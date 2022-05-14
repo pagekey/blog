@@ -20,9 +20,7 @@ The advantage to this approach is the dynamic nature of the list. Unless you run
 
 In this case, we will be talking about a **singly linked list**, meaning that each Node only has one reference, which belongs to the **next** Node. For a __doubly linked list__, there would be an additional reference to the **previous** Node.
 
-import YouTubePlayer from '@site/src/components/YouTubePlayer';
-
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 ## Nodes and Ropes
 

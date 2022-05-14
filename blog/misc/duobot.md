@@ -6,9 +6,7 @@ tags: [language-learning]
 youtube: zhjWD8O564Q
 ---
 
-import YouTubePlayer from '@site/src/components/YouTubePlayer';
-
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, I show off my magical DuoLingo-playing bot made with Selenium. It's best magic trick: breaking while you're using it.
 
