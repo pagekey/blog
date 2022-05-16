@@ -7,7 +7,7 @@ youtube: XKvmgtOidYU
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 Some of us grew up clicking around in MS Paint on Windows. Others may enjoyed the luxurious interface afforded by Mac OS. Still others may have been stuck with nothing more than a cell phone, or even just a TI-84 calculator.
 

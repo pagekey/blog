@@ -4,11 +4,11 @@ date: "2020-07-15"
 authors: [steve]
 tags: [pkos]
 youtube: -V-eKSKwexs
-project_page: /projects/pkos/10
+project: pkos
 ---
 
 import ProjectPost from '@site/src/components/ProjectPost';
 
-<ProjectPost frontMatter={frontMatter}>
+<ProjectPost frontmatter={frontmatter}>
 Time for some real hardware! Let's load this OS up and try it out on an old laptop.
 </ProjectPost>

@@ -8,7 +8,7 @@ youtube: d1JGsHc1NGA
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we install dependencies and run our first Qt graphical application using C++ on Ubuntu Linux.
 
@@ -16,4 +16,4 @@ In this video, we install dependencies and run our first Qt graphical applicatio
 
 Code for this lesson:
 
-<https://github.com/pagekeysolutions/education/tree/master/Qt_in_90_Sec>
+[https://github.com/pagekeysolutions/education/tree/master/Qt_in_90_Sec](https://github.com/pagekeysolutions/education/tree/master/Qt_in_90_Sec)

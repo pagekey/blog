@@ -8,6 +8,6 @@ youtube: fA-9FyBPN18
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we install Python 3 on Windows 10 in 90 seconds or less.

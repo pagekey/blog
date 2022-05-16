@@ -8,7 +8,7 @@ youtube: O5rH_fsOOJM
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we learn how to create, manage, and remove Python Virtual Environments.
 

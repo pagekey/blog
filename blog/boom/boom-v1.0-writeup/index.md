@@ -57,7 +57,7 @@ So here's the opportunity: if existing language companies are willing to remain 
 
 Let's take a step back. That was sounding pretty ambitious, even arrogant, for someone who doesn't even seem to have a plan yet. What's going to make this app so great?
 
-To be fair, there are many, many obstacles that could get in the way of a single person trying to compete with well-established, well-funded companies that have existed for decades. But who knows? I may gain some allies along the way to help out. (Hit me up - <info@pagekeysolutions.com>)
+To be fair, there are many, many obstacles that could get in the way of a single person trying to compete with well-established, well-funded companies that have existed for decades. But who knows? I may gain some allies along the way to help out. (Hit me up - [info@pagekeysolutions.com](mailto:info@pagekeysolutions.com))
 
 If all goes well and I can get everything working, I would like Boom! to present **engaging quizzes** that **randomly generate content** to make people **use the vocabulary and grammar they learn in new ways**. I want this content to be **publicly available**, *and* **publicly editable** (though there will be a review process before edits are merged).
 
@@ -172,6 +172,6 @@ That being said, maybe I'm a bit of a hypocrite for engaging in such a system, b
 
 You made it all the way to the end? Thanks for that!
 
-Please [download the app](https://boomlanguages.com/) and try it out if you haven't already. I am very open to feedback and ideas for new features. Just send your thoughts over to <info@pagekeysolutions.com>.
+Please [download the app](https://boomlanguages.com/) and try it out if you haven't already. I am very open to feedback and ideas for new features. Just send your thoughts over to [info@pagekeysolutions.com](mailto:info@pagekeysolutions.com).
 
 Also, if you want to read more tech articles like this, consider subscribing to our Line by Line Code mailing list using the form below this article.

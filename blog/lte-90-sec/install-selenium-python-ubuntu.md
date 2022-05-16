@@ -8,7 +8,7 @@ youtube: MTarw_BUR-M
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we learn how to set up Selenium in 90 seconds or less! Made using Ubuntu on Windows (WSL). You may need to start an Xming server if you use this method (I did).
 
@@ -16,7 +16,7 @@ In this video, we learn how to set up Selenium in 90 seconds or less! Made using
 
 ## Steps
 
-### 1. Install pacakges.
+### 1. Install packages.
 
 ```bash
 sudo apt update && sudo apt install python3 python3-pip firefox

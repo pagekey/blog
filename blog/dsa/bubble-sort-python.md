@@ -8,7 +8,7 @@ youtube: LmZLKhd2Juc
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we learn the ins and outs of Bubble Sort, a sorting algorithm that will come in handy in many situations. Well, maybe just in your programming classes.
 

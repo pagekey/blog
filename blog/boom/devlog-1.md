@@ -8,7 +8,7 @@ youtube: 5kwHY_1ewd4
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 Picking up an old project from earlier this year and making a few additions.
 

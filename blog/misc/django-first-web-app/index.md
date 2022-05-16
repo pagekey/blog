@@ -126,7 +126,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
 
-Now open up a browser and type <http://localhost:8000/> into your address bar. You should see a welcome page for Django!
+Now open up a browser and type [http://localhost:8000/](http://localhost:8000/) into your address bar. You should see a welcome page for Django!
 
 ![Django Welcome Page](hello_django.png)
 

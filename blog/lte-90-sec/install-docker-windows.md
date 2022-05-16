@@ -8,6 +8,6 @@ youtube: Jl_C_sy02MA
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we get Docker working for *us* in 90 seconds!

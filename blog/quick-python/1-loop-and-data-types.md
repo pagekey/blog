@@ -8,7 +8,7 @@ youtube: ydQASRg1dZE
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we get our feet wet and unlock a tiny bit of the enormous power Python offer with a simple for loop.
 
@@ -16,6 +16,6 @@ In this video, we get our feet wet and unlock a tiny bit of the enormous power P
 
 Check out the source code here:
 
-<https://github.com/stephengrice/education/tree/master/Quick_Python/01_Loops_Data_Types>
+[https://github.com/stephengrice/education/tree/master/Quick_Python/01_Loops_Data_Types](https://github.com/stephengrice/education/tree/master/Quick_Python/01_Loops_Data_Types)
 
 If you need to install Python, we have you covered! Check out our [Done in 90 Seconds series](/blog/tags/lte-90-sec) to get it installed FAST!

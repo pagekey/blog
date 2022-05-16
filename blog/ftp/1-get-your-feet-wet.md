@@ -4,13 +4,13 @@ date: "2022-04-07"
 authors: [steve]
 tags: [ftp,python]
 youtube: rM8BZdOA_60
-project_page: /projects/ftp/1
+project: ftp
 ---
 
 import ProjectPost from '@site/src/components/ProjectPost';
 
-<ProjectPost frontMatter={frontMatter}>
+<ProjectPost frontmatter={frontmatter}>
 Coding is not scary! It's really easy to get started.
-<br/><br/>
+
 Send this video to anyone you know who wants to get started with programming, but doesn't know how.
 </ProjectPost>

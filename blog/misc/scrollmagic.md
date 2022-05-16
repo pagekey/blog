@@ -7,10 +7,10 @@ youtube: 8jtLCrvUddA
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 Today, we learn how to create a basic ScrollMagic web animation.
 
 <!--truncate-->
 
-View the demo: <http://bit.ly/pks-scrollmagic>
+View the demo: [http://bit.ly/pks-scrollmagic](http://bit.ly/pks-scrollmagic)

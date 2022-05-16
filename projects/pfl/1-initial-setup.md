@@ -6,7 +6,7 @@ youtube: hO16sBPMe34
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 Let's code a workout app from scratch. Why? Watch the video and find out.
 

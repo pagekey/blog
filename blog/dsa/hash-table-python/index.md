@@ -10,7 +10,7 @@ youtube: zHi5v78W1f0
 
 This tutorial will show you how to implement a hash table with **separate chaining**. It's not the most efficient method, but it is the simplest way to get started and create a fully functioning hash table.
 
-<!--truncate-->
+<!-- truncate -->
 
 <YouTubePlayer youtubeLink={frontmatter.youtube} />
 

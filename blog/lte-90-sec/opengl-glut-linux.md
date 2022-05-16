@@ -8,7 +8,7 @@ youtube: cShqFtmDTQE
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we run through the steps for making our first OpenGL program using GLUT.
 

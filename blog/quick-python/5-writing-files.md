@@ -8,7 +8,7 @@ youtube: t-hqxcGsJvU
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we cover writing to files and discuss "write" mode vs. "append" mode. 
 
@@ -16,4 +16,4 @@ In this video, we cover writing to files and discuss "write" mode vs. "append" m
 
 Link to code:
 
-<https://github.com/stephengrice/education/tree/master/Quick_Python/05_Write_a_File>
+[https://github.com/stephengrice/education/tree/master/Quick_Python/05_Write_a_File](https://github.com/stephengrice/education/tree/master/Quick_Python/05_Write_a_File)

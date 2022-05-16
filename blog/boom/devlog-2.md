@@ -8,7 +8,7 @@ youtube: IBdZjelApI4
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 Here's the latest for Boom Languages, a new language learning app I'm working on.
 

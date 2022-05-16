@@ -19,7 +19,7 @@ After that, we're going to modify the gem so that you can use it anywhere on you
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 ## Requirements
 

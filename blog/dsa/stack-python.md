@@ -16,7 +16,7 @@ There's no other data structure like the Stack. In only a few minutes, you can h
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 ## An Analogy
 

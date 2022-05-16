@@ -8,6 +8,6 @@ youtube: 59_sTxdsGiI
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we install the up-and-coming programming language Julia on Windows in 90 seconds or less.

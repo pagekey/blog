@@ -7,7 +7,7 @@ youtube: C70jUkQyIQM
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 Do you have all of your notes in OneNote? Want to move your notes out, but not sure where to start? In this video, we'll convert all of your OneNote notes to Markdown with an easy-to-use script. Then, you can open it in a different application, like Obsidian.
 

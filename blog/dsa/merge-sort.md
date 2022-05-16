@@ -8,7 +8,7 @@ youtube: syHhPKK00Rc
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we learn the ins and outs of Merge Sort, a sorting algorithm that will come in handy in many situations.  We go over theory, and then visualize the entire sorting process from start to finish.
 

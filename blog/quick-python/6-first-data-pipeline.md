@@ -8,7 +8,7 @@ youtube: VCqwKazLLbY
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 In this video, we use standard input and output in Python to process data piped to us from other applications.
 

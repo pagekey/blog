@@ -6,7 +6,7 @@ youtube: rM8BZdOA_60
 
 import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<YouTubePlayer youtubeLink={frontMatter.youtube} />
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
 
 Coding is not scary! It's really easy to get started.
 

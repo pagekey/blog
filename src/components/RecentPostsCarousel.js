@@ -13,7 +13,7 @@ export default function RecentPostsCarousel(props) {
                     {posts.map(({ content: BlogPostContent }) => (
                         <BlogPostItem
                             key={BlogPostContent.metadata.permalink}
-                            frontMatter={BlogPostContent.frontMatter}
+                            frontmatter={BlogPostContent.frontmatter}
                             assets={BlogPostContent.assets}
                             metadata={BlogPostContent.metadata}
                             truncated={BlogPostContent.metadata.truncated}

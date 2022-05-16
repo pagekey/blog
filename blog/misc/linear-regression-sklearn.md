@@ -55,19 +55,19 @@ $$
 
 Notice that we use $\hat{y}$ (prounounced "y hat") to represent our predicted value. All in all, the goal of linear regression is to find an equation for $\hat{y}$. First though, let's use the above equation to find the residual of a real-world example.
 
-Consider someone who is 5'8 and weighs 160 pounds. When all's said and done, we'll have an equation where we plug in the x-value, 5'8, and get a weight as a result. If the result is 170 pounds, then we have a residual of 160-170=-10 pounds. In math terms, \(y=160\) and \(\hat{y}=170\), meaning that residual \(e=-10\) for this particular point.
+Consider someone who is 5'8 and weighs 160 pounds. When all's said and done, we'll have an equation where we plug in the x-value, 5'8, and get a weight as a result. If the result is 170 pounds, then we have a residual of 160-170=-10 pounds. In math terms, $y=160$ and $\hat{y}=170$, meaning that residual $e=-10$ for this particular point.
 
 Another example is someone who is 6'0 and 200 lbs. If our model predicted that they would weight 190, the residual e=200-190=10.
 
 #### How is residual different from error?
 
-Since the variable used for residual is \(e\), you may think that it's the same thing as error. It's similar, but not quite the same. As it turns out, the **residual** is the exact difference between the actual and predicted value for a given sample, as we've already seen; the **error** is the same thing, but for an entire population [3][4]. This means that the error can be hard or impossible to calculate exactly, so it's usually just theoretical.
+Since the variable used for residual is $e$, you may think that it's the same thing as error. It's similar, but not quite the same. As it turns out, the **residual** is the exact difference between the actual and predicted value for a given sample, as we've already seen; the **error** is the same thing, but for an entire population [3][4]. This means that the error can be hard or impossible to calculate exactly, so it's usually just theoretical.
 
 #### Understanding Correlation Coefficients
 
 Another key part of calculating the regression line is to correlation coefficients. Khan Academy concisely summarizes the concept: "Correlation coefficients are trying to measure how well a **linear model** can describe the relationship between **two variables**" (emphasis mine) [5]. See [5] for a video to build intuition, so that you can match the given correlation coefficient to a dataset based on how well it is correlated and whether the correlation is positive or negative.
 
-The ability to calculate a correlation coefficient \(r\) will play a key role in determining the slope \(m\) of our regression line \(\hat{y}\).
+The ability to calculate a correlation coefficient $r$ will play a key role in determining the slope $m$ of our regression line $\hat{y}$.
 
 In order to actually calculate the correlation coefficient, we'll need two more concepts in our toolkit: sample mean and standard deviation.
 
@@ -100,7 +100,7 @@ $$
 s=\sqrt{\frac{\sum_{i=1}^{N}{(x_i-\bar{x})^2}}{N-1}}
 $$
 
-Note that you use Greek sigma (\(\sigma\)) to represent **population standard deviation**, which is when you are calculating for all possible points you could be interested in. However, in our case, we only have some of the data (training data), so we need the **sample standard deviation**, represented with letter \(s\). The only difference in the calculation is that we divide by \(n-1\) instead of by \(n\) when calculating the average of squared distances from the mean (the variance).
+Note that you use Greek sigma ($\sigma$) to represent **population standard deviation**, which is when you are calculating for all possible points you could be interested in. However, in our case, we only have some of the data (training data), so we need the **sample standard deviation**, represented with letter $s$. The only difference in the calculation is that we divide by $n-1$ instead of by $n$ when calculating the average of squared distances from the mean (the variance).
 
 #### z-scores
 
@@ -111,7 +111,7 @@ $$
 z=\frac{x_i-\bar{x}}{s}
 $$
 
-In the above, \(z\) represents the final z-score, while \(x_i\) is the sample, \(\bar{x}\) is the sample mean, and of course \(s\) is the sample standard deviation.
+In the above, $z$ represents the final z-score, while $x_i$ is the sample, $\bar{x}$ is the sample mean, and of course $s$ is the sample standard deviation.
 
 #### Calculating Correlation Coefficients
 
@@ -122,9 +122,9 @@ $$
 r=\frac{1}{n-1}\sum(\frac{x_i-\bar{x}}{s_x})(\frac{y_i-\bar{y}}{s_y})
 $$
 
-There are three parts to this. In the first part, we have \(\frac{1}{n-1}\), which is a number that will get smaller as more points are added. We are multiplying this by a sum of all points, so as more points are added, each individual point affects the outcome less.
+There are three parts to this. In the first part, we have $\frac{1}{n-1}$, which is a number that will get smaller as more points are added. We are multiplying this by a sum of all points, so as more points are added, each individual point affects the outcome less.
 
-What about the summation? It looks complicated at first, but you're really just doing something for every sample, or (x, y) point, in your data set. Notice that the first term, \(\frac{x_i-\bar{x}}{s_x}\), is actually just the z-score for x, or the residual for x divided by the standard deviation for x. The same is the case in the next term, except it's for y.
+What about the summation? It looks complicated at first, but you're really just doing something for every sample, or (x, y) point, in your data set. Notice that the first term, $\frac{x_i-\bar{x}}{s_x}$, is actually just the z-score for x, or the residual for x divided by the standard deviation for x. The same is the case in the next term, except it's for y.
 
 So this means that we multiply the z-score of each variable, x and y, together for every point, and then add all of these values together. This is scaled by our first term, which keeps r from getting excessively large or small. We know that r will always be between 1 and negative 1 thanks to that initial term.
 
@@ -159,22 +159,22 @@ I would recommend trying out [the example provided by scikit-learn](https://scik
 
 ## References
 
-[1] <https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression>
+[1] https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression
 
-[2] <https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression>
+[2] https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression
 
-[3] <https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/a/introduction-to-residuals>
+[3] https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/a/introduction-to-residuals
 
-[4] <http://www.askanalytics.in/2015/09/difference-between-error-and-residual.html>
+[4] http://www.askanalytics.in/2015/09/difference-between-error-and-residual.html
 
-[5] <https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/scatterplots-and-correlation/v/correlation-coefficient-intuition-examples>
+[5] https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/scatterplots-and-correlation/v/correlation-coefficient-intuition-examples
 
-[6] <https://www.mathsisfun.com/data/standard-deviation.html>
+[6] https://www.mathsisfun.com/data/standard-deviation.html
 
-[7] <https://www.statisticshowto.com/probability-and-statistics/z-score/>
+[7] https://www.statisticshowto.com/probability-and-statistics/z-score/
 
-[8] <https://statsandr.com/blog/what-is-the-difference-between-population-and-sample/>
+[8] https://statsandr.com/blog/what-is-the-difference-between-population-and-sample/
 
-[9] <https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset>
+[9] https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset
 
-[10] <http://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html>
+[10] http://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html
