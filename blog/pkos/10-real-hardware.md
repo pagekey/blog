@@ -7,8 +7,15 @@ youtube: -V-eKSKwexs
 project: pkos
 ---
 
-import ProjectPost from '@site/src/components/ProjectPost';
+import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<ProjectPost frontmatter={frontmatter}>
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
+
 Time for some real hardware! Let's load this OS up and try it out on an old laptop.
-</ProjectPost>
+
+<!--truncate-->
+
+## Code
+
+- [Link to tag](https://github.com/pagekeysolutions/pkos/releases/tag/vid%2Fos010)
+- [Diff from previous video](https://github.com/pagekeysolutions/pkos/compare/vid/os009..vid/os010)

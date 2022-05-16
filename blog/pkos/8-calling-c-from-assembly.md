@@ -7,8 +7,15 @@ youtube: 5RWjI83C47k
 project: pkos
 ---
 
-import ProjectPost from '@site/src/components/ProjectPost';
+import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<ProjectPost frontmatter={frontmatter}>
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
+
 In this video, we run our first miniature kernel, written in C.
-</ProjectPost>
+
+<!--truncate-->
+
+## Code
+
+- [Link to tag](https://github.com/pagekeysolutions/pkos/releases/tag/vid%2Fos008)
+- [Diff from previous video](https://github.com/pagekeysolutions/pkos/compare/vid/os007..vid/os008)

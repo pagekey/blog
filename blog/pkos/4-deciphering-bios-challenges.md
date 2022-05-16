@@ -7,8 +7,15 @@ youtube: 9dU7CyKkHew
 project: pkos
 ---
 
-import ProjectPost from '@site/src/components/ProjectPost';
+import YouTubePlayer from '@site/src/components/YouTubePlayer';
 
-<ProjectPost frontmatter={frontmatter}>
+<YouTubePlayer youtubeLink={frontmatter.youtube} />
+
 Let's go over the challenges from the last video.
-</ProjectPost>
+
+<!--truncate-->
+
+## Code
+
+- [Link to tag](https://github.com/pagekeysolutions/pkos/releases/tag/vid%2Fos004)
+- [Diff from previous video](https://github.com/pagekeysolutions/pkos/compare/vid/os003..vid/os004)
