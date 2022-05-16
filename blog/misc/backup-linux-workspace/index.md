@@ -4,7 +4,7 @@ date: "2018-11-24"
 authors: [steve]
 ---
 
-![A Computer Workspace](/img/blog/featured/linux-workspace.jpg)
+![A Computer Workspace](@post/linux-workspace.jpg)
 
 How many times have you sat down at a new Linux computer and felt like you were starting all over again? All of those aliases, every little helper file and script - gone. This new computer is a shell of its former self (pun intended). Your heart warms as you think back to the comfort and productivity that came with your Linux workstation at home. If only there were a way to take everything you know and love on the go...
 

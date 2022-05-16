@@ -4,7 +4,7 @@ date: "2018-04-16"
 authors: [steve]
 ---
 
-![Man doing a backflip](/img/blog/featured/backflip.jpg)
+![Man doing a backflip](@post/backflip.jpg)
 
 Every day, system administrators, students, professors, and everyday computer users struggle with entering their password on the command line. With each passing jump from one system to another, ten seconds tick by. Whoops, that's a mistake - make it 30!
 

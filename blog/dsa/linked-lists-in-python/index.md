@@ -6,7 +6,7 @@ tags: [data-structs-and-algs]
 youtube: KZVU2X4Dw8w
 ---
 
-![Links of rope](/img/blog/featured/linked-list.jpg)
+![Links of rope](@post/linked-list.jpg)
 
 Need a quick run down on a classic data structure? Look no further.
 

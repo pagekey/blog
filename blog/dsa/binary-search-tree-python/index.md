@@ -4,7 +4,7 @@ date: "2018-04-19"
 authors: [steve]
 ---
 
-![Example of a Binary Search Tree](1example_tree.png)
+![Example of a Binary Search Tree](@post/1example_tree.png)
 
 Decisions, decisions... Life is all about choices! Usually there are so many ways to go. An infinite expanse of roads and pathways stretches in front of you, an endless gradient of details; as you consider them, your head starts to spin, your eyes start to droop, your mind races, your head pounds -
 
@@ -20,7 +20,7 @@ For flat arrays, searching for, inserting, and deleting data will loop through e
 
 ## Insert
 
-![Binary Search Tree: Insert method diagram](2insert.png)
+![Binary Search Tree: Insert method diagram](@post/2insert.png)
 
 In this case, the `Node` will have most of the important code for the `insert` method. The `BST` class will essentially be a wrapper for the `Node`, hiding some of the rough edges of the internal methods to give the user a clean interface.
 
@@ -68,7 +68,7 @@ class BST(object):
 
 ## Find
 
-![Binary Search Tree: Find method diagram](3find.png)
+![Binary Search Tree: Find method diagram](@post/3find.png)
 
 `find` is another recursive method, which means that it will be implemented in the `Node` class.
 
@@ -108,10 +108,10 @@ class BST(object):
 
 ## Remove
 
-![Binary Search Tree: Remove method diagram, leaf node removal](4remove.png)
+![Binary Search Tree: Remove method diagram, leaf node removal](@post/4remove.png)
 <figcaption>Example of leaf node removale</figcaption>
 
-![Binary Search Tree: Remove method diagram, non-leaf node removal](5remove.png)
+![Binary Search Tree: Remove method diagram, non-leaf node removal](@post/5remove.png)
 <figcaption>Example of non-leaf node removal</figcaption>
 
 Finally, the `BST` class is getting its chance to be more than just a wrapper! The `Node` class will have no `remove` method at all - the magic will happen entirely within the `BST` class.
@@ -225,7 +225,7 @@ The code for each method of traversal will look very similar. Each time, we'll s
 
 ### Pre-Order Traversal
 
-![Binary Search Tree: Pre-Order Traversal](6pre_order.png)
+![Binary Search Tree: Pre-Order Traversal](@post/6pre_order.png)
 
 ```python
 class Node(object):
@@ -245,7 +245,7 @@ class Node(object):
 
 ### In-Order Traversal
 
-![Binary Search Tree: In-Order Traversal](7in_order.png)
+![Binary Search Tree: In-Order Traversal](@post/7in_order.png)
 
 ```python
 class Node(object):
@@ -265,7 +265,7 @@ class Node(object):
 
 ### Post-Order Traversal
 
-![Binary Search Tree: Post-Order Traversal](8post_order.png)
+![Binary Search Tree: Post-Order Traversal](@post/8post_order.png)
 
 ```python
 class Node(object):

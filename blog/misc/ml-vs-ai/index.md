@@ -4,7 +4,7 @@ date: "2021-04-11"
 authors: [steve]
 ---
 
-![Cute robot](/img/blog/featured/cute-robot.jpeg)
+![Cute robot](@post/cute-robot.jpeg)
 
 Everyone has heard of machine learning and artificial intelligence at this point, right?
 

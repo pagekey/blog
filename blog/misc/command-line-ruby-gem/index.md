@@ -5,7 +5,7 @@ authors: [steve]
 youtube: KNa1TXnaZSg
 ---
 
-![A shiny red gem](/img/blog/featured/shiny-gem.jpg)
+![A shiny red gem](@post/shiny-gem.jpg)
 
 Anyone who has used Ruby before knows that gems are the spice of life. They are easy to install and distribute, even easier to use, and most importantly, they provide useful functionality. It's not uncommon to see entire software projects centered around a single well-made gem. Take any Ruby on Rails project, and you'll see this in practice.
 

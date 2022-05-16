@@ -4,7 +4,7 @@ date: "2021-04-17"
 authors: [steve]
 ---
 
-![Wall panels](/img/blog/featured/wall-panels.jpg)
+![Wall panels](@post/wall-panels.jpg)
 
 Machine learning is fascinating, but it can be overwhelming if you're just getting started. Luckily, scikit-learn is an open-source machine learning library that allows you to jump in and gain hands-on experience immediately, harnessing the power of almost 2,000 contributors without reading a single scientific paper.
 

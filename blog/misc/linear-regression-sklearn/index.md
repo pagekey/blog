@@ -4,7 +4,7 @@ date: "2021-05-20"
 authors: [steve]
 ---
 
-![Row of buildings](/img/blog/featured/buildings-row.jpg)
+![Row of buildings](@post/buildings-row.jpg)
 
 Where do we start with something as complex as scikit-learn? At the beginning, of course!
 

@@ -4,7 +4,7 @@ date: "2020-11-02"
 authors: [steve]
 ---
 
-![Coffee beans](/img/blog/featured/coffee.jpg)
+![Coffee beans](@post/coffee.jpg)
 
 Welcome to our JavaScript lesson! Today, we'll be trying out some fun examples to see a few of the cool things you can do with JavaScript.
 

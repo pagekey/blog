@@ -4,7 +4,7 @@ date: "2018-12-12"
 authors: [steve]
 ---
 
-![Brushes in front of a blank canvas](/img/blog/featured/design-vs-implementation.jpg)
+![Brushes in front of a blank canvas](@post/design-vs-implementation.jpg)
 
 Typically, people don't go about their day thinking about design and implementation, or at least not in these terms. Such words are usually limited to the vocabulary of engineers, programmers, developers, or project managers. In spite of this, these two concepts can apply to just about everything in your daily life. Learning to think in these terms may give you a new perspective.
 

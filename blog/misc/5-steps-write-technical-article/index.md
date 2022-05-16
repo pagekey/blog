@@ -4,7 +4,7 @@ date: "2018-12-13"
 authors: [steve]
 ---
 
-![Circuitboard parts](/img/blog/featured/write-technical-article.jpg)
+![Circuitboard parts](@post/write-technical-article.jpg)
 
 Over the past few months, I've written [a](/blog/dsa/hash-table-python) [fair](/blog/misc/linux-kernel-1-compile-from-source) [number](/blog/misc/linux-kernel-2-modifications) [of](/blog/misc/command-line-ruby-gem) [technical](/blog/dsa/binary-search-tree-python) [articles](/blog/misc/backup-linux-workspace). At first, it felt unnatural to apply what I learned in English class to the cold logic of programming and computers. Despite this, I rinsed and repeated enough times to see that it's not such a bad fit after all. Below, I outline the five steps I take, in one form or another, every time I write a technically-focused article.
 
