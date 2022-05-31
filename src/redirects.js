@@ -42,6 +42,8 @@ let redirects = [
     { from: ['/docs/pkos/os12'], to: '/projects/pkos/12' },
     { from: ['/docs/pkos/os13'], to: '/projects/pkos/13' },
     { from: ['/docs/pkos/os14'], to: '/projects/pkos/14' },
+    { from: ['/blog/tags/quick-python'], to: '/projects/quick-python' },
+    { from: ['/blog/tags/lte-90-sec'], to: '/projects/lte-90-sec' },
 ]; //.concat(docsPaths);
 
 module.exports = redirects;

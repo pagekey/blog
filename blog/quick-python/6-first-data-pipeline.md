@@ -14,4 +14,4 @@ In this video, we use standard input and output in Python to process data piped 
 
 <!--truncate-->
 
-If you liked this video, check out the whole [Quick Python series](/blog/tags/quick-python) and be sure to sign up using the form below to get notified of new posts! Thanks for checking this one out.
+If you liked this video, check out the whole [Quick Python series](/projects/quick-python) and be sure to sign up using the form below to get notified of new posts! Thanks for checking this one out.
