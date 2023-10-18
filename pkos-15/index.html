@@ -1,0 +1,1151 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../pkos-14/">
+      
+      
+        <link rel="next" href="../logic-analyzer/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>OS15: Writing a Simple VGA Driver (Bare-Metal Graphics) - PageKey</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#timestamps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PageKey" class="md-header__button md-logo" aria-label="PageKey" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PageKey
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OS15: Writing a Simple VGA Driver (Bare-Metal Graphics)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PageKey" class="md-nav__button md-logo" aria-label="PageKey" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    PageKey
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/self-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/pagekey-operating-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PageKey Operating System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/boom-languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boom Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/plaintext-daw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plaintext DAW
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/rust-book-speedrun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust Book Speedrun
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/markdown-sitegen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown Sitegen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/keyreader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KeyReader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/first-time-programmer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Time Programmer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/what-i-learned-recently/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What I Learned Recently
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/quick-python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/90-seconds-or-less/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    90 Seconds or Less
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/data-structures-algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Structures & Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/linux-kernel-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux Kernel Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#timestamps" class="md-nav__link">
+    Timestamps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-reproduce" class="md-nav__link">
+    Steps to Reproduce
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qemu-hardware" class="md-nav__link">
+    QEMU Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vga-hardware" class="md-nav__link">
+    VGA Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-the-graphics-mode-without-the-bios" class="md-nav__link">
+    Settings the Graphics Mode (without the BIOS)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-the-code" class="md-nav__link">
+    Writing the Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#were-stuck-in-vga-mode" class="md-nav__link">
+    We're Stuck in VGA Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-lessons-learned" class="md-nav__link">
+    Other Lessons Learned
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href=".." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/stephengrice.png" alt="Steve Grice">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>Steve Grice</strong><br>
+                      Techie
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2022-05-03 00:00:00" class="md-ellipsis">May 3, 2022</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/pagekey-operating-system/">PageKey Operating System</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../tags/#assembly" class="md-tag">assembly</a>
+    
+  
+    
+    
+    
+      <a href="../tags/#c" class="md-tag">c</a>
+    
+  
+    
+    
+    
+      <a href="../tags/#tutorial" class="md-tag">tutorial</a>
+    
+  
+</nav>
+
+
+
+  <h1>OS15: Writing a Simple VGA Driver (Bare-Metal Graphics)</h1>
+
+<div><p>Our OS just got a lot more colorful. In this post, we figure out how to draw on the screen by switching to VGA mode and manually editing the video memory.</p>
+<!-- more -->
+
+<p><div class="video-container"><iframe src="https://www.youtube.com/embed/GllPGcVLEDY" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<p>Thanks to Scott Spitler for suggesting this topic.</p>
+<h2 id="timestamps">Timestamps</h2>
+<ul>
+<li>0:00 Intro</li>
+<li>0:35 Demo (Emulated)</li>
+<li>1:04 Demo (Real hardware)</li>
+<li>2:04 VGA Background</li>
+<li>2:34 QEMU Hardware</li>
+<li>3:27 VGA Hardware</li>
+<li>4:52 Setting the Graphics Mode</li>
+<li>5:57 CODE WALKTHROUGH</li>
+<li>9:28 Stuck in VGA Mode</li>
+<li>11:30 Other lessons learned</li>
+<li>12:17 Outro</li>
+</ul>
+<h2 id="steps-to-reproduce">Steps to Reproduce</h2>
+<ol>
+<li>
+<p>Clone the repo: <code>git clone https://github.com/pagekeysolutions/pkos</code></p>
+</li>
+<li>
+<p>Enter the repo: <code>cd pkos</code></p>
+</li>
+<li>
+<p>Check out the code snapshot for this post: <code>git checkout vid/015</code></p>
+</li>
+<li>
+<p>Enable X connections: <code>xhost local:root</code></p>
+</li>
+<li>
+<p>Run the OS on QEMU: <code>docker-compose up</code></p>
+</li>
+</ol>
+<h2 id="code">Code</h2>
+<ul>
+<li><a href="https://github.com/pagekeysolutions/pkos/releases/tag/vid%2Fos015">Link to tag</a></li>
+<li><a href="https://github.com/pagekeysolutions/pkos/compare/vid/os014..vid/os015">Diff from previous video</a></li>
+</ul>
+<h2 id="background">Background</h2>
+<p>VGA stands for Video Graphics Array [1]. Designed for use with CRT monitors, this old-fashioned video display chipset uses an analog signal. It has been replaced by DVI, or Digital Video Interface [2]. As it turns out, the HDMI standard is just DVI with better color support and audio bundled into the same (smaller) connector [3].</p>
+<h2 id="qemu-hardware">QEMU Hardware</h2>
+<p>I thought it may be helpful to look into what hardware is being simulated in our beloved i386 QEMU emulator. Thankfully, the man page for <code>qemu-system-i386</code> tells us exactly what to expect. For VGA, emulator uses the "Cirrus CLGD 5446 PCI VGA card or dummy VGA card with Bochs VESA extensions" [4].  This card connects via the PCI bus [5].  It seems to be old enough that it's hard to purchase anywhere. I am wondering how modern computers, like the laptop I've tried this OS out on in <a href="../pkos-10/">OS10</a>, support VGA mode for x86. I can't seem to find any sources on it, but I thought that I read somewhere (maybe on the OSDev Wiki) that the external VGA chipsets were replaced with a smaller version included directly on the motherboard.</p>
+<h2 id="vga-hardware">VGA Hardware</h2>
+<p>As always, the OS Dev Wiki has our back on this topic. Their page on VGA hardware greets me with an encouraging quote:</p>
+<blockquote>
+<p>While the VGA chip is quite a simple piece of hardware ... it is possibly one of the most complicated devices to program for</p>
+</blockquote>
+<p>Wonderful! However, it goes on to mention that there are many shortcuts you can take to make it easier, and it's still a good place to get your start developing video drivers [6]. With this in mind, I found some code in the public domain that I was able to make heavy use of to get <em>something</em> working, even if that something isn't the most elegant graphics code ever written. The OS Dev post [6] goes into great depth about which ports are used to control VGA. It seems that a combination of I/O ports are used to program the chipset into the right mode, and then you can use memory-mapped I/O once everything is set up. The code that I "borrowed" took care of the hard part of writing very specific values to VGA I/O ports, and then I was able to quite simply modify the right memory locations to draw on the screen.</p>
+<p>One other tidbit that I learned from [6] is that VGA uses a "sequencer," among other devices in its rendering pipeline (if you could call it that). The sequencer is connected to the VGA memory space, reading it and generating colors that are fed to subsequent stages. Also, it's worth noting that there are 4 planes of VGA memory, each 64 KB in size, for a total of 256 KB.</p>
+<h2 id="settings-the-graphics-mode-without-the-bios">Settings the Graphics Mode (without the BIOS)</h2>
+<p>How do you set the graphics mode in protected mode? The sage answer comes again from OSDev [7]:</p>
+<blockquote>
+<p><strong>You don't</strong>. Graphics programming is fun, but graphics are hardly essential for an OS. <strong>Don't get side-tracked</strong></p>
+</blockquote>
+<p>In fact, it's recommended that you avoid getting too deep into this topic unless you have "more than one life to waste" [8]. Apparently, you can make VGA work without the BIOS and still get some low-resolution graphics working, but to move beyond it, you'll hit some serious barriers. Graphics cards would <strong>each, separately</strong> require their own graphics driver implementation, and there often isn't sufficient documentation on these cards [8], meaning that you'd be reverse engineering it. That being said, at some point <em>far</em> down the line, I'm sure there's a way to obtain implementations of graphics drivers for popular cards and compile them specifically for our OS. But this is all besides the point - let's jump into the actual code of writing the VGA driver.</p>
+<h2 id="writing-the-code">Writing the Code</h2>
+<p>The code that helped me get this working was found at [9]. It's an actual example of techniques for changing the graphics mode without the BIOS. The file itself is huge, and I made no effort to build or run it. Instead, I searched for relevant code snippets that I could use in PKOS. I found <code>write_regs</code> to be a key function. This, paired with a character array named <code>g_320x200x256</code>, representing register values required to enter 320x200 VGA resolution with a color-depth of 256, allowed me to change the graphics mode. I added a command to <code>kernel.c</code> so that whenever you type <code>vga</code>, it runs the <code>vga_test()</code> function in <code>vga.c</code>, which in turn runs <code>write_regs(g_320x200x256)</code>. When we do this, our text-based interface goes away, and we see something cool!</p>
+<p><img alt="VGA Mode with Random Noise" src="../2022/pkos/pkos-15/vga1.png"></p>
+<figcaption>Our first glimpse of VGA mode</figcaption>
+
+<p>Beautiful! The coolest part of this is that we seem to be unintentionally visualizing a section of memory as VGA. The little dots of yellow and stripes of gray must have had some other meaning to the computer before we entered this mode, though I'm not sure what. Maybe the buffer for our text interface that just disappeared is represented here.</p>
+<p>Our next step is to figure out how to clear the screen. Again, I borrow some code from [9], modifying it to compile with our OS. Specifically, I got rid of the <code>far</code> keyword - I wasn't sure what this was, and neither was our compiler! This gave us the following function to plot a pixel:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vga_plot_pixel</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">320</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">VGA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">VGA_ADDRESS</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">VGA</span><span class="p">[</span><span class="n">offset</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>We simply calculate the address of the color we'd like to update based on <code>x</code> and <code>y</code>, and then change it in memory! I originally had the wrong address for <code>VGA_ADDRESS</code>, and so this code didn't seem to do anything. The correct value is <code>0xA0000</code>.</p>
+<p>We're now free to clear the screen by plotting color 0 (black) on every pixel from 0,0 to 320,200. From that point on, we can have some fun with our <code>vga_plot_pixel</code> function. We're basically free to draw whatever we want! As for me, I drew some happy faces, a rectangle, and a pallete of colors <code>0x0</code> through <code>0xF</code>.</p>
+<p><img alt="VGA Mode with Custom Drawing" src="../2022/pkos/pkos-15/vga2.png"></p>
+<figcaption>The output of our custom drawing code</figcaption>
+
+<p>While we apparently have 256 colors available in this mode, I did not explore past color <code>0xF</code>.</p>
+<h2 id="were-stuck-in-vga-mode">We're Stuck in VGA Mode</h2>
+<p>Unfortunately, I was not able to find a way out of this mode. I left my various unsuccessful attempts on the <code>vga-text-mode</code> branch in the repo. Though [9] provides <code>g_80x25_text</code> register values, writing this with <code>write_regs</code> when the user hits ESC was not enough. The actual code also writes 4096-byte font into a specific place in <em>virtual</em> memory. Unfortunately, this makes use of external dependencies to calculate, and I wasn't able to get it to work. Depending on your compiler, this would either be a <code>memcpy</code>, include some variables from <code>dos.h</code>, or something like that. Since we're running on bare-metal, we don't have <code>dos.h</code> and we'd have to roll our own <code>memcpy</code>. I took a quick-and-dirty attempt at <code>memcpy</code>:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Famous last words - how hard can memcpy be</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">memcpy</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="o">*</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">src</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Sadly, this didn't seem to help, so I gave up on it for now. The only way out of this mode is a reboot!</p>
+<h2 id="other-lessons-learned">Other Lessons Learned</h2>
+<p>I was having trouble getting into the debugger, so I added a script for debugging named <code>scripts/docker_run_debug</code> which allows easy access to the existing debugging functionality with QEMU and GDB. It was poking around in memory and checking values that made me realize I had the wrong VGA address.</p>
+<p>I also found out about how global variables work in C. Apparently, you should declare the global as <code>extern</code> in your header file, and then actually give it a value in your implementation file. Otherwise, you'll get yelled at for having multiple definitions of the same variable, even if you use header guards [10].</p>
+<p>Speaking of which, I added header guards! Without these lovely <code>#ifndef __HEADER_H</code>,  <code>#define __HEADER_H</code>, <code>#endif</code> combos, you'll get all sorts of errors for mutliple definitions of the same variable or function.</p>
+<h2 id="references">References</h2>
+<p>[1] <a href="https://www.britannica.com/technology/VGA">https://www.britannica.com/technology/VGA</a></p>
+<p>[2] <a href="https://computer.howstuffworks.com/monitor3.htm">https://computer.howstuffworks.com/monitor3.htm</a></p>
+<p>[3] <a href="https://www.toptenreviews.com/how-hdmi-cables-work">https://www.toptenreviews.com/how-hdmi-cables-work</a></p>
+<p>[4] <a href="https://manpages.debian.org/stretch/qemu-system-x86/qemu-system-i386.1.en.html">https://manpages.debian.org/stretch/qemu-system-x86/qemu-system-i386.1.en.html</a></p>
+<p>[5] <a href="http://www.vgamuseum.info/index.php/cpu/item/147-cirrus-logic-cl-gd5446">http://www.vgamuseum.info/index.php/cpu/item/147-cirrus-logic-cl-gd5446</a></p>
+<p>[6] <a href="https://wiki.osdev.org/VGA_Hardware">https://wiki.osdev.org/VGA_Hardware</a></p>
+<p>[7] <a href="https://files.osdev.org/mirrors/geezer/osd/graphics/index.htm">https://files.osdev.org/mirrors/geezer/osd/graphics/index.htm</a></p>
+<p>[8] <a href="https://wiki.osdev.org/How_do_I_set_a_graphics_mode">https://wiki.osdev.org/How_do_I_set_a_graphics_mode</a></p>
+<p>[9] <a href="https://files.osdev.org/mirrors/geezer/osd/graphics/modes.c">https://files.osdev.org/mirrors/geezer/osd/graphics/modes.c</a></p>
+<p>[10] <a href="https://stackoverflow.com/questions/8201944/multiple-definition-and-header-only-libraries">https://stackoverflow.com/questions/8201944/multiple-definition-and-header-only-libraries</a></p></div>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2017 - <script>document.write(new Date().getFullYear())</script> PageKey Solutions, LLC
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/@PageKey" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

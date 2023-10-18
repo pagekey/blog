@@ -1,0 +1,1067 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../daw-14/">
+      
+      
+        <link rel="next" href="../pkos-21/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>5 Lessons from Rewriting My App FOUR TIMES | boom devlog 9 - PageKey</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-just-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PageKey" class="md-header__button md-logo" aria-label="PageKey" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PageKey
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5 Lessons from Rewriting My App FOUR TIMES | boom devlog 9
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PageKey" class="md-nav__button md-logo" aria-label="PageKey" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    PageKey
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/self-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/pagekey-operating-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PageKey Operating System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/boom-languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boom Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/plaintext-daw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plaintext DAW
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/rust-book-speedrun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust Book Speedrun
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/markdown-sitegen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown Sitegen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/keyreader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KeyReader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/first-time-programmer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Time Programmer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/what-i-learned-recently/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What I Learned Recently
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/quick-python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/90-seconds-or-less/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    90 Seconds or Less
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/data-structures-algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Structures & Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/linux-kernel-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux Kernel Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-just-start" class="md-nav__link">
+    1. Just start.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-its-not-just-about-the-idea" class="md-nav__link">
+    2. It's not just about the idea.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dont-just-ship-it" class="md-nav__link">
+    3. Don't just ship it.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-start-with-whats-most-important" class="md-nav__link">
+    4. Start with what's most important.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-do-a-proper-launch" class="md-nav__link">
+    5. Do a proper launch.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-prototype-of-version-4" class="md-nav__link">
+    Demo: Prototype of Version 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's Next
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href=".." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/stephengrice.png" alt="Steve Grice">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>Steve Grice</strong><br>
+                      Techie
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-05-27 00:00:00" class="md-ellipsis">May 27, 2023</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/boom-languages/">Boom Languages</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              9 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../tags/#javascript" class="md-tag">javascript</a>
+    
+  
+    
+    
+    
+      <a href="../tags/#language" class="md-tag">language</a>
+    
+  
+</nav>
+
+
+
+  <h1>5 Lessons from Rewriting My App FOUR TIMES | boom devlog 9</h1>
+
+<div><p>Four times, from scratch.</p>
+<p>That's how many times I've re-written my app, called Boom Languages. Every time I did, I learned a ton, and in this post, I'm going to tell you the 5 top lessons I've learned along the way.</p>
+<!-- more -->
+
+<p><div class="video-container"><iframe src="https://www.youtube.com/embed/a72nZ0n_wd0" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<p>Be sure to <a href="https://pagekey.io/boom/signup">sign up</a> to get notified when the latest version of Boom is available!</p>
+<h2 id="1-just-start">1. Just start.</h2>
+<p>Any article focused on innovation or entrepreneurship will tell you this - start today, because if you put it off until tomorrow, then tomorrow will never come. I've read this advice many times, and when I finally applied it to my language app idea, it rang true.</p>
+<p>You can spend your whole life getting ready, but the truth is, many of the lessons you need can only be learned as you go. You have to jump in, even if you're woefully unprepared and lacking key skills. You'll learn them as you go.</p>
+<p>For me, this entailed creating a rough plan for my app, opening up a code editor, and typing those fateful keystrokes: <code>git init</code>. If I hadn't finally made that initial commit on November 28, 2020, the hundreds that followed may never have come to pass.</p>
+<p>I've built four versions of this app so far:</p>
+<ul>
+<li>Version 1 was just to show that I could get an app on the iOS and Android app stores. There was nothing special about it - it had a quiz feature, but so does every other major language learning app.</li>
+<li>Version 2 added a feature that would become key - the Article Translator. It's a tool that helps you break down a big, intimidating, dense body of text written in a foreign language into manageable pieces - sentences - so that you can work your way through it without getting overwhelmed.</li>
+<li>Version 3 was the exact same app, but re-written from scratch (using React Native instead of Flutter).</li>
+<li>And now I'm working on Version 4, which is <strong>yet another</strong> complete rewrite from scratch.</li>
+</ul>
+<p>But if I had never just gone for it, I'd still be loafing around thinking about the next big idea.</p>
+<p>Curious to try the new version? Sign up <a href="https://pagekey.io/boom/signup"><strong>here</strong></a> to get notified when it's available. There's even a chance you'll be selected as an exclusive private tester!</p>
+<h2 id="2-its-not-just-about-the-idea">2. It's not just about the idea.</h2>
+<p>Another classic piece of entrepreneurial advice comes from Derek Sivers, who introduced the thought that <a href="https://sive.rs/multiply">ideas are a multiplier of execution</a>. Basically, it means that the way you <strong>execute</strong> an idea has far more leverage on whether you're successful than the idea itself. That's not to mention the fact that practicing your skills at executing ideas makes you better at it, so that when another "million-dollar idea" comes floating into your head, you'll be ready and able to turn it into reality.</p>
+<h2 id="3-dont-just-ship-it">3. Don't just ship it.</h2>
+<p>I was deeply inspired by Seth Godin's book Linchpin. One of my key takeaways from that book was the concept of "shipping it" - he makes the point that if you don't "ship" your ideas and make them available to the world, then all the work you put into them is essentially wasted. The ideas need to interact with the world to grow and become something worthwhile - and they can't do that until you actually hit the publish button. At first, I embraced this fully, but with time, I've realized the truth is a bit more nuanced than it seemed.</p>
+<p>Growing up, I was a bit of a perfectionist - taking things slow and steady when writing an essay for school or working on homework, and checking everything over to make sure it was right before turning it in. Reading Linchpin made me change my habits - from careful checks to just sending it.</p>
+<p>At first, it made me uncomfortable, but eventually, I was shipping things with wild abandon, left and right, without giving it too much thought. Hit a rough spot in a video? Can't find the right wording? No problem, just ship it and move onto the next one. Stuck on a programming problem? Go for the easy, messy solution and move onto the next problem.</p>
+<p>I took to setting goals that were focused on completion rather than effort or quality. Some examples included working on Boom for a certain amount of time each day, or producing a YouTube video every week about a technical topic.</p>
+<p>Taking it to the next extreme, in January 2023, I challenged myself to make a YouTube video every single day. I was able to keep it up for over a month, but by the end of it, I was completely burnt out, and confused as to why I was spending so much time making such low quality videos. I was cutting corners just to meet my daily "shipping" quota.</p>
+<p>It was at this point that I vowed to return to an earlier time, before metrics, before "grindset" culture, before "shipping," before <strong>quantity</strong> - and I realized that I needed to focus on <strong>quality</strong>. When you're just getting started, it can be great to flail wildly, test the waters, and <a href="https://www.youtube.com/watch?v=-1wcilQ58hI&amp;t=2942s">blow up a few spaceships along the way</a>. But this approach has its limits, and I've decided to swing the pendulum in the other direction, at least for me, for now.</p>
+<h2 id="4-start-with-whats-most-important">4. Start with what's most important.</h2>
+<p>When an app has a server, it's a lot more complicated than if everything is happening locally. You have to worry about migrating your database, maintaining a schema, and keeping the API synced between the client and the server. Even more headaches abound when you're trying to deploy to mobile - you have to appease Apple (as we saw in <a href="../boom-devlog-8/">the last devlog</a>).</p>
+<p>And on top of it all, I was adding features that didn't matter - like user logins and leaderboards - before finding a set of core features that effectively taught foreign languages and were fun and easy to use. When I tried to implement features that actually mattered, I found myself buried by a mountain of technical debt, and decided to start over.</p>
+<p>This time, however, I would concentrate on the features that mattered first, and eschew everything that wasn't directly related to them. If there was a corner that I could cut, I'd cut it to be able to build the core features faster and better. If it wasn't a core feature, I was going to ignore it.</p>
+<p>This led to the somewhat radical approach of building the app as a simple website that uses the browser's built-in <code>localStorage</code> instead of relying on a server. With this lean approach, I was able to prototype all the important features from the main app (that took me months to build) in a single weekend.</p>
+<p>The limitations to this are immense, but the speed with which I was able to iterate was priceless. Dozens of times, I cleared the <code>localStorage</code> on my browser and started fresh with a new schema. If I had to make these changes to a production app, I would have had to worry about migrating user data and a slew of other nit-picky concerns.</p>
+<p>When I'm the only user and I start from scratch, I don't have to worry about screwing anything up - I can just do it.</p>
+<p>This fast-and-loose approach seems to contradict my point about "quality over quantity," but I don't think it does. The key here is that I'm not publishing this unpolished prototype for everyone to use. Instead, I'm using it as a way to discover the features and app design that are most effective, while investing the smallest possible amount of time doing it. I'll probably discard this messy prototype code at some point, but for now, it's getting the job done.</p>
+<h2 id="5-do-a-proper-launch">5. Do a proper launch.</h2>
+<p>Iteration is great, but the average person trying to use an app will click away after 2 seconds if they're not engaged, and they'll never come back. And that's just if the design is ugly - if a button doesn't do what it's supposed to, or if an error box pops up and there's no obvious way to fix it, forget it - they're gone, and they won't be coming back.</p>
+<p>In the past, I wanted to have the latest, bleeding edge version of my app available to the <strong>whole world</strong> - I was basically saying, "Look, everyone, I'm building something! It's not done, but try it out and see how not done it is!" I thought that it was a waste of time and effort to build a brand for a product that wasn't ready yet.</p>
+<p>Building a list of people ready to use something that didn't exist yet seemed pretentious to me; I just wanted to show what was done so far and get feedback. No need to hide anything, right? From the perspective of an engineer, this is logical, but it's terrible marketing. The message that gets sent is that we have no problem putting something out there that doesn't work.</p>
+<p>That's why I'm going to severely limit the number of people who have access to the latest version of Boom this time around. I may even take the old version off the app store. I'll still document the process and share what I learn, but until I have something that I'm confident is impressive and useful to language learners, I'm keeping it under wraps.</p>
+<p>I always learn a ton from shoulder-surfing when family or friends try my app. That's why I'm going to allow that shoulder-surfing to happen when I can watch, and otherwise, I'll save peope the pain of trying to use something that spontaneously implodes without warning, usually right when things are getting good.</p>
+<h2 id="demo-prototype-of-version-4">Demo: Prototype of Version 4</h2>
+<p>If you want to check out a demonstration of the prototype I built for Boom v4, you can check out the video that accompanies this article. The demonstration starts at <a href="https://www.youtube.com/watch?v=a72nZ0n_wd0&amp;t=436s">7:16</a>.</p>
+<h2 id="whats-next">What's Next</h2>
+<p>There are four simple elements to my plan as I move forward with this app:</p>
+<ol>
+<li><strong>Build</strong> something that I personally want to use every single day to learn languages. This will be focused on adding features that I find useful, and that I find myself doing anyway through other means. I want Boom to be an integrated solution, so you don't have to hop between Google Translate tabs, Anki review sessions, and random YouTube videos to make progress on your language journey.</li>
+<li><strong>Involve others.</strong> Get some people to use it, and make it so that <strong>they</strong> want to use it every day. This can happen in tandem with the previous step. I'll work with a select few to see how they respond to the app. This will help me uncover usability blindspots that arise from being the one who wrote all the code. When you can't just pop open "Inspect Element" to figure out what's going on, things certainly look different!</li>
+<li><strong>Scale!</strong> When the previous two steps are complete, I'll have a reasonably high-quality proof-of-concept of a working, useful learning system. Then it will be time to take that potentially useful product and get it into the hands of as many people as I can. I'm not skilled at sales or marketing, but I'm hoping that if I just get started, I can fail my way to success like I did while building this app. <strong>Of course, this would be a lot easier if I had someone with business savvy to work with</strong> - if you're interested, <a href="mailto:steve@pagekey.io">send me an email</a>!</li>
+<li><strong>Monetize.</strong> Once enough people are using the app and the features are stable, we can look into ways to make money with this app and make it a sustainable business. I've done research into in-app purchases, subscription models, and licensing, but I have a lot more to learn. This is another place where I'll probably need help from some smart folks with good business acumen - and good character.</li>
+</ol>
+<p>So, that's all for this Boom Languages brain dump. I hope you got something out of the lessons that I shared. If you want updates as I make progress, you can <a href="https://pagekey.io/boom/signup"><strong>sign up for the mailing list</strong></a> to get notified when new versions are available, and subscribe to the PageKey YouTube channel to stay in-the-know when we publish new videos. Thanks for reading!</p></div>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2017 - <script>document.write(new Date().getFullYear())</script> PageKey Solutions, LLC
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/@PageKey" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

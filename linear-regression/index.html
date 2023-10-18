@@ -1,0 +1,1164 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../getting-started-scikit-learn/">
+      
+      
+        <link rel="next" href="../quick-python-8/">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Snap the Line! Understanding Linear Regression and Scikit-Learn - PageKey</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#disclaimer-and-sources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PageKey" class="md-header__button md-logo" aria-label="PageKey" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PageKey
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Snap the Line! Understanding Linear Regression and Scikit-Learn
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PageKey" class="md-nav__button md-logo" aria-label="PageKey" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    PageKey
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/self-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/pagekey-operating-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PageKey Operating System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/boom-languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boom Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/plaintext-daw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plaintext DAW
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/rust-book-speedrun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust Book Speedrun
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/markdown-sitegen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown Sitegen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/keyreader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KeyReader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/first-time-programmer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Time Programmer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/what-i-learned-recently/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What I Learned Recently
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/quick-python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/90-seconds-or-less/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    90 Seconds or Less
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/data-structures-algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Structures & Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/linux-kernel-series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux Kernel Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disclaimer-and-sources" class="md-nav__link">
+    Disclaimer and Sources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-real-world-example" class="md-nav__link">
+    A Real World Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-math" class="md-nav__link">
+    The Math
+  </a>
+  
+    <nav class="md-nav" aria-label="The Math">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#population-vs-sample-statistics" class="md-nav__link">
+    Population vs. Sample Statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#residuals-and-error" class="md-nav__link">
+    Residuals and Error
+  </a>
+  
+    <nav class="md-nav" aria-label="Residuals and Error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-a-residual" class="md-nav__link">
+    What's a Residual?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-is-residual-different-from-error" class="md-nav__link">
+    How is residual different from error?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-correlation-coefficients" class="md-nav__link">
+    Understanding Correlation Coefficients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-mean" class="md-nav__link">
+    Sample Mean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-deviation" class="md-nav__link">
+    Standard Deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z-scores" class="md-nav__link">
+    z-scores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-correlation-coefficients" class="md-nav__link">
+    Calculating Correlation Coefficients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordinary-least-squares" class="md-nav__link">
+    Ordinary Least Squares
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fun-part-using-scikit-learn" class="md-nav__link">
+    The Fun Part - Using scikit-learn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href=".." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/stephengrice.png" alt="Steve Grice">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>Steve Grice</strong><br>
+                      Techie
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2021-05-20 00:00:00" class="md-ellipsis">May 20, 2021</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              9 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../tags/#machine-learning" class="md-tag">machine-learning</a>
+    
+  
+</nav>
+
+
+
+  <h1>Snap the Line! Understanding Linear Regression and Scikit-Learn</h1>
+
+<div><p><img alt="Row of buildings" src="../2021/linear-regression-sklearn/buildings-row.jpg"></p>
+<p>Where do we start with something as complex as scikit-learn? At the beginning, of course!</p>
+<p>The Linear Regression module in scikit-learn provides an excellent first step into the world of machine learning. Rather than having to read a 90 page paper, we can instead make use of the knowledge that we gained in our stats class to form a model that will make some predictions for us.</p>
+<p>If this sounds like a lot, don’t worry. We’ll briefly review the math concepts you need to know to fully understand what’s going on, and also touch on an example with real-world data that will put things in perspective.</p>
+<!-- more -->
+
+<p><em>Photo by <a href="https://www.pexels.com/@nohkstudio?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels">NOHK</a></em></p>
+<h2 id="disclaimer-and-sources">Disclaimer and Sources</h2>
+<p>I am simultaneously learning and teaching this topic. I've been watching various videos across the web to fill in my own personal knowledge gaps in statistics. The article below is my attempt to explain what I've learned so far. If you're like me, you may want to try to figure out the answers yourself before reading my solution. To follow the same path that I did, check the sources at the end of this article. Each link contains some information that I cited somewhere in this article.</p>
+<h2 id="a-real-world-example">A Real World Example</h2>
+<p>Let's start with the problem that we're trying to solve, and then we can work our way back to a solution.</p>
+<p>Khan Academy [1] provides what may be the simplest problem we could attempt to solve with linear regression. Suppose you collect the height and weight of many individuals in your hometown and would like to find the relation between height and weight. To do so, you can create a scatter plot by plotting height along the x-axis and weight along the y-axis. In doing so, we are assuming that height is the independent variable and weight is the dependent variable.</p>
+<p>Looking at a scatter plot, we can come up with a line ourselves. Just hold your finger up to the graph and you can approximate a "line of best fit." But this is machine learning, not people learning, so we'll need to automate the process of finding that fit line somehow.</p>
+<p>To do so, we'll need to think about how the data would relate to the fit line and apply some statistics that we'll learn in the next section.</p>
+<h2 id="the-math">The Math</h2>
+<h3 id="population-vs-sample-statistics">Population vs. Sample Statistics</h3>
+<p>In statistics, a population contains <strong>all</strong> members of a specific group, whereas a sample consists of a subset of that group [8]. For example, if you're trying to draw conclusions about people living in the United States, the population you're working with will be upwards of 300 million people. This makes it obvious why we would want to work with samples - there's no way you'll be able to gather reasonable, accurate data for 300 million people! Instead, you need to sample the population of 300 million to get a subset of people that represent the larger group.</p>
+<p>It seems in the world of statistics that you often have a choice between using formulas for the <strong>population</strong> or for the <strong>sample</strong>. In our case, we'll pretty much always be using the formula for <strong>sample</strong>. I believe I know why this is (though I could be wrong): We're working to form a linear regression <strong>model</strong> based on <strong>training data</strong> (which is a sample). Then we apply our model to other members of the population that were not part of the training data set.</p>
+<p>If we used every single member of the population as training data, then we'd just be calculating it outright, wouldn't we? There would be nothing left to use the model on after training! For this reason, it makes sense to me that we're using the formulas for sample rather than for population.</p>
+<h3 id="residuals-and-error">Residuals and Error</h3>
+<p>In the context of the last problem, we are trying to find a line that most closely matches the dataset. Before we can come up with an entire continuous line to represent the dataset, we first have to figure out how to determine whether a <strong>single data point</strong> is any good or not. To do so, we'll use the concept of a <strong>residual</strong>.</p>
+<h4 id="whats-a-residual">What's a Residual?</h4>
+<p>A residual is "the difference between the observed value of the dependent variable (<span class="arithmatex">\(y\)</span>) and the predicted value (<span class="arithmatex">\(\hat{y}\)</span>) is called the residual (<span class="arithmatex">\(e\)</span>)" [2]. As an equation, that would be:</p>
+<div class="arithmatex">\[
+\large
+e=y-\hat{y}
+\]</div>
+<p>Notice that we use <span class="arithmatex">\(\hat{y}\)</span> (prounounced "y hat") to represent our predicted value. All in all, the goal of linear regression is to find an equation for <span class="arithmatex">\(\hat{y}\)</span>. First though, let's use the above equation to find the residual of a real-world example.</p>
+<p>Consider someone who is 5'8 and weighs 160 pounds. When all's said and done, we'll have an equation where we plug in the x-value, 5'8, and get a weight as a result. If the result is 170 pounds, then we have a residual of 160-170=-10 pounds. In math terms, <span class="arithmatex">\(y=160\)</span> and <span class="arithmatex">\(\hat{y}=170\)</span>, meaning that residual <span class="arithmatex">\(e=-10\)</span> for this particular point.</p>
+<p>Another example is someone who is 6'0 and 200 lbs. If our model predicted that they would weight 190, the residual e=200-190=10.</p>
+<h4 id="how-is-residual-different-from-error">How is residual different from error?</h4>
+<p>Since the variable used for residual is <span class="arithmatex">\(e\)</span>, you may think that it's the same thing as error. It's similar, but not quite the same. As it turns out, the <strong>residual</strong> is the exact difference between the actual and predicted value for a given sample, as we've already seen; the <strong>error</strong> is the same thing, but for an entire population [3][4]. This means that the error can be hard or impossible to calculate exactly, so it's usually just theoretical.</p>
+<h4 id="understanding-correlation-coefficients">Understanding Correlation Coefficients</h4>
+<p>Another key part of calculating the regression line is to correlation coefficients. Khan Academy concisely summarizes the concept: "Correlation coefficients are trying to measure how well a <strong>linear model</strong> can describe the relationship between <strong>two variables</strong>" (emphasis mine) [5]. See [5] for a video to build intuition, so that you can match the given correlation coefficient to a dataset based on how well it is correlated and whether the correlation is positive or negative.</p>
+<p>The ability to calculate a correlation coefficient <span class="arithmatex">\(r\)</span> will play a key role in determining the slope <span class="arithmatex">\(m\)</span> of our regression line <span class="arithmatex">\(\hat{y}\)</span>.</p>
+<p>In order to actually calculate the correlation coefficient, we'll need two more concepts in our toolkit: sample mean and standard deviation.</p>
+<h4 id="sample-mean">Sample Mean</h4>
+<p>The sample mean is just the mean, or average, of a given set of samples. Because our model will be bivariate, involving two variables, we'll calculate the sample mean for both x, the independent variable, and y, the dependent variable.</p>
+<p>Calculating the sample mean is as easy as adding up all the values and dividing by the total number of values, just like any other average. Mathematically, it would be</p>
+<div class="arithmatex">\[
+\large
+\bar{x}=\frac{\sum_{x \in X}{x}}{|X|}
+\]</div>
+<p>for all points x in the domain X and </p>
+<div class="arithmatex">\[
+\large
+\bar{x}=\frac{\sum_{x \in X}{x}}{|X|}
+\]</div>
+<p>for points y in codomain Y.</p>
+<h4 id="standard-deviation">Standard Deviation</h4>
+<p>The standard deviation of a set of number is just a measure of how spread out the numbers are [6]. To calculate it, you take the square root of the variance. The variance is the average of squared distances from the mean. In math, this would be:</p>
+<div class="arithmatex">\[
+\large
+s=\sqrt{\frac{\sum_{i=1}^{N}{(x_i-\bar{x})^2}}{N-1}}
+\]</div>
+<p>Note that you use Greek sigma (<span class="arithmatex">\(\sigma\)</span>) to represent <strong>population standard deviation</strong>, which is when you are calculating for all possible points you could be interested in. However, in our case, we only have some of the data (training data), so we need the <strong>sample standard deviation</strong>, represented with letter <span class="arithmatex">\(s\)</span>. The only difference in the calculation is that we divide by <span class="arithmatex">\(n-1\)</span> instead of by <span class="arithmatex">\(n\)</span> when calculating the average of squared distances from the mean (the variance).</p>
+<h4 id="z-scores">z-scores</h4>
+<p>The z-score, or "standard score," tells you how many standard deviations above or below the population mean a given sample is [7]. This number will give you an idea of how far off that data point is from the mean. To calculate the z-score, we use this formula:</p>
+<div class="arithmatex">\[
+\large
+z=\frac{x_i-\bar{x}}{s}
+\]</div>
+<p>In the above, <span class="arithmatex">\(z\)</span> represents the final z-score, while <span class="arithmatex">\(x_i\)</span> is the sample, <span class="arithmatex">\(\bar{x}\)</span> is the sample mean, and of course <span class="arithmatex">\(s\)</span> is the sample standard deviation.</p>
+<h4 id="calculating-correlation-coefficients">Calculating Correlation Coefficients</h4>
+<p>Given the sample mean and sample standard deviation, the correlation coefficient can be calculated using the following formula:</p>
+<div class="arithmatex">\[
+\large
+r=\frac{1}{n-1}\sum(\frac{x_i-\bar{x}}{s_x})(\frac{y_i-\bar{y}}{s_y})
+\]</div>
+<p>There are three parts to this. In the first part, we have <span class="arithmatex">\(\frac{1}{n-1}\)</span>, which is a number that will get smaller as more points are added. We are multiplying this by a sum of all points, so as more points are added, each individual point affects the outcome less.</p>
+<p>What about the summation? It looks complicated at first, but you're really just doing something for every sample, or (x, y) point, in your data set. Notice that the first term, <span class="arithmatex">\(\frac{x_i-\bar{x}}{s_x}\)</span>, is actually just the z-score for x, or the residual for x divided by the standard deviation for x. The same is the case in the next term, except it's for y.</p>
+<p>So this means that we multiply the z-score of each variable, x and y, together for every point, and then add all of these values together. This is scaled by our first term, which keeps r from getting excessively large or small. We know that r will always be between 1 and negative 1 thanks to that initial term.</p>
+<h4 id="ordinary-least-squares">Ordinary Least Squares</h4>
+<p>Remember when we calculated an example residual of -10? That's great for one point, but how to we get a feel for how <strong>all</strong> of the points fit our line?</p>
+<p>One way would be to sum all of the residuals. However, this won't work, because a large negative residual, say -1,000, could be added to a large positive residual, 1,000, and you'd end up with a difference of 0. That makes no sense - if the points are off by a thousand, it's not a great line!</p>
+<p>One thought could be to use <code>math.abs</code> to take the absolute value of each point. However, there's an easier way. How about squaring the numbers? That takes care of the sign, <em>and</em> as an added bonus, makes the numbers much larger, which further highlights the extend to which they differ from the line.</p>
+<p>Credit to Khan for this explanation, building this up step-by-step.</p>
+<h2 id="the-fun-part-using-scikit-learn">The Fun Part - Using scikit-learn</h2>
+<p>Now that we've put all that effort into learning the math behind it, let's sit back and let scikit-learn do it all for us!</p>
+<p>We'll start out by using the <a href="https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset">Diabetes dataset</a>, one of several "Toy Datasets" built into scikit-learn. This way, we don't have to worry about doing any preprocessing, which is the sometimes tedious process of getting data into the right format for our algorithm to ingest. Instead, we just call the handy-dandy <code>load_diabetes</code> method and wham! We've got X and Y samples loaded up into variables.</p>
+<p>Here's the code to load all of the samples:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_diabetes</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_diabetes</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<p>The dataset itself consists of data for 442 diabetes patients. There are 10 predictive variable columns and the 11th column indicates the extent to which the disease progressed in the last year. Our goal is to use these predictive variables to form a model, which in this case takes the form of a regression line, so that we can predict someone's disease progression based on one or more of these variables.</p>
+<p>If we want to use this to do real lienar regression, things get a bit more complicated. We'll have to split the data into training data and test data. This way, we'll have a way to check how well the model we come up with actually reflects the remaining real-world data that we have to test with.</p>
+<p>I would recommend trying out <a href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html">the example provided by scikit-learn</a>, which does just this and allows you to form a prediction based on one of the features in this dataset.</p>
+<h2 id="references">References</h2>
+<p>[1] <a href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression">https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression</a></p>
+<p>[2] <a href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression">https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression</a></p>
+<p>[3] <a href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/a/introduction-to-residuals">https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/a/introduction-to-residuals</a></p>
+<p>[4] <a href="http://www.askanalytics.in/2015/09/difference-between-error-and-residual.html">http://www.askanalytics.in/2015/09/difference-between-error-and-residual.html</a></p>
+<p>[5] <a href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/scatterplots-and-correlation/v/correlation-coefficient-intuition-examples">https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/scatterplots-and-correlation/v/correlation-coefficient-intuition-examples</a></p>
+<p>[6] <a href="https://www.mathsisfun.com/data/standard-deviation.html">https://www.mathsisfun.com/data/standard-deviation.html</a></p>
+<p>[7] <a href="https://www.statisticshowto.com/probability-and-statistics/z-score/">https://www.statisticshowto.com/probability-and-statistics/z-score/</a></p>
+<p>[8] <a href="https://statsandr.com/blog/what-is-the-difference-between-population-and-sample/">https://statsandr.com/blog/what-is-the-difference-between-population-and-sample/</a></p>
+<p>[9] <a href="https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset">https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset</a></p>
+<p>[10] <a href="http://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html">http://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html</a></p></div>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2017 - <script>document.write(new Date().getFullYear())</script> PageKey Solutions, LLC
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/@PageKey" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
