@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="en" dir="ltr" class="2xl:text-[20px]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="sitemap" href="/sitemap-index.xml"><link rel="shortcut icon" href="/_astro/favicon.EoKXths8.ico"><link rel="icon" type="image/svg+xml" href="/_astro/favicon.Ca94UIdJ.svg"><link rel="mask-icon" href="/_astro/favicon.Ca94UIdJ.svg" color="#8D46E7"><link rel="apple-touch-icon" sizes="180x180" href="/_astro/apple-touch-icon.Ctlcgf5O.png">
+  <style>
+    :root {
+      --aw-font-sans: 'InterVariable';
+      --aw-font-serif: 'InterVariable';
+      --aw-font-heading: 'InterVariable';
+
+      --aw-color-primary: rgb(1 97 239);
+      --aw-color-secondary: rgb(1 84 207);
+      --aw-color-accent: rgb(109 40 217);
+
+      --aw-color-text-heading: rgb(0 0 0);
+      --aw-color-text-default: rgb(16 16 16);
+      --aw-color-text-muted: rgb(16 16 16 / 66%);
+      --aw-color-bg-page: rgb(255 255 255);
+
+      --aw-color-bg-page-dark: rgb(3 6 32);
+
+      ::selection {
+        background-color: lavender;
+      }
+    }
+
+    .dark {
+      
+      
+      
+
+      --aw-color-primary: rgb(1 97 239);
+      --aw-color-secondary: rgb(1 84 207);
+      --aw-color-accent: rgb(109 40 217);
+
+      --aw-color-text-heading: rgb(247, 248, 248);
+      --aw-color-text-default: rgb(229 236 246);
+      --aw-color-text-muted: rgb(229 236 246 / 66%);
+      --aw-color-bg-page: rgb(3 6 32);
+
+      ::selection {
+        background-color: black;
+        color: snow;
+      }
+    }
+    .katex-html {
+      display: none;
+    }
+  </style>
+<script>(function(){const defaultTheme = "system";
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    const matches = document.querySelectorAll("[data-aw-toggle-color-scheme] > input");
+
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.checked = theme !== "dark";
+      });
+    }
+  }
+
+  if ((defaultTheme && defaultTheme.endsWith(":only")) || (!localStorage.theme && defaultTheme !== "system")) {
+    applyTheme(defaultTheme.replace(":only", ""));
+  } else if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    applyTheme("dark");
+  } else {
+    applyTheme("light");
+  }
+})();</script><title>Get your feet wet | First Time Programmer 1 — PageKey</title>
+<meta name="description" content="🚀 Let&#39;s take back tech." />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://pagekey.io/blog/2022/ftp/1" />
+<meta property="og:title" content="Get your feet wet | First Time Programmer 1" />
+<meta property="og:description" content="🚀 Let&#39;s take back tech." />
+<meta property="og:url" content="https://pagekey.io/blog/2022/ftp/1" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="http://i3.ytimg.com/vi/rM8BZdOA_60/hqdefault.jpg" />
+
+<meta property="og:locale" content="en" />
+<meta property="og:site_name" content="PageKey" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@onwidget" />
+<meta name="twitter:creator" content="@onwidget" /><meta name="google-site-verification" content="orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M"><!-- Uncomment line below to activate View Transitions --><!-- <ViewTransitions fallback="swap" /> --><link rel="stylesheet" href="/_astro/click-through.BIjqSRpO.css"><script type="module" src="/_astro/hoisted.BpGYQVPl.js"></script></head> <body class="antialiased text-default bg-page tracking-tight">   <!-- 
+<div
+  class="dark text-muted text-sm bg-black dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 hidden md:block overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"
+>
+  <span class="dark:bg-slate-700 bg-white/40 dark:text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">NEW</span>
+  <a href="https://astro.build/blog/astro-440/" class="text-muted hover:underline dark:text-slate-400 font-medium"
+    >Astro 4.4 is now available! »</a
+  >
+  <a
+    target="_blank"
+    rel="noopener"
+    class="float-right rtl:float-left"
+    title="If you like AstroWind, give us a star."
+    href="https://github.com/onwidget/astrowind"
+  >
+    <img
+      src="https://img.shields.io/github/stars/onwidget/astrowind.svg?style=social&label=Stars&maxAge=86400"
+      alt="Follow @onWidget"
+      width="84"
+      height="20"
+    />
+  </a>
+</div> -->   <header class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-aw-sticky-header id="header"> <div class="absolute inset-0"></div> <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl"> <div class="flex justify-between"> <a class="flex items-center" href="/"> <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"> <span id="pks-daily-emoji">🔑</span> PageKey </span>  </a> <div class="flex items-center md:hidden"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> </div> <nav class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/"> Home </a> </li><li class="dropdown">  <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center"> Products <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" data-icon="tabler:chevron-down">  <symbol id="ai:tabler:chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></symbol><use xlink:href="#ai:tabler:chevron-down"></use>  </svg> </button> <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"> <li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/products/boom"> 💣 Boom Languages </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/products/keydo"> ✅ KeyDo </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/products/keyreader"> 📙 KeyReader </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/products/pkos"> 💻 PageKey Operating System </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/products/pkvid"> 🎥 PKVid </a> </li><li> <a class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap" href="/products/ptd"> 🎹 Plaintext DAW </a> </li> </ul>  </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/blog"> Blog </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/team"> Team </a> </li> </ul> </nav> <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0"> <div class="items-center flex justify-between w-full md:w-auto"> <div class="flex"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 md:inline-block" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol><use xlink:href="#ai:tabler:sun"></use>  </svg></button> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS Feed" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">  <symbol id="ai:tabler:rss"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></symbol><use xlink:href="#ai:tabler:rss"></use>  </svg> </a> </div>  </div> </div> </div> </header>  <main>  <section class="py-8 sm:py-16 lg:py-20 mx-auto"> <article> <header class=""> <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"> <p> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:clock">  <symbol id="ai:tabler:clock"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 7v5l3 3"/></g></symbol><use xlink:href="#ai:tabler:clock"></use>  </svg> <time datetime="Thu Apr 07 2022 00:00:00 GMT+0000 (Coordinated Universal Time)" class="inline-block">Apr 7, 2022</time>  
+· <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" data-icon="tabler:user">  <symbol id="ai:tabler:user"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0-8 0M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></symbol><use xlink:href="#ai:tabler:user"></use>  </svg> <span class="inline-block">Steve Grice</span>   
+· <a class="capitalize hover:underline inline-block" href="/category/first-time-programmer"> first time programmer </a>  
+&nbsp;· <span>2</span> min read
+ </p> </div> <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"> Get your feet wet | First Time Programmer 1 </h1> <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">  </p> <img src="http://i3.ytimg.com/vi/rM8BZdOA_60/hqdefault.jpg" width="900" height="506" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 900px; max-height: 506px; aspect-ratio: 1.7786561264822134; width: 100%;" class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700" alt="" loading="eager" decoding="async"> </header> <div class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"> <p>Coding is not scary! It’s really easy to get started.</p>
+<p>Send this video to anyone you know who wants to get started with programming, but doesn’t know how.</p>
+
+<div class="text-center w-full overflow-hidden"> <iframe width="560" height="315" src="https://www.youtube.com/embed/rM8BZdOA_60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin: auto; border-radius: 10px">
+    </iframe> </div>
+<h2 id="timestamps">Timestamps</h2>
+<ul>
+<li>0:00 Coding is not scary</li>
+<li>1:24 Enter REPL.IT</li>
+<li>2:35 First line</li>
+<li>2:57 Break things (Errors)</li>
+<li>3:37 First Loop</li>
+<li>4:11 Make a design (Challenge)</li>
+<li>4:28 Recap</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>This video sets us up on the <a href="https://replit.com">REPL.IT website</a> and gets us to the point where we have an interactive Python terminal. In a little over two minutes, we see how to write our first line of code:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Hello world&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<p>Get used to this message - it’s usually the first thing you do to break ground in a new programming language. Now that we know we can print something to the screen, let’s try adding some more messages:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Hello world&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Hello world&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Hello world&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Hello world&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<p>Copy-pasting is great and all, but there’s a better way. The true power of code comes from our ability to automate mundane tasks like this in an efficient way. With the following <strong>loop</strong>, we can execute our first line of code 20 times:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">in</span><span style="color:#79B8FF"> range</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Hello world&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<p>Notice how easy it would be to change the 20 to something larger or smaller. Just a few keystrokes and you can go from 20 to 100,000. Imagine how much time (and space in your computer’s memory) it would take to copy and paste that line 100,00 times!</p>
+<p>To close, we’ll make a little design to solidify what we’ve learned. This is a challenge for you - try to use the <code>print</code> statement to make something cool on the screen. As a bonus, see if you can incorporate a loop in your design. I’m not much of an artist, so what I came up with is pretty underwhelming:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;  o  &quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot; ooo &quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;ooooo&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot; ooo &quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;  o  &quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<p>The Sims, anyone?</p>
+<p>Hope you enjoyed and learned something from this first lesson! Even if this was a piece of cake for you, consider sending it to someone who may benefit from a quick intro to coding - let’s show people that it’s not as hard as it sounds!</p> </div> <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row"> <ul class="mr-5 rtl:mr-0 rtl:ml-5"><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/javascript" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">javascript</a></li><li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium"><a href="/tag/tutorial" class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">tutorial</a></li></ul> <div class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600"> <span class="align-super font-bold text-gray-400 dark:text-slate-400">Share:</span> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Twitter Share" data-aw-social-share="twitter" data-aw-url="https://pagekey.io/blog/2022/ftp/1" data-aw-text="Get your feet wet | First Time Programmer 1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol><use xlink:href="#ai:tabler:brand-x"></use>  </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Facebook Share" data-aw-social-share="facebook" data-aw-url="https://pagekey.io/blog/2022/ftp/1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-facebook">  <symbol id="ai:tabler:brand-facebook"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z"/></symbol><use xlink:href="#ai:tabler:brand-facebook"></use>  </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Linkedin Share" data-aw-social-share="linkedin" data-aw-url="https://pagekey.io/blog/2022/ftp/1" data-aw-text="Get your feet wet | First Time Programmer 1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-linkedin">  <symbol id="ai:tabler:brand-linkedin"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm4 5v5m0-8v.01M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></g></symbol><use xlink:href="#ai:tabler:brand-linkedin"></use>  </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Whatsapp Share" data-aw-social-share="whatsapp" data-aw-url="https://pagekey.io/blog/2022/ftp/1" data-aw-text="Get your feet wet | First Time Programmer 1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:brand-whatsapp">  <symbol id="ai:tabler:brand-whatsapp"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></g></symbol><use xlink:href="#ai:tabler:brand-whatsapp"></use>  </svg> </button> <button class="ml-2 rtl:ml-0 rtl:mr-2" title="Email Share" data-aw-social-share="mail" data-aw-url="https://pagekey.io/blog/2022/ftp/1" data-aw-text="Get your feet wet | First Time Programmer 1"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300" data-icon="tabler:mail">  <symbol id="ai:tabler:mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7l9 6l9-6"/></g></symbol><use xlink:href="#ai:tabler:mail"></use>  </svg> </button> </div> </div> </article> </section> <div class="mx-auto px-6 sm:px-6 max-w-3xl pt-8 md:pt-4 pb-12 md:pb-20"> <a class="btn btn-tertiary px-3 md:px-3" href="/blog"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" data-icon="tabler:chevron-left">  <symbol id="ai:tabler:chevron-left"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"/></symbol><use xlink:href="#ai:tabler:chevron-left"></use>  </svg> Back to Blog
+</a> </div> <section class="relative not-prose scroll-mt-[72px]"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">  <div class="absolute inset-0">  </div>  </div> <div class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default pt-0 lg:pt-0 md:pt-0"> <div class="flex flex-col lg:justify-between lg:flex-row mb-8"><div class="md:max-w-sm"><h2 class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2">Related Posts</h2><a class="text-muted dark:text-slate-400 hover:text-primary transition ease-in duration-200 block mb-6 lg:mb-0" href="/blog">View All Posts »
+</a></div></div><div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 -mb-6"> <article class="mb-6 transition"> <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6"> <a href="/blog/2022/ftp/6"> <img src="http://i3.ytimg.com/vi/dltSR6z-7XQ/hqdefault.jpg" width="400" height="225" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 100%; max-height: 100%;" class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="Using Other People's Code - NPM and Node | FTP6" loading="lazy" decoding="async"> </a> </div> <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading"> <a href="/blog/2022/ftp/6" class="hover:text-primary dark:hover:text-blue-700  transition ease-in duration-200"> Using Other People&#39;s Code - NPM and Node | FTP6 </a> </h3> <p class="text-muted dark:text-slate-400 text-lg"></p> </article><article class="mb-6 transition"> <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6">  </div> <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading"> <a href="/blog/2020/quick-python/3-error-handling" class="hover:text-primary dark:hover:text-blue-700  transition ease-in duration-200"> Quick Python 3: Error Handling (Actually pretty useful!) </a> </h3> <p class="text-muted dark:text-slate-400 text-lg"></p> </article><article class="mb-6 transition"> <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6"> <a href="/blog/2019/django-first-web-app"> <img src="/blog/2019/django-first-web-app.jpg" width="400" height="225" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 100%; max-height: 100%;" class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="Django: How to Install and Run Your First Web App" loading="lazy" decoding="async"> </a> </div> <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading"> <a href="/blog/2019/django-first-web-app" class="hover:text-primary dark:hover:text-blue-700  transition ease-in duration-200"> Django: How to Install and Run Your First Web App </a> </h3> <p class="text-muted dark:text-slate-400 text-lg"></p> </article><article class="mb-6 transition"> <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6"> <a href="/blog/2022/21-programming-terms-for-beginners"> <img src="http://i3.ytimg.com/vi/NbGXjdAsCR8/hqdefault.jpg" width="400" height="225" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 100%; max-height: 100%;" class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="21 Programming Terms for Absolute Beginners" loading="lazy" decoding="async"> </a> </div> <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading"> <a href="/blog/2022/21-programming-terms-for-beginners" class="hover:text-primary dark:hover:text-blue-700  transition ease-in duration-200"> 21 Programming Terms for Absolute Beginners </a> </h3> <p class="text-muted dark:text-slate-400 text-lg"></p> </article> </div> </div> </section>  </main>  <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose"> <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300"> <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12"> <div class="col-span-12 lg:col-span-4"> <div class="mb-2"> <a class="inline-block font-bold text-xl" href="/">PageKey</a> </div> <div class="text-sm text-muted">  </div> </div> <div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">Products</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/products/boom"> Boom Languages </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/products/keydo"> KeyDo </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/products/keyreader"> KeyReader </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/products/pkos"> PageKey Operating System </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/products/pkvid"> PKVid </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/products/ptd"> Plaintext DAW </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">Community</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="https://github.com/pagekey"> GitHub </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="https://discord.gg/5m5yFgDPF5"> Discord </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="https://youtube.com/@PageKey"> YouTube </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">Tags</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/tag/python"> Python </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/tag/rust"> Rust </a> </li> </ul> </div><div class="col-span-6 md:col-span-3 lg:col-span-2"> <div class="dark:text-gray-300 font-medium mb-2">Languages</div> <ul class="text-sm"> <li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/blog"> English </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/tag/spanish"> Español </a> </li><li class="mb-2"> <a class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out" href="/tag/russian"> Русский </a> </li> </ul> </div> </div> <div class="md:flex md:items-center md:justify-between py-6 md:py-8"> <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4"> <li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Discord" href="https://discord.gg/5m5yFgDPF5"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-discord">  <symbol id="ai:tabler:brand-discord"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0-2 0m6 0a1 1 0 1 0 2 0a1 1 0 0 0-2 0"/><path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833-1.667 3.5-3c.667-1.667.5-5.833-1.5-11.5c-1.457-1.015-3-1.34-4.5-1.5l-.972 1.923a11.913 11.913 0 0 0-4.053 0L9 4c-1.5.16-3.043.485-4.5 1.5c-2 5.667-2.167 9.833-1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2-2 2-3"/><path d="M7 16.5c3.5 1 6.5 1 10 0"/></g></symbol><use xlink:href="#ai:tabler:brand-discord"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="YouTube" href="https://youtube.com/@PageKey"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-youtube">  <symbol id="ai:tabler:brand-youtube"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="m10 9l5 3l-5 3z"/></g></symbol><use xlink:href="#ai:tabler:brand-youtube"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Github" href="https://github.com/pagekey"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol><use xlink:href="#ai:tabler:brand-github"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Instagram" href="https://instagram.com/pagekeysolutions"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:brand-instagram">  <symbol id="ai:tabler:brand-instagram"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 1 0-6 0m7.5-4.5v.01"/></g></symbol><use xlink:href="#ai:tabler:brand-instagram"></use>  </svg>  </a> </li><li> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">  <use xlink:href="#ai:tabler:rss"></use>  </svg>  </a> </li> </ul> <div class="text-sm mr-4 dark:text-muted"> 
+    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(/favicon.ico)]"></span>
+    Copyright &copy; 2024 PageKey Solutions, LLC · All rights reserved.
+   </div> </div> </div> </footer>   <script>(function(){const defaultTheme = "system";
+
+  if (window.basic_script) {
+    return;
+  }
+
+  window.basic_script = true;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+
+  const initTheme = function () {
+    if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+      applyTheme(defaultTheme.replace(':only', ''));
+    } else if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  };
+  initTheme();
+
+  function attachEvent(selector, event, fn) {
+    const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.addEventListener(event, (e) => fn(e, elem), false);
+      });
+    }
+  }
+
+  const onLoad = function () {
+    let lastKnownScrollPosition = window.scrollY;
+    let ticking = true;
+
+    attachEvent('#header nav', 'click', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
+      elem.classList.toggle('expanded');
+      document.body.classList.toggle('overflow-hidden');
+      document.getElementById('header')?.classList.toggle('h-screen');
+      document.getElementById('header')?.classList.toggle('expanded');
+      document.getElementById('header')?.classList.toggle('bg-page');
+      document.querySelector('#header nav')?.classList.toggle('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
+      if (defaultTheme.endsWith(':only')) {
+        return;
+      }
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
+      const network = elem.getAttribute('data-aw-social-share');
+      const url = encodeURIComponent(elem.getAttribute('data-aw-url'));
+      const text = encodeURIComponent(elem.getAttribute('data-aw-text'));
+
+      let href;
+      switch (network) {
+        case 'facebook':
+          href = `https://www.facebook.com/sharer.php?u=${url}`;
+          break;
+        case 'twitter':
+          href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+          break;
+        case 'linkedin':
+          href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+          break;
+        case 'whatsapp':
+          href = `https://wa.me/?text=${text}%20${url}`;
+          break;
+        case 'mail':
+          href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;
+          break;
+
+        default:
+          return;
+      }
+
+      const newlink = document.createElement('a');
+      newlink.target = '_blank';
+      newlink.href = href;
+      newlink.click();
+    });
+
+    let screenSize = window.matchMedia('(max-width: 767px)');
+    screenSize.addEventListener('change', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    function appyHeaderStylesOnScroll() {
+      const header = document.querySelector('#header[data-aw-sticky-header]');
+      if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
+        document.getElementById('header').classList.add('scroll');
+      } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+        document.getElementById('header').classList.remove('scroll');
+      }
+      ticking = false;
+    }
+    appyHeaderStylesOnScroll();
+
+    attachEvent([document], 'scroll', function () {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          appyHeaderStylesOnScroll();
+        });
+        ticking = true;
+      }
+    });
+  };
+  const onPageShow = function () {
+    document.documentElement.classList.add('motion-safe:scroll-smooth');
+    const elem = document.querySelector('[data-aw-toggle-menu]');
+    if (elem) {
+      elem.classList.remove('expanded');
+    }
+    document.body.classList.remove('overflow-hidden');
+    document.getElementById('header')?.classList.remove('h-screen');
+    document.getElementById('header')?.classList.remove('expanded');
+    document.querySelector('#header nav')?.classList.add('hidden');
+  };
+
+  window.onload = onLoad;
+  window.onpageshow = onPageShow;
+
+  document.addEventListener('astro:after-swap', () => {
+    initTheme();
+    onLoad();
+    onPageShow();
+  });
+})();</script>  </body> </html>
