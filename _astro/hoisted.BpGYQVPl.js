@@ -1,1 +1,0 @@
-function t(){var n=Date.now(),i=Math.floor(n/(1e3*60*60*24));const e=["📄","🔑","🌩","🗣","🚁","🛎","😳","🐋","📈","🚀","🛰️","📢","🐘","🏆","🔋","🦀","🍍","🍇","💿","⛰","🐧","🎈"];return e[i%e.length]}document.getElementById("pks-daily-emoji").innerHTML=t();
