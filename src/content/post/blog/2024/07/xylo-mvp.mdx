@@ -1,7 +1,7 @@
 ---
 title: "Combining Frontend and Backend - Xylo App Framework MVP"
 publishDate: 2024-07-05
-image: http://i3.ytimg.com/vi/TODO/hqdefault.jpg
+image: http://i3.ytimg.com/vi/9oyM4b8wu0Y/hqdefault.jpg
 author: Steve Grice
 tags:
   - design
@@ -20,7 +20,7 @@ The way to start that journey is with Xylo, my Rust-based application framework.
 
 import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
 
-<BlogYoutubeVideo videoId="TODO" />
+<BlogYoutubeVideo videoId="9oyM4b8wu0Y" />
 
 ## Demo: What I Have So Far
 
@@ -154,10 +154,8 @@ let frontend_handle = thread::spawn(move || {
 	let mut child: Option<Child> = None;
 	loop {
 		if child.is_none() {
-			let original_dir = env::current_dir().expect("Could not get current directory.");
 			child = Some(Command::new("npm")
 				.args(vec!["run","dev"])
-				.current_dir(original_dir.join(".xylo").join("frontend"))
 				.spawn()
 				.expect("Failed to start frontend dev server."));
 		}
@@ -181,10 +179,13 @@ let frontend_handle = thread::spawn(move || {
 }
 ```
 
-The code to create the `Child` is very similar to what was used to create a `Command`. Then, after it has been created, we wait for the process to finish. However, you have to hit CTRL-C multiple times to get the program to exit, which is messy. If we catch and handle the CTRL-C signal, we can clean up our program's resources and exit right away. We can do this by using a variable that is shared across the two threads:
+The code to create the ` Child` is very similar to what was used to create a `Command`. Then, after it has been created, we wait for the process to finish. However, you have to hit CTRL-C multiple times to get the program to exit, which is messy. If we catch and handle the CTRL-C signal, we can clean up our program's resources and exit right away. We can do this by using a variable that is shared across the two threads:
 
 ```rust
-let running = Arc::new(AtomicBool::new(true)); // for frontend thread
+use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::Arc;
+// ...
+let running = Arc::new(AtomicBool::new(true)); // for thread
 let r = running.clone(); // for ctrl-c handler
 ```
 
