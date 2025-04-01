@@ -3,6 +3,7 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import markdownIt from "markdown-it";
 
 import pluginFilters from "./_config/filters.js";
 
@@ -63,11 +64,11 @@ export default async function(eleventyConfig) {
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			title: "PageKey",
+			subtitle: "Take Back Tech.",
+			base: "https://pagekey.io/",
 			author: {
-				name: "Your Name"
+				name: "Steve G."
 			}
 		}
 	});
@@ -105,6 +106,21 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addShortcode("currentBuildDate", () => {
 		return (new Date()).toISOString();
 	});
+	eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+	// Thank you Sean McPherson! https://www.seanmcp.com/articles/add-a-youtube-embedder-shortcode-to-your-eleventy-site/
+	eleventyConfig.addShortcode("youtube", (id, title) => {
+		return `
+			<iframe class="yt-shortcode" src="https://www.youtube.com/embed/${id}" title="YouTube video player${
+				title ? ` for ${title}` : ""
+				}" frameborder="0" allowfullscreen></iframe>
+		`;
+	});
+
+	// eleventyConfig.setLibrary("md", markdownIt({
+	// 	html: false,
+	// 	linkify: false,
+	// }));
 
 	// Features to make your build faster (when you need them)
 

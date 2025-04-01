@@ -6,4 +6,4 @@ const eleventyNavigation = {
 ---
 # About
 
-I am a person that writes stuff.
+*Take Back Tech* by self-hosting and learning as much as possible about the technology that runs our wild modern world.

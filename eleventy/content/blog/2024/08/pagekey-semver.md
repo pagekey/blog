@@ -15,8 +15,6 @@ Instead of spending 20 minutes to figure out how to use existing tools, I decide
 
 Hope this helps you in some way!
 
-Source code: https://github.com/pagekey/semver
+Source code: <https://github.com/pagekey/semver>
 
-import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
-
-<BlogYoutubeVideo videoId="D86N9txOZBY" />
+{% youtube "D86N9txOZBY" %}

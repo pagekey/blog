@@ -1,11 +1,11 @@
 export default {
-	title: "Eleventy Base Blog v9",
-	url: "https://example.com/",
+	title: "PageKey - Take Back Tech",
+	url: "https://pagekey.io/",
 	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	description: "Self-hosting, tech deep dives, and more.",
 	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
-		url: "https://example.com/about-me/"
+		name: "Steve G.",
+		email: "steve@pagekey.io",
+		url: "https://github.com/pagekey/"
 	}
 }
