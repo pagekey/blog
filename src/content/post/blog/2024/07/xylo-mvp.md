@@ -1,7 +1,6 @@
 ---
 title: "Combining Frontend and Backend - Xylo App Framework MVP"
-publishDate: 2024-07-05
-image: http://i3.ytimg.com/vi/cNN1kUHdW8I/hqdefault.jpg
+date: 2024-07-05
 author: Steve Grice
 tags:
   - design
@@ -9,7 +8,7 @@ tags:
   - javascript
   - nextjs
   - self-hosting
-category: xylo
+  - project:xylo
 ---
 
 I have so many app ideas, but so little time. I have plenty of videos about [Boom](https://pagekey.io/products/boom/), a language app that I wrote and rewrote several times. I learned so many lessons along the way, but those lessons are locked way inside the abandoned Boom codebases. I want to abstract that knowledge into a reusable framework so that anyone can make use of them to create apps quickly and easily.
@@ -18,9 +17,7 @@ This plays into my long-term vision of having highly customizable, maintainable 
 
 The way to start that journey is with Xylo, my Rust-based application framework.
 
-import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
-
-<BlogYoutubeVideo videoId="cNN1kUHdW8I" />
+{% youtube "cNN1kUHdW8I" %}
 
 ## Demo: What I Have So Far
 

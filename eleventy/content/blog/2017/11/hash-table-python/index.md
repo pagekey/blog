@@ -1,6 +1,6 @@
 ---
 title: How to Implement a Hash Table in Python
-publishDate: 2017-11-24
+date: 2017-11-24
 image: /blog/2017/hash-table-python.jpg
 author: Steve Grice
 category: Data Structures & Algorithms
@@ -12,9 +12,7 @@ tags:
 
 This tutorial will show you how to implement a hash table with **separate chaining**. It's not the most efficient method, but it is the simplest way to get started and create a fully functioning hash table.
 
-import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
-
-<BlogYoutubeVideo videoId="zHi5v78W1f0" />
+{% youtube "zHi5v78W1f0" %}
 
 ## Background
 

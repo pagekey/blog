@@ -1,7 +1,6 @@
 ---
 title: "PageKey Semver: Simple automated versioning"
-publishDate: 2024-08-30
-image: http://i3.ytimg.com/vi/D86N9txOZBY/hqdefault.jpg
+date: 2024-08-30
 author: Steve Grice
 tags:
   - python
