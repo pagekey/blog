@@ -5,6 +5,7 @@ author: Steve Grice
 tags:
   - python
   - language-learning
+  - duobot
 ---
 
 In this video, I show off my magical DuoLingo-playing bot made with Selenium. Its best magic trick: breaking while you're using it.
