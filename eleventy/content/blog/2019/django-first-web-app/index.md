@@ -1,7 +1,6 @@
 ---
 title: 'Django: How to Install and Run Your First Web App'
-publishDate: 2019-06-17
-image: /blog/2019/django-first-web-app.jpg
+date: 2019-06-17
 author: Steve Grice
 tags:
   - python

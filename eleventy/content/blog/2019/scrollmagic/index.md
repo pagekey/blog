@@ -1,7 +1,6 @@
 ---
 title: Make Your Site Stand Out with ScrollMagic
-publishDate: 2019-04-26
-image: http://i3.ytimg.com/vi/8jtLCrvUddA/hqdefault.jpg
+date: 2019-04-26
 author: Steve Grice
 tags:
   - javascript
@@ -10,8 +9,6 @@ tags:
 
 Today, we learn how to create a basic ScrollMagic web animation.
 
-import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
-
-<BlogYoutubeVideo videoId="8jtLCrvUddA" />
+{% youtube "8jtLCrvUddA" %}
 
 View the demo: [http://bit.ly/pks-scrollmagic](http://bit.ly/pks-scrollmagic)
