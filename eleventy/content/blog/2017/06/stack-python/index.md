@@ -1,21 +1,18 @@
 ---
 title: How to Implement a Stack in Python
-publishDate: 2017-06-22
-image: /blog/2017/stack-python.jpg
+date: 2017-06-22
 author: Steve Grice
-category: Data Structures & Algorithms
 tags:
   - python
   - tutorial
+  - data structures and algorithms
 ---
 
 There's no other data structure like the Stack. In only a few minutes, you can have a fully working implementation that can be used to solve a wide variety of problems. Stacks are useful for anything from reversing a string to language processing applications - not to mention the fact that many programming languages (and probably your operating system) rely on a Stack to function.
 
 **Click [here][stack-src] for the full Stack source code. Also, [here][stack-test] is the test code.**
 
-import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
-
-<BlogYoutubeVideo videoId="5MOy9VYKczY" />
+{% youtube "5MOy9VYKczY" %}
 
 ## An Analogy
 
