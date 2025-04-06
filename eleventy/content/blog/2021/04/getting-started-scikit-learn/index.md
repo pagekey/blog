@@ -1,7 +1,6 @@
 ---
 title: "How to Get Up and Running with Scikit-Learn"
-publishDate: 2021-04-17
-image: /blog/2021/getting-started-sklearn.jpg
+date: 2021-04-17
 author: Steve Grice
 tags:
   - artificial-intelligence
@@ -11,8 +10,6 @@ tags:
 Machine learning is fascinating, but it can be overwhelming if you're just getting started. Luckily, scikit-learn is an open-source machine learning library that allows you to jump in and gain hands-on experience immediately, harnessing the power of almost 2,000 contributors without reading a single scientific paper.
 
 If this sounds interesting to you, read on. In this article, we're going to learn what scikit-learn is, how to install it, and how to run it using Python and Jupyter Notebooks.
-
-*Photo by [Meruyert Gonullu](https://www.pexels.com/@meruyert-bissimbayeva?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels)*
 
 ## What is scikit-learn?
 

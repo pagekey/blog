@@ -1,18 +1,15 @@
 ---
 title: "Boom Languages Dev Log 4"
-publishDate: 2021-12-31
-image: http://i3.ytimg.com/vi/qvgQYVp5O9o/hqdefault.jpg
+date: 2021-12-31
 author: Steve Grice
-category: Boom Languages
 tags:
   - language-learning
+  - boom-languages
 ---
 
 Version 2.2.2 brings some new changes since our last dev log.
 
-import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
-
-<BlogYoutubeVideo videoId="qvgQYVp5O9o" />
+{% youtube "qvgQYVp5O9o" %}
 
 Here's a summary of the changes:
 

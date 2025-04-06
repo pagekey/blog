@@ -1,19 +1,16 @@
 ---
 title: "Quick Python 8: Virtual Environments"
-publishDate: 2021-06-11
-image: http://i3.ytimg.com/vi/O5rH_fsOOJM/hqdefault.jpg
+date: 2021-06-11
 author: Steve Grice
-category: Quick Python
 tags:
   - python
   - tutorial
+  - quick-python
 ---
 
 In this video, we learn how to create, manage, and remove Python Virtual Environments.
 
-import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
-
-<BlogYoutubeVideo videoId="O5rH_fsOOJM" />
+{% youtube "O5rH_fsOOJM" %}
 
 **[Here's a link to the source code.](https://github.com/pagekeysolutions/education/tree/master/Quick_Python/08_Installing_Packages)**
 
@@ -64,4 +61,4 @@ deactivate
 
 -----
 
-If you liked this video, check out the whole [Quick Python series](/category/quick-python) and be sure to sign up using the form below to get notified of new posts! Thanks for checking this one out.
+If you liked this video, check out the whole [Quick Python series](/tags/quick-python) and be sure to sign up using the form below to get notified of new posts! Thanks for checking this one out.

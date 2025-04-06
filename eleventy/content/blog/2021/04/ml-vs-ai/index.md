@@ -1,7 +1,6 @@
 ---
 title: "The Nuanced Truth: Exploring Differences Between ML and AI"
-publishDate: 2021-04-11
-image: /blog/2021/ml-vs-ai.jpg
+date: 2021-04-11
 author: Steve Grice
 tags:
   - artificial-intelligence
@@ -83,8 +82,6 @@ So, what do you think? Would you agree that the key to building a useful artific
 I hope you learned something new from this article about these topics. Please let me know if you have any thoughts on these topics (or corrections if I made any mistakes).
 
 **If you're excited about these topics and want to get your hands dirty, check out my next post about how to install scikit-learn!**
-
-## References
 
 [^1]: https://www.ibm.com/cloud/learn/what-is-artificial-intelligence
 
