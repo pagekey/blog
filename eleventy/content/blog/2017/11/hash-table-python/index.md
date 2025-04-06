@@ -1,12 +1,12 @@
 ---
 title: How to Implement a Hash Table in Python
 date: 2017-11-24
-image: /blog/2017/hash-table-python.jpg
 author: Steve Grice
 category: Data Structures & Algorithms
 tags:
   - python
   - tutorial
+  - data structures and algorithms
 ---
 
 

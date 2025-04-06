@@ -1,12 +1,11 @@
 ---
 title: How to Implement a Linked List in Python
 date: 2017-06-20
-image: /blog/2017/linked-lists-in-python.jpg
 author: Steve Grice
-category: Data Structures & Algorithms
 tags:
   - python
   - tutorial
+  - data structures and algorithms
 ---
 
 Need a quick run down on a classic data structure? Look no further.
@@ -19,9 +18,7 @@ The advantage to this approach is the dynamic nature of the list. Unless you run
 
 In this case, we will be talking about a **singly linked list**, meaning that each Node only has one reference, which belongs to the **next** Node. For a __doubly linked list__, there would be an additional reference to the **previous** Node.
 
-import BlogYoutubeVideo from '~/components/common/BlogYoutubeVideo.astro';
-
-<BlogYoutubeVideo videoId="KZVU2X4Dw8w" />
+{% youtube "KZVU2X4Dw8w" %}
 
 ## Nodes and Ropes
 
