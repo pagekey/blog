@@ -1,0 +1,12 @@
+---
+title: "3.4 Comments | Rust Book Speedrun 5"
+date: 2023-02-28
+author: Steve Grice
+tags:
+  - rust
+  - rust-book-speedrun
+---
+
+A quick one - comments in Rust!
+
+{% youtube "nzH0lTTTE5c" %}

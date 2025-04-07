@@ -1,0 +1,14 @@
+---
+title: "kidney reveal / Adding images | markdown sitegen 8"
+date: 2023-02-13
+author: Steve Grice
+tags:
+  - python
+  - markdown-sitegen
+---
+
+In this video, we reveal the true kidney, along with an imposter bean.
+
+We add images to our generated blog and make sure there are no name conflicts. We also end up writing an interesting regular expression.
+
+{% youtube "saIyx9BL1x8" %}
