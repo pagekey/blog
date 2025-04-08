@@ -1,0 +1,27 @@
+header {
+	display: flex;
+	font-family: "InterVariable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 1.5rem;
+	font-weight: 700;
+	justify-content: space-between;
+	margin: auto;
+	max-width: 80rem;
+	padding: 0.75rem 1.5rem;
+}
+header a[href] {
+	text-decoration: none;
+	color: inherit;
+}
+header a[href]:visited {
+	text-decoration: none;
+	color: inherit;
+}
+header nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+header nav a[href], header nav a[href]:visited {
+	color: var(--color-gray-50);
+	font-size: 0.9375rem;
+}

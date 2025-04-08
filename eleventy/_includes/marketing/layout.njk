@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <title>PageKey: Take Back Tech</title>
+    {%- css %}{% include "_includes/marketing/styles.css" %}{% endcss %}
+    {%- css %}{% include "_includes/marketing/components/header/.css" %}{% endcss %}
+    {%- css %}{% include "_includes/marketing/components/hero/.css" %}{% endcss %}
+    {%- css %}{% include "public/css/youtube.css" %}{% endcss %}
+    <style>{% getBundle "css" %}</style>
+</head>
+<body>
+    {% include "marketing/components/header/.njk" %}
+    <main>
+        {{ content | safe }}
+    </main>
+    <footer>
+        Copyright &copy; PageKey Solutions, LLC
+    </footer>
+</body>
+</html>
