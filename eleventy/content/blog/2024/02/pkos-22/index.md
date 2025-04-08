@@ -3,7 +3,7 @@ title: "OS22: The VGA Rabbit Hole"
 date: 2024-02-28
 author: Steve Grice
 tags:
-  - lang:c
+  - clang
   - pkos
 ---
 

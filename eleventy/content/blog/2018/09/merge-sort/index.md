@@ -5,7 +5,7 @@ author: Steve Grice
 tags:
   - python
   - tutorial
-  - data structure and algorithms
+  - data structures and algorithms
 ---
 
 In this video, we learn the ins and outs of Merge Sort, a sorting algorithm that will come in handy in many situations.  We go over theory, and then visualize the entire sorting process from start to finish.

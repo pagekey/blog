@@ -4,7 +4,7 @@ date: 2022-08-08
 author: Steve Grice
 tags:
   - assembly
-  - lang:c
+  - clang
   - ci-cd
   - python
   - testing

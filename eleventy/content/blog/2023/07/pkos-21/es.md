@@ -3,7 +3,7 @@ title: "OS21: Más PCI + Empezando con Almacenamiento (IDE, SATA)"
 date: 2023-07-10
 author: Steve Grice
 tags:
-  - lang:c
+  - clang
   - spanish
   - pkos
 ---

@@ -4,7 +4,7 @@ date: 2022-02-12
 author: Steve Grice
 tags:
   - assembly
-  - lang:c
+  - clang
   - docker
   - tutorial
   - pkos

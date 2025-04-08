@@ -4,7 +4,7 @@ date: 2022-08-22
 author: Steve Grice
 tags:
   - assembly
-  - lang:c
+  - clang
   - tutorial
   - pkos
 ---

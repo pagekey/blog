@@ -4,7 +4,7 @@ date: 2024-02-17
 author: Steve Grice
 tags:
   - livestream
-  - lang:c
+  - clang
   - pkos
 ---
 

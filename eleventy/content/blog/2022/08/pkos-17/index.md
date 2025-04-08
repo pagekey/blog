@@ -4,7 +4,7 @@ date: 2022-08-15
 author: Steve Grice
 tags:
   - assembly
-  - lang:c
+  - clang
   - ci-cd
   - testing
   - tutorial

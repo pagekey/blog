@@ -5,7 +5,7 @@ author: Steve Grice
 tags:
   - tutorial
   - assembly
-  - lang:c
+  - clang
   - pkos
 ---
 
