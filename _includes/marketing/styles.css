@@ -56,3 +56,30 @@ a[href]:hover,
 a[href]:active {
 	color: var(--text-color-link-active);
 }
+
+/* features */
+.feature {
+	text-align: center;
+	padding: 1rem 2rem;
+}
+.feature h2 {
+	font-size: 1.875rem;
+	font-weight: 700;
+	letter-spacing: -0.05em;
+	line-height: 1;
+	margin: 0;
+}
+.feature p {
+	color: rgba(229, 236, 246, 0.66);
+	font-size: 1.25rem;
+	letter-spacing: -0.025em;
+	margin-bottom: 3rem;
+}
+
+/* footer */
+footer {
+	color: rgba(229, 236, 246, 0.66);
+	font-size: 0.875rem;
+	padding: 1.5rem 1.5rem;
+	text-align: center;
+}
