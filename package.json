@@ -1,63 +1,53 @@
 {
-  "name": "@onwidget/astrowind",
-  "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
-  "version": "1.0.0-beta.21",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "postbuild": "pagefind --source dist",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier -w .",
-    "lint:eslint": "eslint . --ext .js,.ts,.astro"
-  },
-  "dependencies": {
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.2",
-    "@astrolib/analytics": "^0.5.0",
-    "@astrolib/seo": "^1.0.0-beta.5",
-    "@fontsource-variable/inter": "^5.0.17",
-    "astro": "^4.5.12",
-    "astro-icon": "^1.1.0",
-    "astro-pagefind": "^1.5.0",
-    "limax": "4.1.0",
-    "lodash.merge": "^4.6.2",
-    "mermaid": "^10.9.0",
-    "pagefind": "^1.1.0",
-    "rehype-katex": "^7.0.0",
-    "remark-math": "^6.0.0",
-    "typescript-esbuild": "^0.4.9",
-    "unpic": "^3.18.0"
-  },
-  "devDependencies": {
-    "@astrojs/mdx": "^2.2.2",
-    "@astrojs/partytown": "^2.0.4",
-    "@astrojs/tailwind": "5.1.0",
-    "@iconify-json/flat-color-icons": "^1.1.10",
-    "@iconify-json/tabler": "^1.1.109",
-    "@tailwindcss/typography": "^0.5.12",
-    "@types/js-yaml": "^4.0.9",
-    "@types/lodash.merge": "^4.6.9",
-    "@types/mermaid": "^9.2.0",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
-    "astro-compress": "2.2.20",
-    "eslint": "^8.57.0",
-    "eslint-plugin-astro": "^0.33.1",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "js-yaml": "^4.1.0",
-    "mdast-util-to-string": "^4.0.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "reading-time": "^1.5.0",
-    "sharp": "0.33.3",
-    "tailwind-merge": "^2.2.2",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.3"
-  },
-  "engines": {
-    "node": ">=18.14.1"
-  }
+	"name": "eleventy-base-blog",
+	"version": "9.0.0",
+	"description": "A starter repository for a blog web site using the Eleventy site generator.",
+	"type": "module",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+		"start": "npx @11ty/eleventy --serve --quiet",
+		"start-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/ --serve --quiet",
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/11ty/eleventy-base-blog.git"
+	},
+	"author": {
+		"name": "Zach Leatherman",
+		"email": "zachleatherman@gmail.com",
+		"url": "https://zachleat.com/"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=18"
+	},
+	"funding": {
+		"type": "opencollective",
+		"url": "https://opencollective.com/11ty"
+	},
+	"bugs": {
+		"url": "https://github.com/11ty/eleventy-base-blog/issues"
+	},
+	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"@11ty/eleventy-img": "^6.0.1",
+		"@11ty/eleventy-navigation": "^0.3.5",
+		"@11ty/eleventy-plugin-rss": "^2.0.2",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"cross-env": "^7.0.3",
+		"eleventy-plugin-mathjax": "^2.0.4",
+		"luxon": "^3.5.0",
+		"prismjs": "^1.29.0",
+		"zod": "^3.23.8",
+		"zod-validation-error": "^3.3.1"
+	},
+	"dependencies": {
+		"@zachleat/heading-anchors": "^1.0.1"
+	}
 }
