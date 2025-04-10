@@ -61,6 +61,7 @@ a[href]:active {
 .feature {
 	text-align: center;
 	padding: 1rem 1rem;
+	margin-bottom: 3rem;
 }
 .feature h2 {
 	font-size: 1.875rem;
@@ -94,6 +95,68 @@ a[href]:active {
 .feature .card p {
 	font-size: 1rem;
 	margin: 0;
+}
+.feature .contacts {
+	column-gap: 1rem;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	row-gap: 1rem;
+	text-align: left;
+}
+.feature .contact {
+	align-items: flex-start;
+	border-radius: 0.5rem;
+	color: white !important;
+	cursor: pointer;
+	display: flex;
+	padding: 1rem;
+	text-decoration: none;
+	transition-duration: 0.2s;
+}
+.feature .contact:hover {
+	background-color: rgb(30 41 59);
+}
+.feature .contact:active {
+	background-color: rgb(30 41 120);
+}
+.feature .contact .icon {
+	color: rgb(1, 97, 239);
+	fill: rgb(1, 97, 239);
+	margin-right: 0.5rem;
+}
+.feature .contact .right h3 {
+	line-height: 1.1;
+	margin: 0;
+}
+.feature .contact .right span {
+	display: block;
+	margin-top: 0.8rem;
+}
+
+/* buttons */
+.btn {
+	border-radius: 9999px;
+	font-weight: 600;
+	letter-spacing: -0.025em;
+	line-height: 1.375;
+	padding: 0.875rem 1.5rem;
+	text-decoration: none;
+	transition-duration: 0.2s;
+}
+.btn.primary {
+	background-color: rgb(1, 97, 239);
+	color: white !important;
+}
+.btn.primary:hover {
+	background-color: rgb(1 84 207);
+}
+.btn.secondary {
+	border: 0.8px solid rgb(100 116 139);
+	color: rgb(203 213 225) !important;
+}
+.btn.secondary:hover {
+	background-color: rgb(30 41 59);
+	border-color: rgb(30 41 59);
 }
 
 /* footer */

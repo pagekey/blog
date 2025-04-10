@@ -1,7 +1,4 @@
 {% include "marketing/components/hero/.njk" %}
- 
-{% set videoId = "S9RePis7sbo" %}
-{% include "marketing/components/youtube-lite/.njk" %}
 
 <div class="feature">
   <h2>About us</h2>
@@ -12,54 +9,76 @@
 </div>
 
 <div class="feature">
-<h2>What does PageKey do?</h2>
-<p>We'll give you plenty of free content to get you started on your tech journey.</p>
-<div class="cards">
-<div class="card">
-  <img class="icon" src="/icons/document.svg" eleventy:optional="keep" />
-<!-- icon: 'flat-color-icons:document', -->
-<h3>Tutorials and Guides</h3>
-<p>We offer clear instructions on how to use various open source technologies, old and new.</p>
-</div>
-<div class="card">
-  <img class="icon" src="/icons/template.svg" eleventy:optional="keep" />
-<!-- icon: 'flat-color-icons:template', -->
-<h3>Open Source Products</h3>
-<p>We create products that allow you to dive into the code, learn how they work, and manage your own data.</p>
-</div>
-<div class="card">
-  <img class="icon" src="/icons/voice_presentation.svg" eleventy:optional="keep" />
-<!-- icon: 'flat-color-icons:voice-presentation', -->
-<h3>Community</h3>
-<p>Join our Discord and chat with like-minded individuals. Keep an eye out for PageKey hackathons too!</p>
-</div>
-</div>
+  <h2>What does PageKey do?</h2>
+  <p>We'll give you plenty of free content to get you started on your tech journey.</p>
+  <div class="cards">
+    <div class="card">
+      <img class="icon" src="/icons/document.svg" eleventy:optional="keep"/>
+      <!-- icon: 'flat-color-icons:document', -->
+      <h3>Tutorials and Guides</h3>
+      <p>We offer clear instructions on how to use various open source technologies, old and new.</p>
+    </div>
+    <div class="card">
+      <img class="icon" src="/icons/template.svg" eleventy:optional="keep"/>
+      <!-- icon: 'flat-color-icons:template', -->
+      <h3>Open Source Products</h3>
+      <p>We create products that allow you to dive into the code, learn how they work, and manage your own data.</p>
+    </div>
+    <div class="card">
+      <img class="icon" src="/icons/voice_presentation.svg" eleventy:optional="keep"/>
+      <!-- icon: 'flat-color-icons:voice-presentation', -->
+      <h3>Community</h3>
+      <p>Join our Discord and chat with like-minded individuals. Keep an eye out for PageKey hackathons too!</p>
+    </div>
+  </div>
 </div>
 
 <div class="feature">
-<h2>Let's get in touch.</h2>
-<p>We want you to get involved in any way you see fit.</p>
+  <h2>Let's get in touch.</h2>
+  <p>We want you to get involved in any way you see fit.</p>
 
-<div>
-  <h3>YouTube</h3>
-  <a>Watch and comment</a>
-</div>
-<div>
-  <h3>Email</h3>
-  <a>Write to us</a>
-</div>
-<div>
-  <h3>Chat on Discord</h3>
-  <a>Start chatting</a>
-</div>
-<div>
-  <h3>GitHub</h3>
-  <a>Discuss and contribute</a>
-</div>
+  <div class="contacts">
+    <a class="contact" href="#" target="_blank">
+      <div class="left">
+        <img class="icon" src="/icons/brand-youtube.svg" eleventy:optional="keep"/>
+      </div>
+      <div class="right">
+        <h3>YouTube</h3>
+        <span>Watch and comment</span>
+      </div>
+    </a>
+    <a class="contact" href="#" target="_blank">
+      <div class="left">
+        <img class="icon" src="/icons/mail.svg" eleventy:optional="keep"/>
+      </div>
+      <div class="right">
+        <h3>Email</h3>
+        <span>Write to us</span>
+      </div>
+    </a>
+    <a class="contact" href="#" target="_blank">
+      <div class="left">
+        <img class="icon" src="/icons/brand-discord.svg" eleventy:optional="keep"/>
+      </div>
+      <div class="right">
+        <h3>Discord</h3>
+        <span>Chat with us</span>
+      </div>
+    </a>
+    <a class="contact" href="#" target="_blank">
+      <div class="left">
+        <img class="icon" src="/icons/brand-youtube.svg" eleventy:optional="keep"/>
+      </div>
+      <div class="right">
+        <h3>GitHub</h3>
+        <span>Discuss and contribute</span>
+      </div>
+    </a>
+  </div>
 </div>
 
 <div class="feature">
   <h2>Be a part of the vision.</h2>
   <p>Discover a community of like-minded individuals taking control of the tech in their lives.</p>
-  <a>Join us</a>
+  <a class="btn primary" href="#">Join us</a>
 </div>

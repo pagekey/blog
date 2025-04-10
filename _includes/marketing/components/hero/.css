@@ -38,28 +38,6 @@
 	margin: auto;
 	max-width: 28rem;
 	gap: 1rem;
+	margin-bottom: 3rem;
 }
-.hero .btn {
-	border-radius: 9999px;
-	font-weight: 600;
-	letter-spacing: -0.025em;
-	line-height: 1.375;
-	padding: 0.875rem 1.5rem;
-	text-decoration: none;
-	transition-duration: 0.2s;
-}
-.hero .btn.primary {
-	background-color: rgb(1, 97, 239);
-	color: white;
-}
-.hero .btn.primary:hover {
-	background-color: rgb(1 84 207);
-}
-.hero .btn.secondary {
-	border: 0.8px solid rgb(100 116 139);
-	color: rgb(203 213 225);
-}
-.hero .btn.secondary:hover {
-	background-color: rgb(30 41 59);
-	border-color: rgb(30 41 59);
-}
+
