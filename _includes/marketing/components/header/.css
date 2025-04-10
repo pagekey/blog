@@ -21,7 +21,18 @@ header nav ul {
 	margin: 0;
 	padding: 0;
 }
+header nav ul li {
+	display: inline-block;
+	margin: 0 0.5rem;
+}
 header nav a[href], header nav a[href]:visited {
-	color: var(--color-gray-50);
+	transition-duration: 0.2s;
+	color: white;
 	font-size: 0.9375rem;
+}
+header nav a[href]:hover {
+	color: rgb(200 200 200);
+}
+header nav a[href]:active {
+	color: rgb(180 180 180);
 }

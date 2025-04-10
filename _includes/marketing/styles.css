@@ -136,6 +136,7 @@ a[href]:active {
 /* buttons */
 .btn {
 	border-radius: 9999px;
+	cursor: pointer;
 	font-weight: 600;
 	letter-spacing: -0.025em;
 	line-height: 1.375;
@@ -150,6 +151,9 @@ a[href]:active {
 .btn.primary:hover {
 	background-color: rgb(1 84 207);
 }
+.btn.primary:active {
+	background-color: rgb(1 84 150);
+}
 .btn.secondary {
 	border: 0.8px solid rgb(100 116 139);
 	color: rgb(203 213 225) !important;
@@ -157,6 +161,23 @@ a[href]:active {
 .btn.secondary:hover {
 	background-color: rgb(30 41 59);
 	border-color: rgb(30 41 59);
+}
+.btn.secondary:active {
+	background-color: rgb(30 30 30);
+	border-color: rgb(30 30 30);
+}
+
+/* inputs */
+input {
+	margin: 3rem;
+	margin-top: 1rem;
+	background-color: rgb(46 46 46);
+	width: 20rem;
+	border: 1px solid rgb(66 66 66);
+	border-radius: 0.5rem;
+	color: white;
+	padding: 1rem;
+	font-size: 1.5rem;
 }
 
 /* footer */
