@@ -60,7 +60,7 @@ a[href]:active {
 /* features */
 .feature {
 	text-align: center;
-	padding: 1rem 2rem;
+	padding: 1rem 1rem;
 }
 .feature h2 {
 	font-size: 1.875rem;
@@ -74,6 +74,26 @@ a[href]:active {
 	font-size: 1.25rem;
 	letter-spacing: -0.025em;
 	margin-bottom: 3rem;
+}
+.feature .cards {
+	column-gap: 1rem;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	row-gap: 1rem;
+	text-align: left;
+}
+.feature .card {
+	background-color: rgb(15, 23, 42);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-radius: 0.5rem;
+	padding: 1.5rem;
+}
+.feature .card img.icon {
+	width: 3rem;
+}
+.feature .card p {
+	font-size: 1rem;
+	margin: 0;
 }
 
 /* footer */
