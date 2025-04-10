@@ -1,6 +1,8 @@
 .hero {
-	text-align: center;
+	margin: auto;
+	max-width: 64rem;
 	padding: 3rem 1.5rem;
+	text-align: center;
 }
 .hero .subtitle {
 	color: rgb(191, 219, 254);
@@ -14,6 +16,11 @@
 	letter-spacing: -0.05em;
 	line-height: 1;
 	margin: 0;
+}
+@media (min-width: 768px) {
+	.hero h1 {
+		font-size: 3.75rem;
+	}
 }
 .hero h1 .emphasis-1 {
 	color: rgb(251, 146, 60);

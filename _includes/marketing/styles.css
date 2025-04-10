@@ -38,7 +38,7 @@
 /* html/body */
 html,
 body {
-	padding: 0;
+	padding: 0 0.75rem;
 	margin: 0 auto;
 	font-family: var(--font-family);
 	color: var(--text-color);
@@ -62,6 +62,17 @@ a[href]:active {
 	text-align: center;
 	padding: 1rem 1rem;
 	margin-bottom: 3rem;
+	margin: auto;
+	max-width: 64rem;
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 768px) {
+	.feature {
+		margin-bottom: 6rem;
+	}
+}
+@media (min-width: 640px) {
 }
 .feature h2 {
 	font-size: 1.875rem;
@@ -83,6 +94,15 @@ a[href]:active {
 	row-gap: 1rem;
 	text-align: left;
 }
+@media (min-width: 1024px) {
+	.feature .cards {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 640px) {
+}
 .feature .card {
 	background-color: rgb(15, 23, 42);
 	border: 1px solid rgba(255, 255, 255, 0.16);
@@ -102,6 +122,15 @@ a[href]:active {
 	grid-template-columns: 2fr 2fr;
 	row-gap: 1rem;
 	text-align: left;
+}
+@media (min-width: 1024px) {
+	.feature .contacts {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 640px) {
 }
 .feature .contact {
 	align-items: flex-start;
