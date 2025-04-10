@@ -5,7 +5,10 @@
     {%- css %}{% include "_includes/marketing/styles.css" %}{% endcss %}
     {%- css %}{% include "_includes/marketing/components/header/.css" %}{% endcss %}
     {%- css %}{% include "_includes/marketing/components/hero/.css" %}{% endcss %}
+    {%- css %}{% include "_includes/marketing/components/youtube-lite/.css" %}{% endcss %}
+    {%- js  %}{% include "_includes/marketing/components/youtube-lite/.js" %}{% endjs %}
     {%- css %}{% include "public/css/youtube.css" %}{% endcss %}
+
     <style>{% getBundle "css" %}</style>
 </head>
 <body>
@@ -16,5 +19,8 @@
     <footer>
         Copyright &copy; PageKey Solutions, LLC
     </footer>
+
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+    <script type="module" src="{% getBundleFileUrl "js" %}"></script>
 </body>
 </html>
