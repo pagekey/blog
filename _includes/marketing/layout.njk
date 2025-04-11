@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title>PageKey: Take Back Tech</title>
+    {%- css %}{% include "_includes/marketing/styles.css" %}{% endcss %}
+    {%- css %}{% include "_includes/marketing/components/header/.css" %}{% endcss %}
+    {%- css %}{% include "_includes/marketing/components/hero/.css" %}{% endcss %}
+    {%- css %}{% include "_includes/marketing/components/youtube-lite/.css" %}{% endcss %}
+    {%- js  %}{% include "_includes/marketing/components/youtube-lite/.js" %}{% endjs %}
+    {%- css %}{% include "public/css/youtube.css" %}{% endcss %}
+
+    <style>{% getBundle "css" %}</style>
+</head>
+<body>
+    {% include "marketing/components/header/.njk" %}
+    <main>
+        {{ content | safe }}
+    </main>
+    <div class="social-links">
+        <ul>
+            <li>
+                <a href="https://discord.gg/5m5yFgDPF5" target="_blank">
+                    {% include "marketing/icons/brand-discord.svg" %}
+                </a>
+            </li>
+            <li>
+                <a href="https://youtube.com/@PageKey" target="_blank">
+                    {% include "marketing/icons/brand-youtube.svg" %}
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/pagekey" target="_blank">
+                    {% include "marketing/icons/brand-github.svg" %}
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com/pagekeysolutions" target="_blank">
+                    {% include "marketing/icons/brand-instagram.svg" %}
+                </a>
+            </li>
+            <li>
+                <a href="/feed/feed.xml" target="_blank">
+                    {% include "marketing/icons/rss.svg" %}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        Copyright &copy; PageKey Solutions, LLC &bull; All rights reserved
+    </footer>
+
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+    <script type="module" src="{% getBundleFileUrl "js" %}"></script>
+</body>
+</html>

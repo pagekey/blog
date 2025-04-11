@@ -1,0 +1,20 @@
+---
+title: "It has begun. | Rust Book Speedrun 1"
+date: 2023-02-18
+author: Steve Grice
+tags:
+  - rust
+  - rust-book-speedrun
+---
+
+I have no choice. Join me on this journey of speedrunning The Rust Book.
+
+{% youtube "wS2IT-qgOhs" %}
+
+### Timestamps
+
+- 0:00 Intro
+- 2:08 Starting the Rust Book
+- 3:23 Guessing Game
+- 4:48 Generating a Secret Number
+- 8:01 Outro
