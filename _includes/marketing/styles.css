@@ -188,12 +188,25 @@ a[href]:active {
 .btn.primary {
 	background-color: rgb(1, 97, 239);
 	color: white !important;
+	border-width: 0;
 }
 .btn.primary:hover {
 	background-color: rgb(1 84 207);
 }
 .btn.primary:active {
 	background-color: rgb(1 84 150);
+}
+.btn.primary:disabled {
+	background-color: gray;
+	cursor: not-allowed;
+}
+.btn.primary:hover:disabled {
+	background-color: gray;
+	cursor: not-allowed;
+}
+.btn.primary:active:disabled {
+	background-color: gray;
+	cursor: not-allowed;
 }
 .btn.secondary {
 	border: 0.8px solid rgb(100 116 139);

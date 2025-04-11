@@ -9,13 +9,36 @@ layout: marketing/layout.njk
 <div class="feature">
   <h2>Be the first to know.</h2>
 
-  <p>
-    Sign up for the email newsletter and receive new PageKey content directly to your inbox.
-  </p>
-  <div class="">
-    <input name="email" placeholder="your@email.com" />
+  <div id="signupForm">
+    <p>
+      Sign up for the email newsletter and receive new PageKey content directly to your inbox.
+    </p>
+    <div>
+      <input id="txtEmail" name="email" placeholder="your@email.com" />
+    </div>
+    <button class="btn primary" id="btnSignup" disabled>Sign Up</button>
   </div>
-  <a class="btn primary">Sign Up</a>
+  <div id="signupLoading" style="display: none;">
+    <p>
+      Saving...
+    </p>
+  </div>
+  <div id="signupSuccess" style="display: none;">
+    <p>
+      <span style="font-weight: 700; color: green;">
+        Success!
+      </span>
+      You'll hear from us soon!
+    </p>
+  </div>
+  <div id="signupError" style="display: none;">
+    <p>
+      <span style="font-weight: 700; color: red;">
+        Oops!
+      </span>
+      An error occurred while signing you up. Feel free to try again or let us know at <a href="mailto:hello@pagekey.io">hello@pagekey.io</a>
+    </p>
+  </div>
 </div>
 
 <div class="feature">
@@ -25,11 +48,13 @@ layout: marketing/layout.njk
     Check out the Discord and make some friends with other people who want to Take Back Tech.
   </p>
   <div style="display: flex; justify-content: center;">
-    <a class="btn secondary" style="display: flex;">
+    <a id="btnJoin" class="btn secondary" style="display: flex;">
         <span style="margin: 0 0.5rem;">
             Join
         </span>
-        <img src="/icons/brand-discord.svg" eleventy:optional="keep" />
+        <span id="discordIcon">
+          {% include "marketing/icons/brand-discord.svg" %}
+        </span>
     </a>
   </div>
 </div>
@@ -43,4 +68,56 @@ h1 {
 	margin: 3rem;
     text-align: center;
 }
+#btnJoin {
+  transition-duration: 0.2s;
+}
+#btnJoin:hover #discordIcon {
+  color: rgb(1, 97, 239);
+}
 </style>
+
+<script defer>
+window.addEventListener("load", () => {
+  document.getElementById("btnSignup").addEventListener("click", () => {
+    handleSignup();
+  });
+  document.getElementById("txtEmail").addEventListener("keydown", (e) => {
+    const email = document.getElementById("txtEmail").value;
+    let emailValid = email.length > 0 && email.includes("@") && email.includes(".");
+    if (emailValid) {
+      document.getElementById("btnSignup").disabled = false;
+      if (e.key == "Enter") {
+        handleSignup();
+      }
+    } else {
+      document.getElementById("btnSignup").disabled = true;
+    }
+  });
+});
+function handleSignup() {
+  document.getElementById("signupForm").style.display = "none";
+  document.getElementById("signupLoading").style.display = "block";
+  fetch(
+    "https://zu0rim0p04.execute-api.us-east-1.amazonaws.com/default/email-signup-handler",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        "email": document.getElementById("txtEmail").value,
+      }),
+    },
+  ).then((resp) => {
+    document.getElementById("signupLoading").style.display = "none";
+    if (resp.status == 200) {
+      document.getElementById("signupSuccess").style.display = "block";
+    } else {
+      document.getElementById("signupError").style.display = "block";
+    }
+  }).catch((error) => {
+    document.getElementById("signupLoading").style.display = "none";
+    document.getElementById("signupError").style.display = "block";
+  })
+}
+</script>
