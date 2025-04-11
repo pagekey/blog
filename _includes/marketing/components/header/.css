@@ -12,6 +12,30 @@ header {
 header .logo {
 	font-size: 1.25rem;
 	margin-left: 0.5rem;
+	display: flex;
+	justify-content: center;
+}
+header .logo .logo-icon {
+	display: inline-block;
+}
+header .logo .logo-icon svg {
+	width: 2rem;
+	height: 2rem;
+}
+header .logo .logo-icon.dark {
+	display: none;
+}
+@media (prefers-color-scheme: dark) {
+	header .logo .logo-icon.dark {
+		display: inline-block;
+	}
+	header .logo .logo-icon.light {
+		display: none;
+	}
+}
+header .logo #logo-text {
+	color: #f0f0f0;
+	margin-left: 0.5rem;
 }
 header a[href] {
 	text-decoration: none;
@@ -32,14 +56,14 @@ header nav ul li {
 }
 header nav a[href], header nav a[href]:visited {
 	transition-duration: 0.2s;
-	color: white;
+	color: #d6d6d6;
 	font-size: 0.9375rem;
 }
 header nav a[href]:hover {
-	color: rgb(200 200 200);
+	color: rgb(171, 171, 171);
 }
 header nav a[href]:active {
-	color: rgb(180 180 180);
+	color: rgb(150, 150, 150);
 }
 
 @media (prefers-color-scheme: light) {
