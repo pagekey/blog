@@ -109,8 +109,9 @@ a[href]:active {
 	border-radius: 0.5rem;
 	padding: 1.5rem;
 }
-.feature .card img.icon {
+.feature .card .icon {
 	width: 3rem;
+	color: rgb(1, 97, 239);
 }
 .feature .card p {
 	font-size: 1rem;
@@ -150,7 +151,6 @@ a[href]:active {
 }
 .feature .contact .icon {
 	color: rgb(1, 97, 239);
-	fill: rgb(1, 97, 239);
 	margin-right: 0.5rem;
 }
 .feature .contact .right h3 {
@@ -209,6 +209,23 @@ input {
 	font-size: 1.5rem;
 }
 
+/* social links */
+.social-links ul {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	padding: 0;
+}
+.social-links ul li a {
+	padding: 0.625rem;
+	color: rgb(156, 163, 175) !important;
+}
+.social-links ul li a:hover {
+	color: rgb(140, 140, 140) !important;
+}
+.social-links ul li a:active {
+	color: rgb(120, 120, 120) !important;
+}
 /* footer */
 footer {
 	color: rgba(229, 236, 246, 0.66);

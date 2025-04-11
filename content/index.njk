@@ -17,20 +17,23 @@ layout: marketing/layout.njk
   <p>We'll give you plenty of free content to get you started on your tech journey.</p>
   <div class="cards">
     <div class="card">
-      <img class="icon" src="/icons/document.svg" eleventy:optional="keep"/>
-      <!-- icon: 'flat-color-icons:document', -->
+      <div class="icon">
+        {% include "marketing/icons/document.svg" %}
+      </div>
       <h3>Tutorials and Guides</h3>
       <p>We offer clear instructions on how to use various open source technologies, old and new.</p>
     </div>
     <div class="card">
-      <img class="icon" src="/icons/template.svg" eleventy:optional="keep"/>
-      <!-- icon: 'flat-color-icons:template', -->
+      <div class="icon">
+        {% include "marketing/icons/template.svg" %}
+      </div>
       <h3>Open Source Products</h3>
       <p>We create products that allow you to dive into the code, learn how they work, and manage your own data.</p>
     </div>
     <div class="card">
-      <img class="icon" src="/icons/voice_presentation.svg" eleventy:optional="keep"/>
-      <!-- icon: 'flat-color-icons:voice-presentation', -->
+      <div class="icon">
+        {% include "marketing/icons/voice_presentation.svg" %}
+      </div>
       <h3>Community</h3>
       <p>Join our Discord and chat with like-minded individuals. Keep an eye out for PageKey hackathons too!</p>
     </div>
@@ -44,7 +47,9 @@ layout: marketing/layout.njk
   <div class="contacts">
     <a class="contact" href="https://youtube.com/@PageKey" target="_blank">
       <div class="left">
-        <img class="icon" src="/icons/brand-youtube.svg" eleventy:optional="keep"/>
+        <div class="icon">
+          {% include "marketing/icons/brand-youtube.svg" %}
+        </div>
       </div>
       <div class="right">
         <h3>YouTube</h3>
@@ -53,7 +58,9 @@ layout: marketing/layout.njk
     </a>
     <a class="contact" href="mailto:hello@pagekey.io" target="_blank">
       <div class="left">
-        <img class="icon" src="/icons/mail.svg" eleventy:optional="keep"/>
+        <div class="icon">
+          {% include "marketing/icons/mail.svg" %}
+        </div>
       </div>
       <div class="right">
         <h3>Email</h3>
@@ -62,7 +69,9 @@ layout: marketing/layout.njk
     </a>
     <a class="contact" href="https://discord.gg/5m5yFgDPF5" target="_blank">
       <div class="left">
-        <img class="icon" src="/icons/brand-discord.svg" eleventy:optional="keep"/>
+        <div class="icon">
+          {% include "marketing/icons/brand-discord.svg" %}
+        </div>
       </div>
       <div class="right">
         <h3>Discord</h3>
@@ -71,7 +80,9 @@ layout: marketing/layout.njk
     </a>
     <a class="contact" href="https://github.com/pagekey" target="_blank">
       <div class="left">
-        <img class="icon" src="/icons/brand-github.svg" eleventy:optional="keep"/>
+        <div class="icon">
+          {% include "marketing/icons/brand-github.svg" %}
+        </div>
       </div>
       <div class="right">
         <h3>GitHub</h3>
