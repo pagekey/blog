@@ -37,6 +37,11 @@ header .logo #logo-text {
 	color: #f0f0f0;
 	margin-left: 0.5rem;
 }
+@media (prefers-color-scheme: light) {
+	header .logo #logo-text {
+		color: black;
+	}
+}
 header a[href] {
 	text-decoration: none;
 	color: inherit;
