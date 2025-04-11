@@ -36,6 +36,9 @@
 }
 
 /* html/body */
+html {
+	width: 100vw;
+}
 html,
 body {
 	padding: 0;
@@ -223,15 +226,27 @@ a[href]:active {
 
 /* inputs */
 input {
-	margin: 3rem;
+	margin: 1rem;
 	margin-top: 1rem;
 	background-color: rgb(46 46 46);
-	width: 20rem;
+	width: 15rem;
 	border: 1px solid rgb(66 66 66);
 	border-radius: 0.5rem;
 	color: white;
+	font-size: 1rem;
 	padding: 1rem;
-	font-size: 1.5rem;
+	max-width: 100%;
+}
+@media (min-width: 640px) {
+}
+@media (min-width: 768px) {
+	input {
+		font-size: 1.5rem;
+		margin: 3rem;
+		width: 20rem;
+	}
+}
+@media (min-width: 1024px) {
 }
 
 /* footer */
