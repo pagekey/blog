@@ -38,7 +38,7 @@
 /* html/body */
 html,
 body {
-	padding: 0 0.75rem;
+	padding: 0;
 	margin: 0 auto;
 	font-family: var(--font-family);
 	color: var(--text-color);
@@ -65,14 +65,14 @@ a[href]:active {
 	margin: auto;
 	max-width: 64rem;
 }
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
 }
 @media (min-width: 768px) {
 	.feature {
 		margin-bottom: 6rem;
 	}
 }
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
 }
 .feature h2 {
 	font-size: 1.875rem;
@@ -90,19 +90,25 @@ a[href]:active {
 .feature .cards {
 	column-gap: 1rem;
 	display: grid;
-	grid-template-columns: 2fr 2fr;
 	row-gap: 1rem;
 	text-align: left;
+}
+@media (min-width: 640px) {
+	.feature .cards {
+		grid-template-columns: 1fr;
+	}
+}
+@media (min-width: 768px) {
+	.feature .cards {
+		grid-template-columns: 1fr 1fr;
+	}
 }
 @media (min-width: 1024px) {
 	.feature .cards {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
-@media (min-width: 768px) {
-}
-@media (min-width: 640px) {
-}
+
 .feature .card {
 	background-color: rgb(15, 23, 42);
 	border: 1px solid rgba(255, 255, 255, 0.16);
@@ -120,18 +126,24 @@ a[href]:active {
 .feature .contacts {
 	column-gap: 1rem;
 	display: grid;
-	grid-template-columns: 2fr 2fr;
+	/* grid-template-columns: 2fr 2fr; */
 	row-gap: 1rem;
 	text-align: left;
+}
+@media (min-width: 640px) {
+	.feature .contacts {
+		grid-template-columns: 1fr;
+	}
+}
+@media (min-width: 768px) {
+	.feature .contacts {
+		grid-template-columns: 1fr 1fr;
+	}
 }
 @media (min-width: 1024px) {
 	.feature .contacts {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
-}
-@media (min-width: 768px) {
-}
-@media (min-width: 640px) {
 }
 .feature .contact {
 	align-items: flex-start;
@@ -215,6 +227,7 @@ input {
 	justify-content: center;
 	list-style-type: none;
 	padding: 0;
+	margin-top: 3rem;
 }
 .social-links ul li a {
 	padding: 0.625rem;
@@ -232,4 +245,61 @@ footer {
 	font-size: 0.875rem;
 	padding: 1.5rem 1.5rem;
 	text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+	.feature.lightblue {
+		background-color: rgb(239, 249, 255);
+	}
+	.feature p {
+		color: rgba(16, 16, 16, 0.66);
+	}
+	.feature .card {
+		background-color: rgb(255, 255, 255);
+		border: 1px solid rgba(255, 255, 255, 0.16);
+	}
+	.feature .card .icon {
+		color: rgb(1, 97, 239);
+	}
+	.feature .contact {
+		background-color: rgba(239, 249, 255, 0.8);
+		color: rgb(16, 16, 16) !important;
+	}
+	.feature .contact:hover {
+		background-color: rgb(211, 223, 230);
+	}
+	.feature .contact:active {
+		background-color: rgb(189, 201, 208);
+	}
+	.feature .contact .icon {
+		color: rgb(1, 97, 239);
+	}
+	.btn.secondary {
+		color: rgb(16 16 16) !important;
+		border-color: rgb(156, 163, 175);
+	}
+	.btn.secondary:hover {
+		border-color: rgb(75 85 99);
+		background-color: rgb(243 244 246);
+	}
+	.btn.secondary:active {
+		border-color: rgb(75 85 99);
+	}
+	input {
+		background-color: rgb(46 46 46);
+		border: 1px solid rgb(66 66 66);
+		color: white;
+	}
+	.social-links ul li a {
+		color: rgb(156, 163, 175) !important;
+	}
+	.social-links ul li a:hover {
+		color: rgb(140, 140, 140) !important;
+	}
+	.social-links ul li a:active {
+		color: rgb(120, 120, 120) !important;
+	}
+	footer {
+		color: rgb(16, 16, 16);
+	}
 }

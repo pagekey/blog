@@ -41,3 +41,18 @@ header nav a[href]:hover {
 header nav a[href]:active {
 	color: rgb(180 180 180);
 }
+
+@media (prefers-color-scheme: light) {
+	header {
+		border-bottom: 1px solid transparent;
+	}
+	header nav a[href], header nav a[href]:visited {
+		color: rgb(16, 16, 16);
+	}
+	header nav a[href]:hover {
+		color: rgb(100 100 100);
+	}
+	header nav a[href]:active {
+		color: rgb(140 140 140);
+	}
+}

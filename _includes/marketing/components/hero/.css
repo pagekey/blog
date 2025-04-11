@@ -48,3 +48,20 @@
 	margin-bottom: 3rem;
 }
 
+@media (prefers-color-scheme: light) {
+	.hero .subtitle {
+		color: rgb(1, 84, 207);
+	}
+	.hero h1 .emphasis-1 {
+		color: rgb(251, 146, 60);
+	}
+	.hero h1 .emphasis-2 {
+		color: rgb(109, 40, 217);
+	}
+	.hero p {
+		color: rgba(16, 16, 16, 0.66);
+	}
+	.hero p .emphasis {
+		color: black;
+	}
+}
