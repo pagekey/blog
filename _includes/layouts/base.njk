@@ -26,6 +26,7 @@
 		{#- Add the contents of a file to the bundle #}
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
 		{%- css %}{% include "public/css/youtube.css" %}{% endcss %}
+		{%- css %}{% include "components/social-links/.css" %}{% endcss %}
 		{#- Or you can add from node_modules #}
 		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
 
@@ -48,7 +49,9 @@
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
 				{%- for entry in collections.all | eleventyNavigation %}
+					{% if entry.url != "/feed/feed.xml" %}
 					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+					{% endif %}
 				{%- endfor %}
 				</ul>
 			</nav>
@@ -62,6 +65,7 @@
 
 		<footer>
 			<p><em>Copyright &copy; {% year %} PageKey Solutions, LLC</em></p>
+			{% include "components/social-links/.njk" %}
 		</footer>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->

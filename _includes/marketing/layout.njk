@@ -7,6 +7,7 @@
     {%- css %}{% include "_includes/marketing/components/hero/.css" %}{% endcss %}
     {%- css %}{% include "_includes/marketing/components/youtube-lite/.css" %}{% endcss %}
     {%- js  %}{% include "_includes/marketing/components/youtube-lite/.js" %}{% endjs %}
+    {%- css %}{% include "components/social-links/.css" %}{% endcss %}
     {%- css %}{% include "public/css/youtube.css" %}{% endcss %}
 
     <style>{% getBundle "css" %}</style>
@@ -16,35 +17,7 @@
     <main>
         {{ content | safe }}
     </main>
-    <div class="social-links">
-        <ul>
-            <li>
-                <a href="https://discord.gg/5m5yFgDPF5" target="_blank">
-                    {% include "marketing/icons/brand-discord.svg" %}
-                </a>
-            </li>
-            <li>
-                <a href="https://youtube.com/@PageKey" target="_blank">
-                    {% include "marketing/icons/brand-youtube.svg" %}
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/pagekey" target="_blank">
-                    {% include "marketing/icons/brand-github.svg" %}
-                </a>
-            </li>
-            <li>
-                <a href="https://instagram.com/pagekeysolutions" target="_blank">
-                    {% include "marketing/icons/brand-instagram.svg" %}
-                </a>
-            </li>
-            <li>
-                <a href="/feed/feed.xml" target="_blank">
-                    {% include "marketing/icons/rss.svg" %}
-                </a>
-            </li>
-        </ul>
-    </div>
+    {% include "components/social-links/.njk" %}
     <footer>
         Copyright &copy; PageKey Solutions, LLC &bull; All rights reserved
     </footer>

@@ -277,3 +277,17 @@ header {
 	margin-right: 1em;
 }
 
+
+/* footer and social links collab */
+footer {
+	text-align: center;
+}
+@media (min-width: 640px) {
+	footer {
+		display: flex;
+		justify-content: space-between;
+	}
+	footer p, footer .social-links ul {
+		margin: 0;
+	}
+}

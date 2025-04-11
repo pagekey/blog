@@ -1,0 +1,17 @@
+.social-links ul {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	padding: 0;
+	margin-top: 3rem;
+}
+.social-links ul li a {
+	padding: 0.625rem;
+	color: rgb(156, 163, 175) !important;
+}
+.social-links ul li a:hover {
+	color: rgb(140, 140, 140) !important;
+}
+.social-links ul li a:active {
+	color: rgb(120, 120, 120) !important;
+}
