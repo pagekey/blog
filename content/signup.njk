@@ -81,7 +81,7 @@ window.addEventListener("load", () => {
   document.getElementById("btnSignup").addEventListener("click", () => {
     handleSignup();
   });
-  document.getElementById("txtEmail").addEventListener("keydown", (e) => {
+  document.getElementById("txtEmail").addEventListener("input", (e) => {
     const email = document.getElementById("txtEmail").value;
     let emailValid = email.length > 0 && email.includes("@") && email.includes(".");
     if (emailValid) {
