@@ -1,0 +1,121 @@
+---
+layout: marketing/layout.njk
+---
+
+<h1>
+    Building a self-hosted home server that <i>just works</i>.
+</h1>
+
+<div class="feature">
+  <h2>Private. Pre-configured. Built by someone who's been through the pain.</h2>
+
+  <div id="signupForm">
+    <p>
+      Join the waitlist and help shape the product.
+    </p>
+    <div>
+      <input id="txtEmail" name="email" placeholder="your@email.com" />
+      <div>
+        <label><b>What would your dream home server do for you?</b></label>
+      </div>
+      <input id="txtPrompt" name="prompt" placeholder="(write anything)" />
+    </div>
+    <button class="btn primary" id="btnSignup" disabled>Sign Up</button>
+  </div>
+  <div id="signupLoading" style="display: none;">
+    <p>
+      Saving...
+    </p>
+  </div>
+  <div id="signupSuccess" style="display: none;">
+    <p>
+      <span style="font-weight: 700; color: green;">
+        Success!
+      </span>
+      You'll hear from us soon!
+    </p>
+  </div>
+  <div id="signupError" style="display: none;">
+    <p>
+      <span style="font-weight: 700; color: red;">
+        Oops!
+      </span>
+      An error occurred while signing you up. Feel free to try again or let us know at <a href="mailto:hello@pagekey.io">hello@pagekey.io</a>
+    </p>
+  </div>
+</div>
+
+
+<style>
+h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	letter-spacing: -0.05em;
+	line-height: 1;
+	margin: 3rem;
+    text-align: center;
+}
+#btnJoin {
+  transition-duration: 0.2s;
+}
+#btnJoin:hover #discordIcon {
+  color: rgb(1, 97, 239);
+}
+</style>
+
+<script defer>
+    function validateInputs() {
+        const email = document.getElementById("txtEmail").value;
+        const answer = document.getElementById("txtPrompt").value;
+        let emailValid = email.length > 0 && email.includes("@") && email.includes(".") && answer.length > 0;
+        if (emailValid) {
+        document.getElementById("btnSignup").disabled = false;
+        return true;
+        } else {
+        document.getElementById("btnSignup").disabled = true;
+        return false;
+        }
+    }
+    window.addEventListener("load", () => {
+    document.getElementById("btnSignup").addEventListener("click", () => {
+        handleSignup();
+    });
+    document.getElementById("txtEmail").addEventListener("input", (e) => {
+        let valid = validateInputs();
+    });
+    document.getElementById("txtPrompt").addEventListener("input", (e) => {
+        let valid = validateInputs();
+        if (e.key == "Enter" && valid) {
+            handleSignup();
+        }
+    });
+    });
+function handleSignup() {
+  document.getElementById("signupForm").style.display = "none";
+  document.getElementById("signupLoading").style.display = "block";
+  fetch(
+    "https://zu0rim0p04.execute-api.us-east-1.amazonaws.com/default/email-signup-handler",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        "email": document.getElementById("txtEmail").value,
+        "newsletter": "pagekey",
+        "answer": document.getElementById("txtPrompt").value,
+      }),
+    },
+  ).then((resp) => {
+    document.getElementById("signupLoading").style.display = "none";
+    if (resp.status == 200) {
+      document.getElementById("signupSuccess").style.display = "block";
+    } else {
+      document.getElementById("signupError").style.display = "block";
+    }
+  }).catch((error) => {
+    document.getElementById("signupLoading").style.display = "none";
+    document.getElementById("signupError").style.display = "block";
+  })
+}
+</script>
