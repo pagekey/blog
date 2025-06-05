@@ -106,6 +106,7 @@ function handleSignup() {
       },
       body: JSON.stringify({
         "email": document.getElementById("txtEmail").value,
+				"newsletter": "pagekey",
       }),
     },
   ).then((resp) => {
