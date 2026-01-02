@@ -1,5 +1,7 @@
 # Building PageKey, 2026 Week 1 (Coding is Re-Coding)
 
+{% youtube "RFSjHSe-tCc" %}
+
 Most of the technology we rely on every day is opaque, centralized, and out of our control.
 
 I’m building a business to change that — starting with a small, local alternative to cloud infrastructure called the PageKey Unit: something you can actually understand and control.
