@@ -2,6 +2,12 @@
 layout: marketing/layout.njk
 ---
 
+<div style="text-align: center; font-size: 300%; margin-top: 25%; margin-bottom: 50%;">
+  <b>
+  Note: Moved to <a href="https://tryhexbox.com">tryhexbox.com</a>
+  </b>
+</div>
+
 <h1>
     Building a self-hosted home server that <i>just works</i>.
 </h1>
@@ -26,11 +32,13 @@ layout: marketing/layout.njk
       Join the waitlist and help shape the product.
     </p>
     <div>
-      <input id="txtEmail" name="email" placeholder="your@email.com" />
+      <input id="txtEmail" name="email" placeholder="your@email.com"/>
       <div>
-        <label><b>What would your dream home server do for you?</b></label>
+        <label>
+          <b>What would your dream home server do for you?</b>
+        </label>
       </div>
-      <input id="txtPrompt" name="prompt" placeholder="(write anything)" />
+      <input id="txtPrompt" name="prompt" placeholder="(write anything)"/>
     </div>
     <button class="btn primary" id="btnSignup" disabled>Sign Up</button>
   </div>
@@ -57,77 +65,115 @@ layout: marketing/layout.njk
   </div>
 </div>
 
-
 <style>
-h1 {
-	font-size: 3rem;
-	font-weight: 700;
-	letter-spacing: -0.05em;
-	line-height: 1;
-	margin: 3rem;
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin: 3rem;
     text-align: center;
-}
-#btnJoin {
-  transition-duration: 0.2s;
-}
-#btnJoin:hover #discordIcon {
-  color: rgb(1, 97, 239);
-}
+  }
+  #btnJoin {
+    transition-duration: 0.2s;
+  }
+  #btnJoin:hover #discordIcon {
+    color: rgb(1, 97, 239);
+  }
 </style>
 
 <script defer>
-    function validateInputs() {
-        const email = document.getElementById("txtEmail").value;
-        const answer = document.getElementById("txtPrompt").value;
-        let emailValid = email.length > 0 && email.includes("@") && email.includes(".") && answer.length > 0;
-        if (emailValid) {
-        document.getElementById("btnSignup").disabled = false;
-        return true;
-        } else {
-        document.getElementById("btnSignup").disabled = true;
-        return false;
-        }
+  window.location.href = "https://tryhexbox.com";
+  function validateInputs() {
+    const email = document
+      .getElementById("txtEmail")
+      .value;
+    const answer = document
+      .getElementById("txtPrompt")
+      .value;
+    let emailValid = email.length > 0 && email.includes("@") && email.includes(".") && answer.length > 0;
+    if (emailValid) {
+      document
+        .getElementById("btnSignup")
+        .disabled = false;
+      return true;
+    } else {
+      document
+        .getElementById("btnSignup")
+        .disabled = true;
+      return false;
     }
-    window.addEventListener("load", () => {
-    document.getElementById("btnSignup").addEventListener("click", () => {
+  }
+  window.addEventListener("load", () => {
+    document
+      .getElementById("btnSignup")
+      .addEventListener("click", () => {
         handleSignup();
-    });
-    document.getElementById("txtEmail").addEventListener("input", (e) => {
+      });
+    document
+      .getElementById("txtEmail")
+      .addEventListener("input", (e) => {
         let valid = validateInputs();
-    });
-    document.getElementById("txtPrompt").addEventListener("input", (e) => {
+      });
+    document
+      .getElementById("txtPrompt")
+      .addEventListener("input", (e) => {
         let valid = validateInputs();
         if (e.key == "Enter" && valid) {
-            handleSignup();
+          handleSignup();
         }
-    });
-    });
-function handleSignup() {
-  document.getElementById("signupForm").style.display = "none";
-  document.getElementById("signupLoading").style.display = "block";
-  fetch(
-    "https://zu0rim0p04.execute-api.us-east-1.amazonaws.com/default/email-signup-handler",
-    {
+      });
+  });
+  function handleSignup() {
+    document
+      .getElementById("signupForm")
+      .style
+      .display = "none";
+    document
+      .getElementById("signupLoading")
+      .style
+      .display = "block";
+    fetch("https://zu0rim0p04.execute-api.us-east-1.amazonaws.com/default/email-signup-handler", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "email": document.getElementById("txtEmail").value,
+        "email": document
+          .getElementById("txtEmail")
+          .value,
         "newsletter": "pagekey-unit",
-        "answer": document.getElementById("txtPrompt").value,
-      }),
-    },
-  ).then((resp) => {
-    document.getElementById("signupLoading").style.display = "none";
-    if (resp.status == 200) {
-      document.getElementById("signupSuccess").style.display = "block";
-    } else {
-      document.getElementById("signupError").style.display = "block";
+        "answer": document
+          .getElementById("txtPrompt")
+          .value
+      })
+    },)
+      .then((resp) => {
+        document
+          .getElementById("signupLoading")
+          .style
+          .display = "none";
+        if (resp.status == 200) {
+          document
+            .getElementById("signupSuccess")
+            .style
+            .display = "block";
+        } else {
+          document
+            .getElementById("signupError")
+            .style
+            .display = "block";
+        }
+      })
+      .catch((error) => {
+        document
+          .getElementById("signupLoading")
+          .style
+          .display = "none";
+        document
+          .getElementById("signupError")
+          .style
+          .display = "block";
+      })
     }
-  }).catch((error) => {
-    document.getElementById("signupLoading").style.display = "none";
-    document.getElementById("signupError").style.display = "block";
-  })
-}
 </script>
