@@ -1,5 +1,5 @@
 ---
-title: "Building PageKey, 2026 Week 3 (Hex, A CLI for Transparent Computing)"
+title: "Building HexBox, 2026 Week 3 (Hex, A CLI for Transparent Computing)"
 date: 2026-01-16
 author: Steve Grice
 tags:

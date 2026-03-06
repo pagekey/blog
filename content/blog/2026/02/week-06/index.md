@@ -1,5 +1,5 @@
 ---
-title: "Building PageKey, 2026 Week 6 (Contracts, Providers, Items)"
+title: "Building HexBox, 2026 Week 6 (Contracts, Providers, Items)"
 date: 2026-02-06
 author: Steve Grice
 tags:

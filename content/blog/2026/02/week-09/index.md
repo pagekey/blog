@@ -1,5 +1,5 @@
 ---
-title: "Building PageKey, 2026 Week 9 (Items Calling Items)"
+title: "Building HexBox, 2026 Week 9 (Items Calling Items)"
 date: 2026-02-20
 author: Steve Grice
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "Building PageKey, 2026 Week 8 (Sources, Assistants, Websites)"
+title: "Building HexBox, 2026 Week 8 (Sources, Assistants, Websites)"
 date: 2026-02-20
 author: Steve Grice
 tags:

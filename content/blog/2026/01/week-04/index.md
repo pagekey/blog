@@ -1,5 +1,5 @@
 ---
-title: "Building PageKey, 2026 Week 4 (Maintain Two, Iterate Faster)"
+title: "Building HexBox, 2026 Week 4 (Maintain Two, Iterate Faster)"
 date: 2026-01-25
 author: Steve Grice
 tags:

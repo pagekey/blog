@@ -1,5 +1,5 @@
 ---
-title: "Building PageKey, 2026 Week 10 (UI on Physical Hardware!)"
+title: "Building HexBox, 2026 Week 10 (UI on Physical Hardware!)"
 date: 2026-03-06
 author: Steve Grice
 tags:

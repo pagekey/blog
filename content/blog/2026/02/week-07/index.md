@@ -1,5 +1,5 @@
 ---
-title: "Building PageKey, 2026 Week 7 (Ollama Assistant MVP)"
+title: "Building HexBox, 2026 Week 7 (Ollama Assistant MVP)"
 date: 2026-02-13
 author: Steve Grice
 tags:
