@@ -18,7 +18,7 @@ tags:
 
 ## 1. Something Useful: Startup Expo & Build Timelapse
 
-- Thanks [Coffee and Code Philadelphia]() for hosting us at their Startup Expo at the Pennovation Center.
+- Thanks [Coffee and Code Philadelphia](https://www.linkedin.com/company/code-coffee-philadelphia/) for hosting us at their Startup Expo at the Pennovation Center.
 - We now have physical hardware!
 
 ## 2. What I Worked On This Week
