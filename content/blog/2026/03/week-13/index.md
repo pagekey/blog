@@ -1,5 +1,5 @@
 ---
-title: "Building HexBox, 2026 Week 13 (Google Oauth WIN)"
+title: "Building HexBox, 2026 Week 13 (Google Oauth WIN + Data Center Tour)"
 date: 2026-03-27
 author: Steve Grice
 tags:
@@ -15,7 +15,7 @@ tags:
 
 {% youtube "l3wkeCfPQD8" %}
 
-## 1. Something Useful: Google OAuth WIN
+## 1. Something Useful: Google Oauth WIN + "Data Center" Tour
 
 - You can use the HexBox UI to transparently request an OAuth API token from Google.
 - You can use that token to list files on your Google Drive.
