@@ -1,39 +1,23 @@
-import  { useState } from 'react';
+import { useState } from 'react';
+import pageKeyLogo from './assets/logo_dark.svg';
 
 // --- Sub-components for better clean structure ---
 
 const Header = () => {
   return (
     <header className="pagekey-header">
-      <a href="/" className="logo">
-        <span className="logo-icon light">
-          <svg width="80mm" height="80mm" viewBox="0 0 80 80" version="1.1" id="svg1" xmlSpace="preserve">
-            <defs id="defs1">
-              <linearGradient id="linearGradient9">
-                <stop style={{ stopColor: '#fcac54', stopOpacity: 1 }} offset="0" id="stop9"></stop>
-                <stop style={{ stopColor: '#dc7603', stopOpacity: 1 }} offset="1" id="stop10"></stop>
-              </linearGradient>
-              <clipPath clipPathUnits="userSpaceOnUse" id="clipPath6">
-                <rect style={{ fill: '#000000', strokeWidth: 0.264583 }} id="rect6" width="28.219061" height="27.979239" x="70.979279" y="156.3259"></rect>
-              </clipPath>
-              <clipPath clipPathUnits="userSpaceOnUse" id="clipPath7">
-                <rect style={{ fill: '#000000', strokeWidth: 0.264583 }} id="rect8" width="25.581018" height="23.502562" x="71.778687" y="159.12381"></rect>
-              </clipPath>
-              <linearGradient xlinkHref="#linearGradient9" id="linearGradient10" x1="77.338921" y1="161.9478" x2="93.924683" y2="178.53355" gradientUnits="userSpaceOnUse"></linearGradient>
-            </defs>
-            <g id="layer1" transform="translate(-64.628595,-109.02934)">
-              <g id="g1" style={{ display: 'inline' }} transform="translate(-0.38685944,1.1918091)">
-                <path style={{ display: 'inline', fill: '#f9f9f9', fillOpacity: 1, fillRule: 'nonzero', strokeWidth: 0.264583 }} d="m 77.938571,159.40688 c 0,0 -3.148597,12.88062 -0.429354,16.60169 2.719242,3.72107 16.744808,2.86236 19.607168,-4.0073 2.862361,-6.86967 20.036525,1.28806 22.612645,-6.15408 2.57612,-7.44213 16.74481,-31.48596 16.74481,-31.48596 l -2.71924,-14.02557 -20.609,-1.00182 -28.480482,29.62543 z" id="path11"></path>
-                <path style={{ display: 'inline', fill: 'url(#linearGradient10)', fillRule: 'nonzero' }} d="m 81.369224,180.69437 c -9.182067,-2.9113 -10.150215,-15.88566 -1.475438,-19.77267 2.625118,-1.17627 7.187429,-1.19754 9.358994,-0.0436 0.824618,0.43818 1.499305,0.90792 1.499305,1.04387 0,0.13595 -0.886998,1.14354 -1.971108,2.23908 -1.88853,1.90844 -2.033874,1.98482 -3.469317,1.82302 -2.884685,-0.32515 -5.139003,1.78024 -5.141589,4.80191 -0.0011,1.32031 0.194678,1.7368 1.368289,2.91042 1.152752,1.15275 1.602381,1.3696 2.839741,1.3696 2.803151,0 4.955,-1.98764 4.964976,-4.58611 0.0041,-1.07841 0.31691,-1.5168 2.470627,-3.4629 l 2.465887,-2.22819 0.398307,0.99346 c 0.721475,1.79952 0.806699,6.19147 0.158038,8.1444 -1.180611,3.55449 -3.838587,5.95977 -7.731202,6.9962 -2.356144,0.62733 -3.134116,0.59634 -5.73551,-0.22846 z" id="path2" clipPath="url(#clipPath7)"></path>
-              </g>
-            </g>
-          </svg>
+      <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <span className="logo-icon light" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={pageKeyLogo} alt="PageKey Logo" style={{ width: '2rem', height: '2rem' }} />
         </span>
-        <span id="logo-text">PageKey</span>
+        <span id="logo-text" style={{ margin: 0, marginBottom: "0.35rem" }}>PageKey</span>
       </a>
-      <nav>
-        <ul>
+      <nav style={{ display: 'flex', alignItems: 'center' }}>
+        {/* Added display: flex, reset default list styles, and added gap for spacing */}
+        <ul style={{ display: 'flex', listStyleType: 'none', margin: 0, padding: 0, gap: '1.5rem' }}>
           <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="https://tryhexbox.com/">HexBox</a></li>
         </ul>
       </nav>
     </header>
@@ -189,7 +173,7 @@ const LocalStylesheet = () => (
         --color-gray-20: #ff0000;
         --color-gray-50: rgb(203, 213, 225);
         --color-gray-90: white;
-        --text-color-link: #1493fb;
+        --text-color-link: white;
         --text-color-link-active: #6969f7;
         --text-color-link-visited: #a6a6f8;
         --background-color: rgb(3, 6, 32);
@@ -209,8 +193,16 @@ const LocalStylesheet = () => (
       color: var(--text-color-link);
       text-decoration: none;
     }
-    .pagekey-container a:visited { color: var(--text-color-link-visited); }
-    .pagekey-container a:hover, .pagekey-container a:active { color: var(--text-color-link-active); }
+
+    /* Force visited links to stay the exact same color instead of turning purple */
+    .pagekey-container a:visited { 
+      color: var(--text-color-link); 
+    }
+
+    .pagekey-container a:hover, 
+    .pagekey-container a:active { 
+      color: var(--text-color-link-active); 
+    }
 
     .pagekey-header {
       display: flex;
