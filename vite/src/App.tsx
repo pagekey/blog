@@ -13,7 +13,6 @@ const Header = () => {
         <span id="logo-text" style={{ margin: 0, marginBottom: "0.35rem" }}>PageKey</span>
       </a>
       <nav style={{ display: 'flex', alignItems: 'center' }}>
-        {/* Added display: flex, reset default list styles, and added gap for spacing */}
         <ul style={{ display: 'flex', listStyleType: 'none', margin: 0, padding: 0, gap: '1.5rem' }}>
           <li><a href="/">Home</a></li>
           <li><a href="/blog">Blog</a></li>
@@ -29,13 +28,13 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      <div className="subtitle">Welcome</div>
-      <h1>Take Back <span className="emphasis-1">Tech</span></h1>
-      <p>Escape the matrix. Build your own systems. <span className="emphasis">Learn real coding.</span></p>
+      <div className="subtitle">A Decade of Building Open Systems</div>
+      <h1>Technology You Can <span className="emphasis-1">Actually Understand</span></h1>
+      <p>For ten years, PageKey has demystified code, circuits, and infrastructure. We build understandable, resilient, local-first systems that give people <span className="emphasis">true ownership over the technology that runs their lives.</span></p>
 
       <div className="cta">
-        <a href="#content" className="btn primary">Get Started</a>
-        <a href="https://github.com" target="_blank" rel="noreferrer" className="btn secondary">GitHub</a>
+        <a href="https://tryhexbox.com/" className="btn primary">Explore HexBox ➔</a>
+        <a href="#content" className="btn secondary">Browse 10 Years of Guides</a>
       </div>
 
       {/* Interactive Custom YouTube Player Embed mapping the original lite-youtube style specs */}
@@ -64,35 +63,55 @@ const Hero = () => {
   );
 };
 
+const HexBoxSpotlight = () => {
+  return (
+    <section className="feature lightblue" style={{ textAlign: 'center' }}>
+      <div style={{ maxWidth: '45rem', margin: '0 auto' }}>
+        <div className="subtitle" style={{ color: 'rgb(251, 146, 60)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem' }}>Current Flagship Project</div>
+        <h2>Meet HexBox</h2>
+        <p style={{ marginBottom: '1.5rem' }}>
+          HexBox is our physical, tangible answer to fragile cloud systems. It is the culmination of everything we've built and taught for the last decade packed into a resilient, local-first device engineered for homes, makerspaces, workshops, and off-grid setups.
+        </p>
+        <p style={{ fontSize: '1rem', opacity: 0.8, marginBottom: '2rem' }}>
+          If you met us in person or hold a PageKey business card, HexBox is the engine driving our core mission forward today.
+        </p>
+        <div>
+          <a href="https://tryhexbox.com/" target="_blank" rel="noreferrer" className="btn primary">Visit tryhexbox.com</a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const ContentFeatures = () => {
   return (
-    <section id="content" className="feature lightblue">
-      <h2>Our Core Framework</h2>
-      <p>Ditch the bloat, secure your stack, and control your deployment pipeline from top to bottom.</p>
+    <section id="content" className="feature">
+      <h2>The Resilient Stack</h2>
+      <p>Whether for a local workspace, an off-grid farm, or a small community, we believe critical infrastructure must remain operational, inspectable, and completely under your watch.</p>
 
       <div className="cards">
         <div className="card">
           <div className="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3.5v1a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-1a3.5 3.5 0 0 0 -1 -3.5"></path><path d="M9.7 17l4.6 0"></path></svg>
           </div>
-          <h3>Self-Hosted Tech</h3>
-          <p>Learn how to deploy your own services away from corporate subscription systems.</p>
+          <h3>Local-First Infrastructure</h3>
+          <p>Built to operate entirely offline without central dependencies. Regain control and protect against fragile platforms.</p>
         </div>
 
         <div className="card">
           <div className="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"></path><path d="M12 12l8 -4.5"></path><path d="M12 12l0 9"></path><path d="M12 12l-8 -4.5"></path></svg>
           </div>
-          <h3>Minimal Infrastructure</h3>
-          <p>Keep codebase footprint light, robust, lightning quick, and fully under your watch.</p>
+          <h3>Inspectable Systems</h3>
+          <p>Ditch the corporate bloat and obfuscation. Every layer, from hardware circuits to code, remains transparent, repairable, and modifiable.</p>
         </div>
 
         <div className="card">
           <div className="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l4 4"></path><path d="M14 4l-4 16"></path></svg>
           </div>
-          <h3>Open Source Dev</h3>
-          <p>Every piece of our architecture belongs in public source documentation trees.</p>
+          <h3>A Decade of Open Dev</h3>
+          <p>Ten years of tutorials, data structures, and deep dives. Everything we design belongs in public documentation trees for a resilient future.</p>
         </div>
       </div>
     </section>
@@ -102,8 +121,8 @@ const ContentFeatures = () => {
 const ContactsSection = () => {
   return (
     <section className="feature">
-      <h2>Connect & Feed</h2>
-      <p>Subscribe to community distribution layers and follow along with local updates.</p>
+      <h2>Connect & Sync</h2>
+      <p>Subscribe to our distribution layers, inspect our repositories, and stay updated locally.</p>
 
       <div className="contacts">
         <a href="https://github.com" target="_blank" rel="noreferrer" className="contact">
@@ -111,8 +130,8 @@ const ContactsSection = () => {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
           </div>
           <div className="right">
-            <h3>GitHub Repository</h3>
-            <span>Explore open trees</span>
+            <h3>GitHub Ecosystem</h3>
+            <span>Explore open source source trees</span>
           </div>
         </a>
 
@@ -194,7 +213,6 @@ const LocalStylesheet = () => (
       text-decoration: none;
     }
 
-    /* Force visited links to stay the exact same color instead of turning purple */
     .pagekey-container a:visited { 
       color: var(--text-color-link); 
     }
@@ -230,7 +248,7 @@ const LocalStylesheet = () => (
 
     .hero { margin: auto; max-width: 64rem; padding: 3rem 1.5rem; text-align: center; }
     .hero .subtitle { color: rgb(191, 219, 254); font-weight: 700; letter-spacing: 0.025em; text-transform: uppercase; }
-    .hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.05em; line-height: 1; margin: 1rem 0; }
+    .hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.05em; line-height: 1.1; margin: 1rem 0; }
     @media (min-width: 768px) { .hero h1 { font-size: 3.75rem; } }
     .hero h1 .emphasis-1 { color: rgb(251, 146, 60); }
     .hero p { color: var(--color-gray-50); font-size: 1.25rem; margin-bottom: 3rem; }
@@ -328,6 +346,7 @@ export default function PageKeyLandingScreen() {
       <Header />
       <main>
         <Hero />
+        <HexBoxSpotlight />
         <ContentFeatures />
         <ContactsSection />
       </main>
