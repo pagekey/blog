@@ -5,7 +5,8 @@ import { Badge } from "@/components/ui/badge";
 
 export default function HomepageContent() {
   return (
-    <main>
+    // Added bg-background and text-foreground to ensure the core theme colors are applied
+    <main className="min-h-screen bg-background text-foreground antialiased">
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-6 py-24 text-center">
         <Badge variant="secondary" className="mb-4">
@@ -47,7 +48,7 @@ export default function HomepageContent() {
         <div className="grid gap-6 md:grid-cols-3">
           <Card>
             <CardContent className="p-6">
-              <Server className="mb-4 h-8 w-8" />
+              <Server className="mb-4 h-8 w-8 text-primary" />
               <h3 className="mb-2 text-xl font-semibold">HexBox</h3>
               <p className="text-muted-foreground">
                 A local-first automation platform for makers, homelabs, and
@@ -58,7 +59,7 @@ export default function HomepageContent() {
 
           <Card>
             <CardContent className="p-6">
-              <BookOpen className="mb-4 h-8 w-8" />
+              <BookOpen className="mb-4 h-8 w-8 text-primary" />
               <h3 className="mb-2 text-xl font-semibold">
                 Educational Content
               </h3>
@@ -71,7 +72,8 @@ export default function HomepageContent() {
 
           <Card>
             <CardContent className="p-6">
-              {/* <Github className="mb-4 h-8 w-8" /> */}
+              {/* Restored the missing icon placeholder logic styling */}
+              <div className="mb-4 h-8 w-8 rounded bg-muted/50" />
               <h3 className="mb-2 text-xl font-semibold">Open Source</h3>
               <p className="text-muted-foreground">
                 Tools, experiments, and infrastructure projects built in public.
