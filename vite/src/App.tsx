@@ -1,12 +1,36 @@
-import { ArrowRight, BookOpen, Server } from "lucide-react";
+import { ArrowRight, BookOpen, Server, Code2, Mail, Video, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import pageKeyLogo from './assets/logo_dark.svg';
+
 
 export default function HomepageContent() {
   return (
     // Added bg-background and text-foreground to ensure the core theme colors are applied
     <main className="min-h-screen bg-background text-foreground antialiased">
+
+      {/* Header Navigation */}
+      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+          {/* Logo & Brand */}
+          <a href="/" className="flex items-center gap-2.5 font-bold text-xl tracking-tight">
+            <img src={pageKeyLogo} alt="PageKey Logo" style={{ width: '2rem', height: '2rem' }} />
+            <span>PageKey</span>
+          </a>
+
+          {/* Nav Links */}
+          <nav className="flex items-center gap-6 text-sm font-medium">
+            <a href="/blog" className="transition-colors hover:text-primary">
+              Blog
+            </a>
+            <a href="https://tryhexbox.com" className="transition-colors hover:text-primary">
+              HexBox
+            </a>
+          </nav>
+        </div>
+      </header>
+
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-6 py-24 text-center">
         <Badge variant="secondary" className="mb-4">
@@ -72,8 +96,7 @@ export default function HomepageContent() {
 
           <Card>
             <CardContent className="p-6">
-              {/* Restored the missing icon placeholder logic styling */}
-              <div className="mb-4 h-8 w-8 rounded bg-muted/50" />
+              <Code2 className="mb-4 h-8 w-8 text-primary" />
               <h3 className="mb-2 text-xl font-semibold">Open Source</h3>
               <p className="text-muted-foreground">
                 Tools, experiments, and infrastructure projects built in public.
@@ -122,6 +145,49 @@ export default function HomepageContent() {
           operational even when cloud services fail. Local-first systems are
           easier to learn, easier to repair, and easier to trust.
         </p>
+      </section>
+
+      {/* Contact & Social Section */}
+      <section className="border-t bg-muted/30">
+        <div className="mx-auto max-w-4xl px-6 py-16 text-center">
+          <h2 className="text-3xl font-bold">Get in Touch</h2>
+          <p className="mt-3 text-muted-foreground">
+            Follow along, review the code, or reach out directly.
+          </p>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <a
+              href="https://youtube.com/@PageKey"
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-col items-center rounded-xl border bg-card p-6 transition-all hover:border-primary hover:shadow-sm"
+            >
+              <Video className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-red-500" />
+              <span className="mt-3 font-semibold">YouTube</span>
+              <span className="mt-1 text-sm text-muted-foreground">Watch tutorials</span>
+            </a>
+
+            <a
+              href="https://github.com/pagekey"
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-col items-center rounded-xl border bg-card p-6 transition-all hover:border-primary hover:shadow-sm"
+            >
+              <Code className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-blue-500" />
+              <span className="mt-3 font-semibold">GitHub</span>
+              <span className="mt-1 text-sm text-muted-foreground">Explore code repos</span>
+            </a>
+
+            <a
+              href="mailto:hello@pagekey.io"
+              className="group flex flex-col items-center rounded-xl border bg-card p-6 transition-all hover:border-primary hover:shadow-sm"
+            >
+              <Mail className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-green-500" />
+              <span className="mt-3 font-semibold">Email</span>
+              <span className="mt-1 text-sm text-muted-foreground">Send a message</span>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   );
