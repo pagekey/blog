@@ -52,6 +52,8 @@ jobs:
         run: |
           # Copy Vite static files directly into the root of Eleventy's build directory
           cp -r ./vite/dist/* ./_site/
+          mkdir -p ./_site/photos
+          cp -r ./vite/dist/* ./_site/photos/
           
           # Inject CNAME record back into the final directory
           echo "pagekey.io" > ./_site/CNAME
