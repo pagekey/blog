@@ -5,8 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
 
 export default function PhotosPage() {
-    const youtubeVideoId = "dQw4w9WgXcQ";
-    const stripeCheckoutUrl = "https://buy.stripe.com/mock_link";
+    // const youtubeVideoId = "dQw4w9WgXcQ";
+    const stripeCheckoutUrl = "https://buy.stripe.com/fZu8wQ6yu7BYckP8pDgEg08";
 
     return (
         <Layout>

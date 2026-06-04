@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import pageKeyLogo from '@/assets/logo_dark.svg';
 
 export default function Layout({ children }: any) {
