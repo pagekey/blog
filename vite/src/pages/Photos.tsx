@@ -107,7 +107,7 @@ export default function PhotosPage() {
 
                         {/* Pricing / Stripe Conversion Card */}
                         <div className="md:col-span-2">
-                            <Card className="relative border-2 border-orange-500/50 shadow-xl bg-gradient-to-b from-card to-orange-500/[0.01]">
+                            <Card className="relative border-2 border-orange-500/50 shadow-xl bg-gradient-to-b from-card to-orange-500/[0.01]" style={{ overflow: "visible" }}>
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest rounded-full">
                                     Batch #1
                                 </div>
@@ -120,7 +120,7 @@ export default function PhotosPage() {
                                         <span className="text-sm font-semibold text-muted-foreground">USD</span>
                                     </div>
                                     <span className="text-xs text-emerald-600 dark:text-emerald-400 font-medium bg-emerald-500/10 px-2 py-0.5 rounded-full inline-block mt-2">
-                                        Free Shipped US Shipping
+                                        Free US Shipping
                                     </span>
                                 </CardHeader>
 
