@@ -127,3 +127,46 @@
 }
 
 /* end shadcn paste */
+
+@theme {
+  /* Define the custom animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 8s linear infinite;
+
+  /* Define the keyframes */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px) rotateX(12deg) rotateY(-10deg);
+    }
+
+    50% {
+      transform: translateY(-20px) rotateX(12deg) rotateY(5deg);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(45deg);
+    }
+
+    to {
+      transform: rotate(405deg);
+    }
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .hex-clip {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+}

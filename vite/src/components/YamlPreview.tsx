@@ -83,13 +83,13 @@ export default function YamlPreview() {
     const [activeTab, setActiveTab] = useState<keyof typeof codeSnippets>("graph");
 
     return (
-        <section className="py-24 bg-slate-950 px-6" id="Architecture">
+        <section className="py-24 bg-zinc-900 px-6" id="Architecture">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-12">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tighter">
-                        Pipeline <span className="text-blue-500">Determinism.</span>
+                        Pipeline <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">Determinism.</span>
                     </h2>
-                    <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                    <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed">
                         HexBox processes applications as deterministic, auditable graphs.
                         Click through the layers to see how topologies, actions, and reactive UI mesh together.
                     </p>
@@ -102,8 +102,8 @@ export default function YamlPreview() {
                             key={tab}
                             onClick={() => setActiveTab(tab)}
                             className={`px-4 py-2 rounded-lg font-mono text-xs uppercase tracking-widest transition-all ${activeTab === tab
-                                ? "bg-blue-600 text-white shadow-lg shadow-blue-900/20"
-                                : "bg-slate-900 text-slate-500 hover:text-slate-300 border border-slate-800"
+                                ? "bg-orange-600 text-white shadow-lg shadow-orange-900/20"
+                                : "bg-zinc-900 text-zinc-500 hover:text-zinc-300 border border-zinc-800"
                                 }`}
                         >
                             {tab}
@@ -111,18 +111,18 @@ export default function YamlPreview() {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
                     {/* Editor Column */}
-                    <div className="lg:col-span-3 bg-[#0d1117] p-8 border-r border-slate-800 min-h-[400px]">
-                        <div className="flex items-center gap-2 mb-6 text-slate-500 text-xs uppercase tracking-widest font-mono">
-                            <Code2 className="w-4 h-4 text-blue-500" />
+                    <div className="lg:col-span-3 bg-[#0d1117] p-8 border-r border-zinc-800 min-h-[400px]">
+                        <div className="flex items-center gap-2 mb-6 text-zinc-500 text-xs uppercase tracking-widest font-mono">
+                            <Code2 className="w-4 h-4 text-orange-500" />
                             {codeSnippets[activeTab].file}
                         </div>
-                        <pre className="font-mono text-sm leading-relaxed text-slate-300 overflow-x-auto">
+                        <pre className="font-mono text-sm leading-relaxed text-zinc-300 overflow-x-auto">
                             <code>
                                 {codeSnippets[activeTab].code.split('\n').map((line, i) => (
                                     <div key={i} className="flex gap-4">
-                                        <span className="text-slate-700 w-4 text-right select-none">{i + 1}</span>
+                                        <span className="text-zinc-700 w-4 text-right select-none">{i + 1}</span>
                                         <span>
                                             {codeSnippets[activeTab].language === 'python' ? (
                                                 // Python Syntax Emulation
@@ -139,13 +139,13 @@ export default function YamlPreview() {
                                                         if (part.startsWith('"') || part.startsWith("'") || ['Params', 'dict', 'str'].includes(part)) {
                                                             return <span key={j} className="text-emerald-400">{part}</span>;
                                                         }
-                                                        return <span key={j} className="text-slate-300">{part}</span>;
+                                                        return <span key={j} className="text-zinc-300">{part}</span>;
                                                     })
                                                 )
                                             ) : (
                                                 // YAML Syntax Emulation
                                                 <span>
-                                                    <span className="text-blue-400">{line.split(':')[0]}</span>
+                                                    <span className="text-orange-400">{line.split(':')[0]}</span>
                                                     {line.includes(':') && <span className="text-emerald-400">:{line.substring(line.indexOf(':') + 1)}</span>}
                                                 </span>
                                             )}
@@ -157,30 +157,30 @@ export default function YamlPreview() {
                     </div>
 
                     {/* Context Column */}
-                    <div className="lg:col-span-2 bg-slate-900/80 p-8 flex flex-col justify-center">
+                    <div className="lg:col-span-2 bg-zinc-900/80 p-8 flex flex-col justify-center">
                         <div className="space-y-6">
-                            <div className="p-4 bg-blue-500/5 border border-blue-500/10 rounded-xl">
+                            <div className="p-4 bg-orange-500/5 border border-orange-500/10 rounded-xl">
                                 <h4 className="text-white font-bold mb-2 flex items-center gap-2">
-                                    {activeTab === 'graph' && <GitFork className="w-4 h-4 text-blue-400" />}
-                                    {activeTab === 'node' && <Cpu className="w-4 h-4 text-blue-400" />}
-                                    {activeTab === 'view' && <Eye className="w-4 h-4 text-blue-400" />}
+                                    {activeTab === 'graph' && <GitFork className="w-4 h-4 text-orange-400" />}
+                                    {activeTab === 'node' && <Cpu className="w-4 h-4 text-orange-400" />}
+                                    {activeTab === 'view' && <Eye className="w-4 h-4 text-orange-400" />}
                                     {codeSnippets[activeTab].title}
                                 </h4>
-                                <p className="text-slate-400 text-sm leading-relaxed">
+                                <p className="text-zinc-400 text-sm leading-relaxed">
                                     {codeSnippets[activeTab].desc}
                                 </p>
                             </div>
 
                             <div className="space-y-3">
-                                <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
+                                <div className="flex items-center gap-3 text-xs font-mono text-zinc-500">
                                     <Check className="w-3 h-3 text-emerald-500" />
                                     Acyclic Dependency Graph
                                 </div>
-                                <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
+                                <div className="flex items-center gap-3 text-xs font-mono text-zinc-500">
                                     <Check className="w-3 h-3 text-emerald-500" />
                                     Isolated Execution Nodes
                                 </div>
-                                <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
+                                <div className="flex items-center gap-3 text-xs font-mono text-zinc-500">
                                     <Check className="w-3 h-3 text-emerald-500" />
                                     Reactive UI Dataflow
                                 </div>
