@@ -53,6 +53,10 @@ jobs:
           # Copy Vite static files directly into the root of Eleventy's build directory
           cp -r ./vite/dist/* ./_site/
 
+          # Make the help page.
+          mkdir -p ./_site/help
+          cp -r ./vite/dist/* ./_site/help/
+
           # Make the hexbox page.
           mkdir -p ./_site/hexbox
           cp -r ./vite/dist/* ./_site/hexbox/
