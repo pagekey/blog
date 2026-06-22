@@ -42,5 +42,5 @@ tags:
 - Excited to show more soon!
 - Stay updated via YouTube or mailing list.
 	- YouTube: [youtube.com/@PageKey](https://youtube.com/@PageKey)
-	- Email list: [https://tryhexbox.com/#Order](https://tryhexbox.com/#Order)
+	- Email list: [https://pagekey.io/hexbox](https://pagekey.io/hexbox)
 - Remember: Transparency + control = better systems for everyone

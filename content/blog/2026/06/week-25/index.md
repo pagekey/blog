@@ -93,5 +93,5 @@ This is the reality of taking back tech. You don't just own your hardware; you o
 - Thanks for following along.
 - Sign up for updates if you want to follow progress as HexBox gets closer to release.
 	- YouTube: [youtube.com/@PageKey](https://youtube.com/@PageKey)
-	- Email list: [https://tryhexbox.com/#Order](https://tryhexbox.com/#Order)
+	- Email list: [https://pagekey.io/hexbox](https://pagekey.io/hexbox)
 - Remember: Transparency + control = better systems for everyone.
