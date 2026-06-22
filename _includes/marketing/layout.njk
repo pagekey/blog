@@ -1,29 +1,33 @@
 <!doctype html>
 <html>
-<head>
-    <title>PageKey: Take Back Tech</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%- css %}{% include "_includes/marketing/styles.css" %}{% endcss %}
-    {%- css %}{% include "_includes/marketing/components/header/.css" %}{% endcss %}
-    {%- css %}{% include "_includes/marketing/components/hero/.css" %}{% endcss %}
-    {%- css %}{% include "_includes/marketing/components/youtube-lite/.css" %}{% endcss %}
-    {%- js  %}{% include "_includes/marketing/components/youtube-lite/.js" %}{% endjs %}
-    {%- css %}{% include "components/social-links/.css" %}{% endcss %}
-    {%- css %}{% include "public/css/youtube.css" %}{% endcss %}
+    <head>
+        <title>PageKey: Take Back Tech</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {%- css %}{% include "_includes/marketing/styles.css" %}{% endcss %}
+        {%- css %}{% include "_includes/marketing/components/header/.css" %}{% endcss %}
+        {%- css %}{% include "_includes/marketing/components/hero/.css" %}{% endcss %}
+        {%- css %}{% include "_includes/marketing/components/youtube-lite/.css" %}{% endcss %}
+        {%- js  %}{% include "_includes/marketing/components/youtube-lite/.js" %}{% endjs %}
+        {%- css %}{% include "components/social-links/.css" %}{% endcss %}
+        {%- css %}{% include "public/css/youtube.css" %}{% endcss %}
 
-    <style>{% getBundle "css" %}</style>
-</head>
-<body>
-    {% include "marketing/components/header/.njk" %}
-    <main>
-        {{ content | safe }}
-    </main>
-    {% include "components/social-links/.njk" %}
-    <footer>
+        <style>
+            {% getBundle "css" %}
+        </style>
+
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="c0d69447-e84c-419f-ac9f-133e56d64a87"></script>
+    </head>
+    <body>
+        {% include "marketing/components/header/.njk" %}
+        <main>
+            {{ content | safe }}
+        </main>
+        {% include "components/social-links/.njk" %}
+        <footer>
         Copyright &copy; PageKey Solutions, LLC &bull; All rights reserved
     </footer>
 
-    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
-    <script type="module" src="{% getBundleFileUrl "js" %}"></script>
-</body>
+        <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+        <script type="module" src="{% getBundleFileUrl "js" %}"></script>
+    </body>
 </html>
