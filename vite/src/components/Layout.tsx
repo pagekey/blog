@@ -1,4 +1,5 @@
 import pageKeyLogo from '@/assets/logo_dark.svg';
+import { Link } from 'react-router-dom';
 
 export default function Layout({ children }: any) {
     const currentYear = new Date().getFullYear();
@@ -23,9 +24,15 @@ export default function Layout({ children }: any) {
                         <a href="/blog" className="transition-colors hover:text-orange-500">
                             Blog
                         </a>
-                        <a href="https://tryhexbox.com" className="transition-colors hover:text-orange-500">
+                        <Link to="/hexbox" className="transition-colors hover:text-orange-500">
                             HexBox
-                        </a>
+                        </Link>
+                        <Link to="/vpn" className="transition-colors hover:text-orange-500">
+                            VPN
+                        </Link>
+                        <Link to="/help" className="transition-colors hover:text-orange-500">
+                            Help
+                        </Link>
                     </nav>
                 </div>
             </header>
@@ -38,7 +45,7 @@ export default function Layout({ children }: any) {
             {/* Simple Footer */}
             <footer className="border-t py-6 md:py-0">
                 <div className="mx-auto flex h-16 max-w-6xl items-center justify-center px-6 text-sm text-muted-foreground">
-                    <p>© {currentYear} PageKey Solutions LLC. All rights reserved.</p>
+                    <p>&copy; {currentYear} PageKey Solutions LLC. All rights reserved.</p>
                 </div>
             </footer>
         </div>

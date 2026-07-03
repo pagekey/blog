@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
@@ -31,10 +32,10 @@ export default function HomePage() {
 
                     <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
                         <Button size="lg" className="bg-orange-600 hover:bg-orange-500 text-white transition-colors" asChild>
-                            <a href="https://tryhexbox.com" target="_blank" rel="noreferrer">
+                            <Link to="/hexbox">
                                 Explore HexBox
                                 <ArrowRight className="ml-2 h-4 w-4" />
-                            </a>
+                            </Link>
                         </Button>
 
                         <Button variant="outline" size="lg" className="hover:bg-muted transition-colors" asChild>
@@ -104,10 +105,10 @@ export default function HomePage() {
 
                         <div className="shrink-0">
                             <Button size="lg" className="bg-orange-600 hover:bg-orange-500 text-white transition-colors" asChild>
-                                <a href="https://tryhexbox.com" target="_blank" rel="noreferrer">
+                                <Link to="/hexbox">
                                     Learn More
                                     <ArrowRight className="ml-2 h-4 w-4" />
-                                </a>
+                                </Link>
                             </Button>
                         </div>
                     </CardContent>
