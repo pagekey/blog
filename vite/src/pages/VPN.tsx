@@ -1,4 +1,4 @@
-import { Shield, Server, Globe, Smartphone, ArrowRight, Check, CloudOff } from "lucide-react";
+import { Shield, Server, Globe, Smartphone, Check, CloudOff } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
