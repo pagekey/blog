@@ -6,6 +6,7 @@ import NotFoundPage from './pages/NotFoundPage'
 import HelpPage from './pages/Help'
 import HexBoxPage from './pages/HexBox'
 import VPNPage from './pages/VPN'
+import KitsPage from './pages/Kits'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/hexbox" element={<HexBoxPage />} />
       <Route path="/photos" element={<PhotosPage />} />
       <Route path="/vpn" element={<VPNPage />} />
+      <Route path="/kits" element={<KitsPage />} />
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
