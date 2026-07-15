@@ -68,6 +68,10 @@ jobs:
           # Make the VPN page.
           mkdir -p ./_site/vpn
           cp -r ./vite/dist/* ./_site/vpn/
+
+          # Make the kits page.
+          mkdir -p ./_site/kits
+          cp -r ./vite/dist/* ./_site/kits/
           
           # Inject CNAME record back into the final directory
           echo "pagekey.io" > ./_site/CNAME

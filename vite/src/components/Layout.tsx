@@ -30,6 +30,9 @@ export default function Layout({ children }: any) {
                         <Link to="/vpn" className="transition-colors hover:text-orange-500">
                             VPN
                         </Link>
+                        {/* <Link to="/kits" className="transition-colors hover:text-orange-500">
+                            Kits
+                        </Link> */}
                         <Link to="/help" className="transition-colors hover:text-orange-500">
                             Help
                         </Link>
