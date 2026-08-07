@@ -7,6 +7,10 @@ import HelpPage from './pages/Help'
 import HexBoxPage from './pages/HexBox'
 import VPNPage from './pages/VPN'
 import KitsPage from './pages/Kits'
+import BlogPost from './pages/BlogPost'
+import BlogIndex from './pages/BlogIndex'
+import TagsIndex from './pages/TagsIndex'
+import TagPosts from './pages/TagPosts'
 
 function App() {
   return (
@@ -17,6 +21,10 @@ function App() {
       <Route path="/photos" element={<PhotosPage />} />
       <Route path="/vpn" element={<VPNPage />} />
       <Route path="/kits" element={<KitsPage />} />
+      <Route path="/blog" element={<BlogIndex />} />
+      <Route path="/blog/tags" element={<TagsIndex />} />
+      <Route path="/blog/tags/:tag" element={<TagPosts />} />
+      <Route path="/blog/:year/:month/:slug" element={<BlogPost />} />
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
