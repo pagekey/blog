@@ -8,7 +8,7 @@ const serveContentPlugin = () => ({
   name: 'serve-content',
   configureServer(server: any) {
     server.middlewares.use('/content', (req: any, res: any, next: any) => {
-      const filePath = path.join(__dirname, '../content', req.url);
+      const filePath = path.join(__dirname, './content', req.url);
       if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
         const stream = fs.createReadStream(filePath);
         // Basic mime types

@@ -32,19 +32,19 @@ jobs:
         run: cd vite && npm ci
 
       - name: Build Vite App
-        run: cd vite && npm run build # Outputs to ./vite/dist
+        run: cd vite && npm run build # Outputs to ./dist
 
       # --- 2. PREPARE DEPLOYMENT ---
       - name: Prepare Deployment
         run: |
           # Create 404.html from index.html for SPA routing on GitHub Pages
-          cp ./vite/dist/index.html ./vite/dist/404.html
+          cp ./dist/index.html ./dist/404.html
           
           # Copy content directory so images load properly
-          cp -r ./content ./vite/dist/content
+          cp -r ./content ./dist/content
           
           # Inject CNAME record back into the final directory
-          echo "pagekey.io" > ./vite/dist/CNAME
+          echo "pagekey.io" > ./dist/CNAME
 
       # --- 3. DEPLOY ---
       - name: Deploy
@@ -52,4 +52,4 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./vite/dist
+          publish_dir: ./dist
