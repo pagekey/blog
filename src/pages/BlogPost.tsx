@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { useParams, Link } from 'react-router-dom';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Layout from '../components/Layout';
 import { getAllPosts, parseFrontmatter } from '../lib/blog';
 
@@ -95,12 +97,32 @@ export default function BlogPost() {
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
             components={{
-              img({ node, src, alt, ...props }) {
+              img({ src, alt, ...props }) {
                 let imageSrc = src;
                 if (src && !src.startsWith('http') && !src.startsWith('/')) {
                    imageSrc = `/content/blog/${year}/${month}/${slug}/${src}`;
                 }
                 return <img src={imageSrc} alt={alt} {...props} className="rounded-lg shadow-md max-w-full" />;
+              },
+              code({ className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || '');
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+                const { ref: _ref, ...rest } = props as any;
+                return match ? (
+                  <SyntaxHighlighter
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    style={vscDarkPlus as any}
+                    language={match[1]}
+                    PreTag="div"
+                    {...rest}
+                  >
+                    {String(children).replace(/\n$/, '')}
+                  </SyntaxHighlighter>
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                );
               }
             }}
           >
