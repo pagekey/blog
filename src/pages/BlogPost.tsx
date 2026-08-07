@@ -70,6 +70,29 @@ export default function BlogPost() {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8 max-w-3xl">
+        <div className="flex justify-between items-center mb-6 text-sm border-b border-border pb-4">
+          <Link to="/blog" className="text-muted-foreground hover:text-orange-500 transition-colors flex items-center gap-1.5 font-medium">
+            ← <span className="hidden sm:inline">Back to </span>Blog
+          </Link>
+          <div className="flex items-center gap-4 text-muted-foreground font-medium">
+            {prevPost ? (
+              <Link to={prevPost.url} className="hover:text-orange-500 transition-colors flex items-center gap-1" title={prevPost.title}>
+                ← Prev
+              </Link>
+            ) : (
+              <span className="text-muted-foreground/45 cursor-not-allowed select-none flex items-center gap-1">← Prev</span>
+            )}
+            <span className="text-muted-foreground/30">|</span>
+            {nextPost ? (
+              <Link to={nextPost.url} className="hover:text-orange-500 transition-colors flex items-center gap-1" title={nextPost.title}>
+                Next →
+              </Link>
+            ) : (
+              <span className="text-muted-foreground/45 cursor-not-allowed select-none flex items-center gap-1">Next →</span>
+            )}
+          </div>
+        </div>
+
         {post.title && (
           <h1 className="text-4xl font-extrabold mb-4">{post.title}</h1>
         )}
