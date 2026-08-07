@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -20,21 +20,27 @@ export default function BlogPost() {
   const nextPost = postIndex > 0 ? posts[postIndex - 1] : null;
   const prevPost = postIndex !== -1 && postIndex < posts.length - 1 ? posts[postIndex + 1] : null;
 
-  const { content, data } = useMemo(() => {
+  const [content, setContent] = useState<string | null>(null);
+
+  useEffect(() => {
     if (!post) {
-      return { content: null, data: null };
+      setContent(null);
+      return;
     }
-    
-    const parsed = parseFrontmatter(post.rawMarkdown);
-    
-    // Process eleventy shortcodes like {% youtube "ID" %}
-    let processedContent = parsed.content;
-    processedContent = processedContent.replace(
-      /{%\s*youtube\s*"([^"]+)"\s*%}/g,
-      '<div className="youtube-wrapper my-8"><iframe className="w-full aspect-video" src="https://www.youtube.com/embed/$1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>'
-    );
-    
-    return { content: processedContent, data: parsed.data };
+
+    if (post.getRawMarkdown) {
+      post.getRawMarkdown().then(rawMarkdown => {
+        const parsed = parseFrontmatter(rawMarkdown);
+        let processedContent = parsed.content;
+        processedContent = processedContent.replace(
+          /{%\s*youtube\s*"([^"]+)"\s*%}/g,
+          '<div className="youtube-wrapper my-8"><iframe className="w-full aspect-video" src="https://www.youtube.com/embed/$1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>'
+        );
+        setContent(processedContent);
+      }).catch(err => {
+        console.error("Failed to load markdown:", err);
+      });
+    }
   }, [post]);
 
   if (!post) {
@@ -62,14 +68,14 @@ export default function BlogPost() {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8 max-w-3xl">
-        {data?.title && (
-          <h1 className="text-4xl font-extrabold mb-4">{data.title}</h1>
+        {post.title && (
+          <h1 className="text-4xl font-extrabold mb-4">{post.title}</h1>
         )}
         
         <div className="flex flex-wrap items-center gap-4 mb-8">
-          {data?.date && (
+          {post.dateString && (
             <div className="text-gray-500">
-              {new Date(data.date).toLocaleDateString()}
+              {new Date(post.dateString).toLocaleDateString()}
             </div>
           )}
           

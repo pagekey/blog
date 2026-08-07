@@ -1,14 +1,4 @@
-export function parseFrontmatter(markdown: string) {
-  const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
-  const match = markdown.match(frontmatterRegex);
-
-  if (!match) {
-    return { data: {}, content: markdown };
-  }
-
-  const yamlString = match[1];
-  const content = match[2];
-
+export function parseYaml(yamlString: string) {
   const data: Record<string, any> = {};
   const lines = yamlString.split(/\r?\n/);
   let currentKey = '';
@@ -32,14 +22,31 @@ export function parseFrontmatter(markdown: string) {
     }
   });
 
+  return data;
+}
+
+export function parseFrontmatter(markdown: string) {
+  const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
+  const match = markdown.match(frontmatterRegex);
+
+  if (!match) {
+    return { data: {}, content: markdown };
+  }
+
+  const yamlString = match[1];
+  const content = match[2];
+
+  const data = parseYaml(yamlString);
+
   return { data, content };
 }
 
 export function getAllPosts() {
-  const markdownFiles = import.meta.glob('../../content/blog/**/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+  const frontmatters = import.meta.glob('../../content/blog/**/*.md', { query: '?frontmatter', import: 'default', eager: true }) as Record<string, string>;
+  const rawModules = import.meta.glob('../../content/blog/**/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
 
-  const posts = Object.entries(markdownFiles).map(([filePath, rawMarkdown]) => {
-    const { data } = parseFrontmatter(rawMarkdown);
+  const posts = Object.entries(frontmatters).map(([filePath, yamlString]) => {
+    const data = parseYaml(yamlString || '');
 
     const match = filePath.match(/\/content\/blog\/(\d{4})\/(\d{2})\/([^\/]+)\/index\.md$/);
 
@@ -70,7 +77,7 @@ export function getAllPosts() {
       month,
       slug,
       filePath,
-      rawMarkdown
+      getRawMarkdown: rawModules[filePath]
     };
   }).filter(post => post.url.startsWith('/blog/') && post.year);
 
