@@ -26,13 +26,13 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-vite-${{ hashFiles('vite/package-lock.json') }}
+          key: ${{ runner.os }}-node-vite-${{ hashFiles('package-lock.json') }}
 
       - name: Install Vite Deps
-        run: cd vite && npm ci
+        run: npm ci
 
       - name: Build Vite App
-        run: cd vite && npm run build # Outputs to ./dist
+        run: npm run build # Outputs to ./dist
 
       # --- 2. PREPARE DEPLOYMENT ---
       - name: Prepare Deployment

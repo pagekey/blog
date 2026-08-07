@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/Home'
 import PhotosPage from './pages/Photos'
@@ -18,6 +18,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/help" element={<HelpPage />} />
       <Route path="/hexbox" element={<HexBoxPage />} />
+      <Route path="/unit" element={<Navigate to="/hexbox" replace />} />
       <Route path="/photos" element={<PhotosPage />} />
       <Route path="/vpn" element={<VPNPage />} />
       <Route path="/kits" element={<KitsPage />} />
