@@ -21,20 +21,7 @@ jobs:
         with:
           node-version: '20'
 
-      # --- 1. BUILD ELEVENTY (Blog) ---
-      - name: Cache npm (Root/Eleventy)
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-eleventy-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Eleventy Deps
-        run: npm ci
-
-      - name: Build Eleventy
-        run: npm run build-ghpages # Outputs to ./_site
-
-      # --- 2. BUILD VITE (Homepage) ---
+      # --- 1. BUILD VITE (Homepage) ---
       - name: Cache npm (Vite)
         uses: actions/cache@v3
         with:
@@ -47,39 +34,22 @@ jobs:
       - name: Build Vite App
         run: cd vite && npm run build # Outputs to ./vite/dist
 
-      # --- 3. STITCH THEM TOGETHER ---
-      - name: Merge Codebases
+      # --- 2. PREPARE DEPLOYMENT ---
+      - name: Prepare Deployment
         run: |
-          # Copy Vite static files directly into the root of Eleventy's build directory
-          cp -r ./vite/dist/* ./_site/
-
-          # Make the help page.
-          mkdir -p ./_site/help
-          cp -r ./vite/dist/* ./_site/help/
-
-          # Make the hexbox page.
-          mkdir -p ./_site/hexbox
-          cp -r ./vite/dist/* ./_site/hexbox/
+          # Create 404.html from index.html for SPA routing on GitHub Pages
+          cp ./vite/dist/index.html ./vite/dist/404.html
           
-          # Make the photos page.
-          mkdir -p ./_site/photos
-          cp -r ./vite/dist/* ./_site/photos/
-
-          # Make the VPN page.
-          mkdir -p ./_site/vpn
-          cp -r ./vite/dist/* ./_site/vpn/
-
-          # Make the kits page.
-          mkdir -p ./_site/kits
-          cp -r ./vite/dist/* ./_site/kits/
+          # Copy content directory so images load properly
+          cp -r ./content ./vite/dist/content
           
           # Inject CNAME record back into the final directory
-          echo "pagekey.io" > ./_site/CNAME
+          echo "pagekey.io" > ./vite/dist/CNAME
 
-      # --- 4. DEPLOY ---
+      # --- 3. DEPLOY ---
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./vite/dist
