@@ -1,8 +1,27 @@
 import pageKeyLogo from '@/assets/logo_dark.svg';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function Layout({ children }: any) {
+export default function Layout({ children, title, description }: { children: React.ReactNode, title?: string, description?: string }) {
     const currentYear = new Date().getFullYear();
+
+    useEffect(() => {
+        if (title) {
+            document.title = title;
+        } else {
+            document.title = "PageKey — Take Back Tech";
+        }
+        
+        if (description) {
+            let metaDesc = document.querySelector('meta[name="description"]');
+            if (!metaDesc) {
+                metaDesc = document.createElement('meta');
+                metaDesc.setAttribute('name', 'description');
+                document.head.appendChild(metaDesc);
+            }
+            metaDesc.setAttribute('content', description);
+        }
+    }, [title, description]);
 
     return (
         <div className="min-h-screen bg-background text-foreground antialiased flex flex-col selection:bg-orange-500/20 selection:text-orange-600">
@@ -21,20 +40,20 @@ export default function Layout({ children }: any) {
 
                     {/* Nav Links */}
                     <nav className="flex items-center gap-6 text-sm font-medium">
+                        <Link to="/products" className="transition-colors hover:text-orange-500">
+                            Products
+                        </Link>
+                        <Link to="/consulting" className="transition-colors hover:text-orange-500">
+                            Consulting
+                        </Link>
                         <a href="/blog" className="transition-colors hover:text-orange-500">
                             Blog
                         </a>
-                        <Link to="/hexbox" className="transition-colors hover:text-orange-500">
-                            HexBox
+                        <Link to="/events" className="transition-colors hover:text-orange-500">
+                            Events
                         </Link>
-                        <Link to="/vpn" className="transition-colors hover:text-orange-500">
-                            VPN
-                        </Link>
-                        {/* <Link to="/kits" className="transition-colors hover:text-orange-500">
-                            Kits
-                        </Link> */}
-                        <Link to="/help" className="transition-colors hover:text-orange-500">
-                            Help
+                        <Link to="/about" className="transition-colors hover:text-orange-500">
+                            About
                         </Link>
                     </nav>
                 </div>

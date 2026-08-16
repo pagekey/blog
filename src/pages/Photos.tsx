@@ -165,7 +165,7 @@ export default function PhotosPage() {
                         </div>
                         <div>
                             <h4 className="font-semibold text-base flex items-center gap-2">
-                                <HelpCircle className="h-4 w-4 text-orange-500" /> Can I expand storage?
+                                <HelpCircle className="h-4 w-4 text-orange-500" /> Can we expand storage?
                             </h4>
                             <p className="mt-2 text-sm text-muted-foreground">
                                 Absolutely. It features high-speed USB ports, allowing you to easily map external external hard drives or network shares (NAS) via the web UI.

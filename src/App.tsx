@@ -12,10 +12,21 @@ import BlogIndex from './pages/BlogIndex'
 import TagsIndex from './pages/TagsIndex'
 import TagPosts from './pages/TagPosts'
 
+import ConsultingPage from './pages/Consulting'
+import EventsPage from './pages/Events'
+import ProductsPage from './pages/Products'
+import AboutPage from './pages/About'
+import SignupPage from './pages/Signup'
+
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/signup" element={<SignupPage />} />
+      <Route path="/consulting" element={<ConsultingPage />} />
+      <Route path="/events" element={<EventsPage />} />
+      <Route path="/products" element={<ProductsPage />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="/help" element={<HelpPage />} />
       <Route path="/hexbox" element={<HexBoxPage />} />
       <Route path="/unit" element={<Navigate to="/hexbox" replace />} />

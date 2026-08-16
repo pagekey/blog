@@ -77,7 +77,7 @@ export default function HelpPage() {
             <section className="mx-auto max-w-4xl px-6 py-12">
                 <div className="mb-10">
                     <h2 className="text-2xl font-bold tracking-tight text-center md:text-left">
-                        What I Can Help You With
+                        What We Can Help You With
                     </h2>
                     <p className="mt-2 text-muted-foreground text-center md:text-left">
                         Bring broken configs, architecture issues, or terminal errors.

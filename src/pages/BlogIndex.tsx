@@ -20,7 +20,7 @@ export default function BlogIndex() {
   } = usePagination(posts, POSTS_PER_PAGE);
 
   return (
-    <Layout>
+    <Layout title="Blog — PageKey" description="Ideas, experiments, builds, and lessons from PageKey. Devlogs, technical articles, and educational posts.">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="flex items-baseline justify-between mb-2">
           <h1 className="text-4xl font-extrabold">Blog</h1>
