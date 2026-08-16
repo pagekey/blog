@@ -66,8 +66,13 @@ export default function Layout({ children, title, description }: { children: Rea
 
             {/* Simple Footer */}
             <footer className="border-t py-6 md:py-0">
-                <div className="mx-auto flex h-16 max-w-6xl items-center justify-center px-6 text-sm text-muted-foreground">
+                <div className="mx-auto flex flex-col md:flex-row h-auto md:h-16 max-w-6xl items-center justify-between gap-4 px-6 text-sm text-muted-foreground">
                     <p>&copy; {currentYear} PageKey Solutions LLC. All rights reserved.</p>
+                    <div className="flex items-center gap-4">
+                        <a href="tel:609-521-8918" className="hover:text-foreground transition-colors">609-521-8918</a>
+                        <span className="opacity-50">&bull;</span>
+                        <a href="mailto:hello@pagekey.io" className="hover:text-foreground transition-colors">hello@pagekey.io</a>
+                    </div>
                 </div>
             </footer>
         </div>

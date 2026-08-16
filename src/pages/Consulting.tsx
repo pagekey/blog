@@ -11,7 +11,7 @@ export default function ConsultingPage() {
                 <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl mb-6">
                     Technology consulting for businesses that need things to <span className="text-orange-600">actually work.</span>
                 </h1>
-                
+
                 <p className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground leading-relaxed">
                     We help businesses solve practical technology problems &mdash; from automation and internal tools to AI, software, infrastructure, and integrations.
                 </p>
@@ -24,7 +24,10 @@ export default function ConsultingPage() {
                         </a>
                     </Button>
                     <p className="text-sm text-muted-foreground mt-2">
-                        hello@pagekey.io
+                        <a href="mailto:hello@pagekey.io" className="hover:underline">hello@pagekey.io</a> &bull; <a href="tel:609-521-8918" className="hover:underline">(609) 521-8198</a>
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-2 hover:underline">
+
                     </p>
                 </div>
             </section>
