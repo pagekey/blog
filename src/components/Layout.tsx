@@ -1,9 +1,11 @@
 import pageKeyLogo from '@/assets/logo_dark.svg';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Layout({ children, title, description }: { children: React.ReactNode, title?: string, description?: string }) {
     const currentYear = new Date().getFullYear();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         if (title) {
@@ -38,8 +40,17 @@ export default function Layout({ children, title, description }: { children: Rea
                         <span className="leading-none" style={{ marginBottom: "0.2rem" }}>PageKey</span>
                     </a>
 
-                    {/* Nav Links */}
-                    <nav className="flex items-center gap-6 text-sm font-medium">
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="md:hidden flex items-center justify-center p-2 text-foreground hover:text-orange-500 transition-colors"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label="Toggle mobile menu"
+                    >
+                        {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
+
+                    {/* Desktop Nav Links */}
+                    <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
                         <Link to="/products" className="transition-colors hover:text-orange-500">
                             Products
                         </Link>
@@ -57,6 +68,29 @@ export default function Layout({ children, title, description }: { children: Rea
                         </Link>
                     </nav>
                 </div>
+
+                {/* Mobile Navigation */}
+                {isMobileMenuOpen && (
+                    <div className="md:hidden border-t bg-background">
+                        <nav className="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
+                            <Link to="/products" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
+                                Products
+                            </Link>
+                            <Link to="/consulting" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
+                                Consulting
+                            </Link>
+                            <a href="/blog" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
+                                Blog
+                            </a>
+                            <Link to="/events" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
+                                Events
+                            </Link>
+                            <Link to="/about" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
+                                About
+                            </Link>
+                        </nav>
+                    </div>
+                )}
             </header>
 
             {/* Main Content Wrapper */}
