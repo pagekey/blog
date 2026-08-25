@@ -57,6 +57,9 @@ export default function Layout({ children, title, description }: { children: Rea
                         <Link to="/consulting" className="transition-colors hover:text-orange-500">
                             Consulting
                         </Link>
+                        <Link to="/portfolio" className="transition-colors hover:text-orange-500">
+                            Portfolio
+                        </Link>
                         <a href="/blog" className="transition-colors hover:text-orange-500">
                             Blog
                         </a>
@@ -78,6 +81,9 @@ export default function Layout({ children, title, description }: { children: Rea
                             </Link>
                             <Link to="/consulting" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
                                 Consulting
+                            </Link>
+                            <Link to="/portfolio" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
+                                Portfolio
                             </Link>
                             <a href="/blog" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
                                 Blog

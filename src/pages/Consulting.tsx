@@ -2,6 +2,7 @@ import { Mail, ArrowRight, Settings, Cpu, Terminal, GitMerge, Server } from "luc
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import { Link } from "react-router-dom";
 
 export default function ConsultingPage() {
     return (
@@ -17,12 +18,19 @@ export default function ConsultingPage() {
                 </p>
 
                 <div className="mt-10 flex flex-col items-center justify-center gap-4">
-                    <Button size="lg" className="bg-orange-600 hover:bg-orange-500 text-white px-8 text-lg h-14" asChild>
-                        <a href="mailto:hello@pagekey.io">
-                            <Mail className="mr-2 h-5 w-5" />
-                            Talk to Us
-                        </a>
-                    </Button>
+                    <div className="flex flex-col items-center gap-4 sm:flex-row">
+                        <Button size="lg" className="bg-orange-600 hover:bg-orange-500 text-white px-8 text-lg h-14" asChild>
+                            <a href="mailto:hello@pagekey.io">
+                                <Mail className="mr-2 h-5 w-5" />
+                                Talk to Us
+                            </a>
+                        </Button>
+                        <Button variant="outline" size="lg" className="px-8 text-lg h-14" asChild>
+                            <Link to="/portfolio">
+                                See Portfolio
+                            </Link>
+                        </Button>
+                    </div>
                     <p className="text-sm text-muted-foreground mt-2">
                         <a href="mailto:hello@pagekey.io" className="hover:underline">hello@pagekey.io</a> &bull; <a href="tel:609-521-8918" className="hover:underline">(609) 521-8198</a>
                     </p>
@@ -37,6 +45,14 @@ export default function ConsultingPage() {
                 <div className="mx-auto max-w-6xl px-6 py-24">
                     <div className="mb-16 text-center">
                         <h2 className="text-3xl font-bold tracking-tight">What We Can Help With</h2>
+                        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                            Want to see the public technical work behind these capabilities? Visit the portfolio for concrete examples and supporting blog posts.
+                        </p>
+                        <div className="mt-6">
+                            <Button variant="outline" asChild>
+                                <Link to="/portfolio">Browse the Portfolio</Link>
+                            </Button>
+                        </div>
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -169,12 +185,17 @@ export default function ConsultingPage() {
             <section className="mx-auto max-w-3xl px-6 py-24 text-center">
                 <h2 className="text-3xl font-bold tracking-tight mb-6">Have a technology problem?</h2>
                 <p className="text-xl text-muted-foreground mb-10">Let's talk.</p>
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-500 text-white px-8 text-lg h-14" asChild>
-                    <a href="mailto:hello@pagekey.io">
-                        <Mail className="mr-2 h-5 w-5" />
-                        Email hello@pagekey.io
-                    </a>
-                </Button>
+                <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <Button size="lg" className="bg-orange-600 hover:bg-orange-500 text-white px-8 text-lg h-14" asChild>
+                        <a href="mailto:hello@pagekey.io">
+                            <Mail className="mr-2 h-5 w-5" />
+                            Email hello@pagekey.io
+                        </a>
+                    </Button>
+                    <Button variant="outline" size="lg" className="px-8 text-lg h-14" asChild>
+                        <Link to="/portfolio">Review Our Portfolio</Link>
+                    </Button>
+                </div>
             </section>
         </Layout>
     );

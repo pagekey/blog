@@ -17,6 +17,7 @@ import EventsPage from './pages/Events'
 import ProductsPage from './pages/Products'
 import AboutPage from './pages/About'
 import SignupPage from './pages/Signup'
+import PortfolioPage from './pages/Portfolio'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/consulting" element={<ConsultingPage />} />
+      <Route path="/portfolio" element={<PortfolioPage />} />
       <Route path="/events" element={<EventsPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/about" element={<AboutPage />} />

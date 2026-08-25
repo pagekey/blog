@@ -32,7 +32,7 @@ export default function HomePage() {
                         </Button>
 
                         <Button variant="outline" size="lg" className="hover:bg-muted transition-colors text-base" asChild>
-                            <a href="#explore">Explore PageKey</a>
+                            <Link to="/portfolio">See Portfolio</Link>
                         </Button>
                     </div>
                 </div>
@@ -53,10 +53,15 @@ export default function HomePage() {
                             <p className="text-muted-foreground">
                                 We help businesses solve practical technology problems. From automating workflows and integrating systems to building custom internal tools, applying AI, and modernizing infrastructure.
                             </p>
-                            <div className="mt-auto pt-4">
+                            <div className="mt-auto flex flex-col gap-3 pt-4 sm:flex-row">
                                 <Button className="bg-orange-600 hover:bg-orange-500 text-white w-full sm:w-auto" asChild>
                                     <Link to="/consulting">
                                         Work With Us
+                                    </Link>
+                                </Button>
+                                <Button variant="outline" className="w-full sm:w-auto" asChild>
+                                    <Link to="/portfolio">
+                                        See Portfolio
                                     </Link>
                                 </Button>
                             </div>
@@ -163,11 +168,18 @@ export default function HomePage() {
                             <p className="text-muted-foreground text-lg mb-2">
                                 We help businesses solve practical technology problems with sensible, well-engineered solutions.
                             </p>
-                            <Button size="lg" className="bg-orange-600 hover:bg-orange-500 text-white" asChild>
-                                <Link to="/consulting">
-                                    Learn about consulting
-                                </Link>
-                            </Button>
+                            <div className="flex flex-col gap-3 sm:flex-row">
+                                <Button size="lg" className="bg-orange-600 hover:bg-orange-500 text-white" asChild>
+                                    <Link to="/consulting">
+                                        Learn about consulting
+                                    </Link>
+                                </Button>
+                                <Button variant="outline" size="lg" asChild>
+                                    <Link to="/portfolio">
+                                        See portfolio
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
                         
                         <div className="flex flex-col items-start justify-center gap-4 border-t pt-10 md:border-t-0 md:border-l md:pt-0 md:pl-12">
