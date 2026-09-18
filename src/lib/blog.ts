@@ -41,6 +41,23 @@ export function parseFrontmatter(markdown: string) {
   return { data, content };
 }
 
+function isDateOnlyString(value: string) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value);
+}
+
+export function parsePostDate(dateString: string) {
+  if (isDateOnlyString(dateString)) {
+    const [year, month, day] = dateString.split('-').map(Number);
+    return new Date(year, month - 1, day);
+  }
+
+  return new Date(dateString);
+}
+
+export function formatPostDate(dateString: string) {
+  return parsePostDate(dateString).toLocaleDateString();
+}
+
 export function getAllPosts() {
   const frontmatters = import.meta.glob('../../content/blog/**/*.md', { query: '?frontmatter', import: 'default', eager: true }) as Record<string, string>;
   const rawModules = import.meta.glob('../../content/blog/**/*.md', { query: '?raw', import: 'default' }) as Record<string, () => Promise<string>>;
@@ -69,7 +86,7 @@ export function getAllPosts() {
 
     return {
       title: data.title || 'Untitled',
-      date: data.date ? new Date(data.date) : new Date(0),
+      date: data.date ? parsePostDate(data.date) : new Date(0),
       dateString: data.date || '',
       tags: data.tags || [],
       url: match ? `/blog/${year}/${month}/${slug}` : `/blog/${slug}`,

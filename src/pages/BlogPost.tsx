@@ -6,7 +6,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Layout from '../components/Layout';
-import { getAllPosts, parseFrontmatter } from '../lib/blog';
+import { formatPostDate, getAllPosts, parseFrontmatter } from '../lib/blog';
 
 export default function BlogPost() {
   const { year, month, slug } = useParams();
@@ -100,7 +100,7 @@ export default function BlogPost() {
         <div className="flex flex-wrap items-center gap-4 mb-8">
           {post.dateString && (
             <div className="text-gray-500">
-              {new Date(post.dateString).toLocaleDateString()}
+              {formatPostDate(post.dateString)}
             </div>
           )}
           

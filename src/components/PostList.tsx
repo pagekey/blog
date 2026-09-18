@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { formatPostDate } from '../lib/blog';
 
 interface PostListProps {
   posts: any[];
@@ -17,7 +18,7 @@ export function PostList({ posts, emptyMessage = "No posts found." }: PostListPr
               </Link>
             </h2>
             <div className="text-sm text-gray-500 mb-3 relative z-10 pointer-events-none">
-              {post.dateString ? new Date(post.dateString).toLocaleDateString() : 'No date'}
+              {post.dateString ? formatPostDate(post.dateString) : 'No date'}
             </div>
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-auto relative z-10">
