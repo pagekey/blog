@@ -11,7 +11,7 @@ How many times have you sat down at a new Linux computer and felt like you were 
 
 Thankfully, there is!
 
-If you don't feel like setting it up yourself, you can clone the pre-finished skeleton I made [on Github](https://github.com/stephengrice/linux-workspace).
+If you don't feel like setting it up yourself, you can clone the pre-finished skeleton I made [on Github](https://github.com/localsteve/linux-workspace).
 
 ## All of your Tools, Mobile
 
@@ -35,7 +35,7 @@ Once it's been pushed to one or more sites, the files are available in multiple 
 
 ## Setup for Success
 
-Again, I want to let you know that you can still get out of this - the repository I set up [here](https://github.com/stephengrice/linux-workspace) can be forked or cloned to get started in a jiffy. However, if you're the DIY type, I respect that - read on!
+Again, I want to let you know that you can still get out of this - the repository I set up [here](https://github.com/localsteve/linux-workspace) can be forked or cloned to get started in a jiffy. However, if you're the DIY type, I respect that - read on!
 
 First things first - as mentioned above, you'll want to make sure all of the repositories that you want access to in your workspace are uploaded to some kind of external source code hosting service, whether it's self-hosted or one of the big names.
 
@@ -95,20 +95,21 @@ With all of that said, here's our sync script:
 ```python
 #!/usr/bin/env python3
 import csv, os
-WORKING_DIRECTORY_NAME = 'wkdir'
+
+WORKING_DIRECTORY_NAME = "wkdir"
 if __name__ == "__main__":
-	with open('repos.csv') as file:
-		csv_data = csv.reader(file, delimiter=',')
-		for row in csv_data:
-			remote_path = row[1]
-			local_path = row[0]
-			if os.path.exists('%s/%s' % (WORKING_DIRECTORY_NAME, local_path)):
-				print('Already exists: %s' % local_path)
-			else:
-				print('Cloning repository...')
-				command = 'git clone %s wkdir/%s' % (remote_path, local_path)
-				print(command)
-				os.system(command)
+    with open("repos.csv") as file:
+        csv_data = csv.reader(file, delimiter=",")
+        for row in csv_data:
+            remote_path = row[1]
+            local_path = row[0]
+            if os.path.exists("%s/%s" % (WORKING_DIRECTORY_NAME, local_path)):
+                print("Already exists: %s" % local_path)
+            else:
+                print("Cloning repository...")
+                command = "git clone %s wkdir/%s" % (remote_path, local_path)
+                print(command)
+                os.system(command)
 ```
 
 My college programming professors would have a heart attack. No comments! What kind of monster have I become?

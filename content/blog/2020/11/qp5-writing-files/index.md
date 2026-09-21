@@ -14,4 +14,4 @@ In this video, we cover writing to files and discuss "write" mode vs. "append" m
 
 Link to code:
 
-<https://github.com/stephengrice/education/tree/master/Quick_Python/05_Write_a_File>
+<https://github.com/pagekey/education/tree/master/Quick_Python/05_Write_a_File>

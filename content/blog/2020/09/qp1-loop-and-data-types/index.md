@@ -14,6 +14,6 @@ In this video, we get our feet wet and unlock a tiny bit of the enormous power P
 
 Check out the source code here:
 
-<https://github.com/stephengrice/education/tree/master/Quick_Python/01_Loops_Data_Types>
+<https://github.com/pagekey/education/tree/master/Quick_Python/01_Loops_Data_Types>
 
 If you need to install Python, we have you covered! Check out our [Done in 90 Seconds series](/tags/90-seconds) to get it installed FAST!

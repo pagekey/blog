@@ -16,6 +16,6 @@ It's a great skill that we'll build on later.
 
 Check out the source code here:
 
-<https://github.com/stephengrice/education/tree/master/Quick_Python/04_Read_a_File>
+<https://github.com/pagekey/education/tree/master/Quick_Python/04_Read_a_File>
 
 If you need to install Python, we have you covered! Check out our [Done in 90 Seconds series](/tags/90-seconds) to get it installed FAST!

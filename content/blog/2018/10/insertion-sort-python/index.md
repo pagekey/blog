@@ -14,6 +14,6 @@ In this video, we learn the ins and outs of Insertion Sort, a sorting algorithm 
 
 The full implementation in Python can be found at the following link:
 
-<https://github.com/stephengrice/youtube/tree/master/Sorts>
+<https://github.com/pagekey/education/tree/master/Sorts>
 
 Thank you for watching.

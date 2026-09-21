@@ -14,6 +14,6 @@ In this video, we keep the user in line! With error handling, we can specify wha
 
 Check out the source code here:
 
-<https://github.com/stephengrice/education/tree/master/Quick_Python/03_Error_Handling>
+<https://github.com/pagekey/education/tree/master/Quick_Python/03_Error_Handling>
 
 If you need to install Python, we have you covered! Check out our [Done in 90 Seconds series](/tags/90-seconds) to get it installed FAST!
