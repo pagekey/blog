@@ -14,7 +14,7 @@ export default function EventsPage() {
                 <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl mb-6">
                     Take Back Tech
                 </h1>
-                
+
                 <p className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground leading-relaxed">
                     Local events for people who want to understand, build, and control their technology.
                 </p>
@@ -23,7 +23,7 @@ export default function EventsPage() {
             {/* Upcoming Events */}
             <section className="mx-auto max-w-4xl px-6 py-12">
                 <h2 className="text-2xl font-bold tracking-tight mb-8">Upcoming Events</h2>
-                
+
                 <Card className="border-dashed border-2 bg-muted/10">
                     <CardContent className="flex flex-col items-center justify-center p-12 text-center text-muted-foreground">
                         <CalendarDays className="h-10 w-10 mb-4 opacity-50" />
@@ -36,10 +36,24 @@ export default function EventsPage() {
             {/* Past Events */}
             <section className="mx-auto max-w-4xl px-6 py-12">
                 <h2 className="text-2xl font-bold tracking-tight mb-8 text-muted-foreground">Past Events</h2>
-                
+
                 <Card className="bg-muted/5 border-muted">
-                    <CardContent className="flex flex-col items-center justify-center p-8 text-center text-muted-foreground">
-                        <p>Past event archives will appear here.</p>
+                    <CardContent className="p-8">
+                        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                            <div>
+                                <h3 className="text-xl font-semibold text-foreground">
+                                    Take Back Tech Philly #1
+                                </h3>
+                                <p className="mt-2 text-muted-foreground">
+                                    Philadelphia, PA
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col gap-1 text-sm text-muted-foreground md:items-end">
+                                <span>July 23, 2026</span>
+                                <span>5:30–7:00 PM Eastern</span>
+                            </div>
+                        </div>
                     </CardContent>
                 </Card>
             </section>
