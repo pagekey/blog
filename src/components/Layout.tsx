@@ -79,12 +79,12 @@ export default function Layout({ children, title, description }: { children: Rea
                             <Link to="/products" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
                                 Products
                             </Link>
-                            <Link to="/consulting" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
+                            {/* <Link to="/consulting" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
                                 Consulting
                             </Link>
                             <Link to="/portfolio" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
                                 Portfolio
-                            </Link>
+                            </Link> */}
                             <a href="/blog" className="transition-colors hover:text-orange-500" onClick={() => setIsMobileMenuOpen(false)}>
                                 Blog
                             </a>
