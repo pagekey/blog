@@ -10,9 +10,6 @@ import {
     Globe,
     HardDriveDownload,
     ShieldCheck,
-    Box,
-    Zap,
-    Cpu
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
