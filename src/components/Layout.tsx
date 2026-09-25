@@ -13,7 +13,7 @@ export default function Layout({ children, title, description }: { children: Rea
         } else {
             document.title = "PageKey — Take Back Tech";
         }
-        
+
         if (description) {
             let metaDesc = document.querySelector('meta[name="description"]');
             if (!metaDesc) {
@@ -54,12 +54,12 @@ export default function Layout({ children, title, description }: { children: Rea
                         <Link to="/products" className="transition-colors hover:text-orange-500">
                             Products
                         </Link>
-                        <Link to="/consulting" className="transition-colors hover:text-orange-500">
+                        {/* <Link to="/consulting" className="transition-colors hover:text-orange-500">
                             Consulting
                         </Link>
                         <Link to="/portfolio" className="transition-colors hover:text-orange-500">
                             Portfolio
-                        </Link>
+                        </Link> */}
                         <a href="/blog" className="transition-colors hover:text-orange-500">
                             Blog
                         </a>
