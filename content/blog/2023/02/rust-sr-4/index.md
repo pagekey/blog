@@ -1,7 +1,7 @@
 ---
 title: "3.3 Functions | Rust Book Speedrun 4"
 date: 2023-02-27
-author: Steve Grice
+author: Steve
 tags:
   - rust
   - rust-book-speedrun

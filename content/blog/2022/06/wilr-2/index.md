@@ -1,7 +1,7 @@
 ---
 title: "WILR2: Rust Beginnings (minigrep)"
 date: 2022-06-20
-author: Steve Grice
+author: Steve
 tags:
   - rust
   - what-i-learned-recently

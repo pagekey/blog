@@ -1,7 +1,7 @@
 ---
 title: "Xylo: The Python rewrite is a win."
 date: 2024-09-20
-author: Steve Grice
+author: Steve
 tags:
   - python
   - rust

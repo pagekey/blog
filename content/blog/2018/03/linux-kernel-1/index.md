@@ -1,7 +1,7 @@
 ---
 title: How to Compile the Linux Kernel from Source
 date: 2018-03-03
-author: Steve Grice
+author: Steve
 tags:
   - linux
   - tutorial

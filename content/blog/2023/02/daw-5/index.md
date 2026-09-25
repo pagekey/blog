@@ -1,7 +1,7 @@
 ---
 title: "DAW5: Loading Piano from Git"
 date: 2023-02-02
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

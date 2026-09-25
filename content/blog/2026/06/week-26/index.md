@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 26 (Step Zero & Escaping the Cloud)"
 date: 2026-06-26
-author: Steve Grice
+author: Steve
 tags:
   - self-hosting
   - hardware

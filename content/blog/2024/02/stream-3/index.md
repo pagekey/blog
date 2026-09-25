@@ -1,7 +1,7 @@
 ---
 title: "Python Docgen Package MVP - Stream 3"
 date: 2024-02-05
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - python

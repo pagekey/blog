@@ -1,7 +1,7 @@
 ---
 title: "Coding a Workout App from Scratch - #1 Initial Setup"
 date: 2022-02-22
-author: Steve Grice
+author: Steve
 tags:
   - design
   - flutter

@@ -1,7 +1,7 @@
 ---
 title: "Boom Languages Dev Log 3"
 date: 2021-10-23
-author: Steve Grice
+author: Steve
 tags:
   - language-learning
   - boom-languages

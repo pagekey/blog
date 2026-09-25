@@ -1,7 +1,7 @@
 ---
 title: "How to: Bare-Metal Kubernetes in Minutes on a NUC"
 date: 2023-09-04
-author: Steve Grice
+author: Steve
 tags:
   - kubernetes
   - tutorial

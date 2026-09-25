@@ -1,7 +1,7 @@
 ---
 title: "Docker 101: Basics and Containerizing a Web App"
 date: 2022-06-06
-author: Steve Grice
+author: Steve
 tags:
   - docker
   - tutorial

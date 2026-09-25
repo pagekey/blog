@@ -1,7 +1,7 @@
 ---
 title: "Snap the Line! Understanding Linear Regression and Scikit-Learn"
 date: 2021-05-20
-author: Steve Grice
+author: Steve
 tags:
   - artificial-intelligence
   - machine-learning
@@ -145,6 +145,7 @@ Here's the code to load all of the samples:
 
 ```python
 from sklearn.datasets import load_diabetes
+
 X, y = load_diabetes(return_X_y=True)
 ```
 

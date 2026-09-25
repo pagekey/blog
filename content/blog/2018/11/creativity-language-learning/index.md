@@ -1,7 +1,7 @@
 ---
 title: Is creativity the key to language learning?
 date: 2018-11-12
-author: Steve Grice
+author: Steve
 tags:
   - language-learning
   - ideas

@@ -1,7 +1,7 @@
 ---
 title: "Get your feet wet | First Time Programmer 1"
 date: 2022-04-07
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - tutorial

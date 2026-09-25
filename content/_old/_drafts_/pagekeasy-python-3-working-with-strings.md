@@ -3,7 +3,7 @@ slug: pagekeasy-python-3
 layout: post
 title: 'Working with Strings - PageKeasy Python (3 of 6)'
 keywords: [learning, ideas, education, productivity, engineering, software engineering, technology, python, scripting, pagekey, pagekeasy, files]
-author: stephengrice
+author: Steve
 categories: ['Python', 'Tutorial', 'Scripting']
 draft: true
 ---
@@ -30,9 +30,9 @@ A common problem is determining whether one string is in another. This may be us
 ```python
 favorite_fruit = "I like bananas and oranges"
 if "oranges" in favorite_fruit:
-  print("Orange you glad I asked?")
+    print("Orange you glad I asked?")
 else:
-  print("Nope!")
+    print("Nope!")
 ```
 
 If you haven't guessed, "Orange you glad I asked?" will be what is printed out.
@@ -50,11 +50,11 @@ mode = fast
 You can now \[open up the file\]() and use a for loop to scan until you find the line containing the IP:
 
 ```python
-f = open('config.txt')
+f = open("config.txt")
 ip_line = None
 for line in f:
-  if 'ip_address' in line:
-    ip_line = line
+    if "ip_address" in line:
+        ip_line = line
 ```
 
 This will set `ip_line` to `ip_address = 192.168.1.1`.

@@ -1,7 +1,7 @@
 ---
 title: "OS15: Writing a Simple VGA Driver (Bare-Metal Graphics)"
 date: 2022-05-03
-author: Steve Grice
+author: Steve
 tags:
   - assembly
   - clang

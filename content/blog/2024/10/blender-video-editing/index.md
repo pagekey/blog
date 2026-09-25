@@ -1,7 +1,7 @@
 ---
 title: "Blender Video Editing: Yes You Can™"
 date: 2024-10-04
-author: Steve Grice
+author: Steve
 tags:
   - blender
   - video-production

@@ -1,7 +1,7 @@
 ---
 title: "NOT Gate with Transistors - Will I blow something up?"
 date: 2024-11-15
-author: Steve Grice
+author: Steve
 tags:
   - hardware
   - logic-gates

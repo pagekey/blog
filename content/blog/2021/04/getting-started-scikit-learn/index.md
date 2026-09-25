@@ -1,7 +1,7 @@
 ---
 title: "How to Get Up and Running with Scikit-Learn"
 date: 2021-04-17
-author: Steve Grice
+author: Steve
 tags:
   - artificial-intelligence
   - machine-learning

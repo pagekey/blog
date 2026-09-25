@@ -1,7 +1,7 @@
 ---
 title: "Boom Devlog 13: Measure Features 3"
 date: 2023-11-11
-author: Steve Grice
+author: Steve
 tags:
   - design
   - javascript

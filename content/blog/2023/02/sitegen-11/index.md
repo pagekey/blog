@@ -1,7 +1,7 @@
 ---
 title: "Adding Pagination | markdown sitegen 11"
 date: 2023-02-22
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

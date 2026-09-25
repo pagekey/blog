@@ -1,7 +1,7 @@
 ---
 title: "≤90s: Install Selenium for Python on Ubuntu"
 date: 2020-03-25
-author: Steve Grice
+author: Steve
 tags:
   - linux
   - python
@@ -55,8 +55,9 @@ vi verify.py
 ```python
 #!/usr/bin/env python
 from selenium import webdriver
-browser = webdriver.Firefox() 
-browser.get('http://www.google.com/')
+
+browser = webdriver.Firefox()
+browser.get("http://www.google.com/")
 ```
 
 ### 7. Run the test script.
@@ -74,17 +75,21 @@ vi test_selenium.py
 ```python
 from selenium import webdriver
 
-class TestGoogle(unittest.TestCase):
-  def setUp(self):
-    self.browser = webdriver.FireFox()
-  def test_title(self): 
-    self.browser.get('http://www.google.com/') 
-    self.assertIn('Google', self.browser.title)
-  def tearDown(self):
-    self.browser.close()
 
-if __name__ == '__main__':
-  unittest.main()
+class TestGoogle(unittest.TestCase):
+    def setUp(self):
+        self.browser = webdriver.FireFox()
+
+    def test_title(self):
+        self.browser.get("http://www.google.com/")
+        self.assertIn("Google", self.browser.title)
+
+    def tearDown(self):
+        self.browser.close()
+
+
+if __name__ == "__main__":
+    unittest.main()
 ```
 
 ### 9. Run your test.

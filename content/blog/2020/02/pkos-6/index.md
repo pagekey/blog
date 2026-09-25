@@ -1,7 +1,7 @@
 ---
 title: "OS6: Reading the Disk"
 date: 2020-02-26
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

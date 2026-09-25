@@ -1,7 +1,7 @@
 ---
 title: "DAW2: Config Magic with Python Dataclasses"
 date: 2023-01-26
-author: Steve Grice
+author: Steve
 tags:
   - design
   - python

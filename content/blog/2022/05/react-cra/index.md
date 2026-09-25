@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with React (Create React App)"
 date: 2022-05-23
-author: Steve Grice
+author: Steve
 tags:
   - javascript
 ---

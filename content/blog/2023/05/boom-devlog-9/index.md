@@ -1,7 +1,7 @@
 ---
 title: "5 Lessons from Rewriting My App FOUR TIMES | boom devlog 9"
 date: 2023-05-27
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - language-learning

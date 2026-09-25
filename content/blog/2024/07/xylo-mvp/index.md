@@ -1,7 +1,7 @@
 ---
 title: "Combining Frontend and Backend - Xylo App Framework MVP"
 date: 2024-07-05
-author: Steve Grice
+author: Steve
 tags:
   - design
   - rust

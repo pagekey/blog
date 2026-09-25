@@ -1,7 +1,7 @@
 ---
 title: "CC2: Noticias de la Pandemia e Inteligencia Artificial"
 date: 2022-05-16
-author: Steve Grice
+author: Steve
 tags:
   - spanish
   - 9-dias-de-codigo

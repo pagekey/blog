@@ -1,7 +1,7 @@
 ---
 title: Making a Command-line Ruby Gem - Write, Build, and Push
 date: 2018-04-04
-author: Steve Grice
+author: Steve
 tags:
   - ruby
   - tutorial

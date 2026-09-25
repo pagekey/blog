@@ -1,7 +1,7 @@
 ---
 title: "DAW9: Advanced TDD with Pytest"
 date: 2023-02-10
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

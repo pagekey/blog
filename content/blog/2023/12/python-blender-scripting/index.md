@@ -1,7 +1,7 @@
 ---
 title: "Python + Blender = EASY Auto-Image/Video (Intro to Blender Scripting)"
 date: 2023-12-21
-author: Steve Grice
+author: Steve
 tags:
   - blender
   - python

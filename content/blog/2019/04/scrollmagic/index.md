@@ -1,7 +1,7 @@
 ---
 title: Make Your Site Stand Out with ScrollMagic
 date: 2019-04-26
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - tutorial

@@ -1,7 +1,7 @@
 ---
 title: "PageKey Semver: Simple automated versioning"
 date: 2024-08-30
-author: Steve Grice
+author: Steve
 tags:
   - python
   - devops

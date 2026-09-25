@@ -1,7 +1,7 @@
 ---
 title: "Quick Python 6: Our First Data Pipeline"
 date: 2020-12-02
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

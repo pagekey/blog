@@ -1,7 +1,7 @@
 ---
 title: "DAW15: Recording Audio with Rust/Tauri (PTD Revived)"
 date: 2024-03-29
-author: Steve Grice
+author: Steve
 tags:
   - python
   - rust

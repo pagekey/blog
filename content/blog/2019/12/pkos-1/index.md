@@ -1,7 +1,7 @@
 ---
 title: "OS1: Installing VirtualBox and Debian"
 date: 2019-12-23
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - pkos

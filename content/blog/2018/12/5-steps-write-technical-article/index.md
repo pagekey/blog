@@ -1,7 +1,7 @@
 ---
 title: '5 Steps to Writing Your Next Technical Article'
 date: 2018-12-13
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - productivity

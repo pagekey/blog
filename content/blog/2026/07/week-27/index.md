@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 27 (Accessing Your Server From Anywhere)"
 date: 2026-07-03
-author: Steve Grice
+author: Steve
 tags:
   - self-hosting
   - hardware

@@ -1,7 +1,7 @@
 ---
 title: "DAW8: New arch, new me"
 date: 2023-02-08
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

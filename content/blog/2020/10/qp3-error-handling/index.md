@@ -1,7 +1,7 @@
 ---
 title: "Quick Python 3: Error Handling (Actually pretty useful!)"
 date: 2020-10-21
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

@@ -1,7 +1,7 @@
 ---
 title: "Logo, Footer, Styling | markdown sitegen 12"
 date: 2023-02-24
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

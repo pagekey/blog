@@ -1,7 +1,7 @@
 ---
 title: How and Why to Use a Logic Analyzer
 date: 2022-05-16
-author: Steve Grice
+author: Steve
 tags:
   - hardware
 ---

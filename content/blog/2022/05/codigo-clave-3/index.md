@@ -1,7 +1,7 @@
 ---
 title: "CC3: Descargamos una Página Web con Python"
 date: 2022-05-17
-author: Steve Grice
+author: Steve
 tags:
   - python
   - spanish

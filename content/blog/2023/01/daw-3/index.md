@@ -1,7 +1,7 @@
 ---
 title: "DAW3: Rendering Two Notes"
 date: 2023-01-30
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

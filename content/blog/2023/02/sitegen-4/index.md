@@ -1,7 +1,7 @@
 ---
 title: "Adding Posts Index | markdown sitegen 4"
 date: 2023-02-05
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

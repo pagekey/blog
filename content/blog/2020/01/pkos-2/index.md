@@ -1,7 +1,7 @@
 ---
 title: "OS2: First Bootloader"
 date: 2020-01-01
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

@@ -1,7 +1,7 @@
 ---
 title: "Nix: Build and Distribute a Go App on GitHub (How-To)"
 date: 2025-01-31
-author: Steve Grice
+author: Steve
 tags:
   - nix
   - golang

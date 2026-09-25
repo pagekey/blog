@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 29 (Samba)"
 date: 2026-07-17
-author: Steve Grice
+author: Steve
 tags:
   - self-hosting
   - hardware

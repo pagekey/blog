@@ -1,7 +1,7 @@
 ---
 title: "NOR Gate from Scratch (How-To, Using Transistors)"
 date: 2024-11-29
-author: Steve Grice
+author: Steve
 tags:
   - hardware
   - logic-gates

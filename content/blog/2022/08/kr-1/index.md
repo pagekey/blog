@@ -1,7 +1,7 @@
 ---
 title: "Can we build our own Kindle, with a twist? | KR1"
 date: 2022-08-29
-author: Steve Grice
+author: Steve
 tags:
   - design
   - keyreader

@@ -1,7 +1,7 @@
 ---
 title: "Quick Python 7: Easy Web Request"
 date: 2020-12-16
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

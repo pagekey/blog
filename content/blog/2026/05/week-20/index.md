@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 20 (Samba, Scheduling & Apps)"
 date: 2026-05-14
-author: Steve Grice
+author: Steve
 tags:
   - backup
   - cli

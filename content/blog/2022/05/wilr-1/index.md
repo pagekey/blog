@@ -1,7 +1,7 @@
 ---
 title: "WILR1: React Native Basics"
 date: 2022-05-30
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - what-i-learned-recently

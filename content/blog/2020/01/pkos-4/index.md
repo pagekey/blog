@@ -1,7 +1,7 @@
 ---
 title: "OS4: Deciphering BIOS Challenges"
 date: 2020-01-29
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

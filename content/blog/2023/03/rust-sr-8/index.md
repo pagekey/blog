@@ -1,7 +1,7 @@
 ---
 title: "4.2 References & Borowing | Rust Book Speedrun 8"
 date: 2023-03-04
-author: Steve Grice
+author: Steve
 tags:
   - rust
   - rust-book-speedrun

@@ -1,7 +1,7 @@
 ---
 title: "Insertion Sort in Python"
 date: 2018-10-13
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

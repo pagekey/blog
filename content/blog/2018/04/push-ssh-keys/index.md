@@ -1,7 +1,7 @@
 ---
 title: Push Out Your SSH Keys - Jump Nodes in a Jiffy!
 date: 2018-04-16
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
 ---

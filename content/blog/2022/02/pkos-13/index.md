@@ -1,7 +1,7 @@
 ---
 title: "OS13: Docker Dev Environment"
 date: 2022-02-12
-author: Steve Grice
+author: Steve
 tags:
   - assembly
   - clang

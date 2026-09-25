@@ -1,7 +1,7 @@
 ---
 title: "Eric Adds Components | KR3"
 date: 2022-09-19
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - keyreader

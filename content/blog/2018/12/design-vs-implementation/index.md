@@ -1,7 +1,7 @@
 ---
 title: 'Design vs. Implementation: The Eternal Divide'
 date: 2018-12-12
-author: Steve Grice
+author: Steve
 tags:
   - ideas
 ---

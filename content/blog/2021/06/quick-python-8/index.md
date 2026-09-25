@@ -1,7 +1,7 @@
 ---
 title: "Quick Python 8: Virtual Environments"
 date: 2021-06-11
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

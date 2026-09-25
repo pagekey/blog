@@ -1,7 +1,7 @@
 ---
 title: "Overlay Text on Video with Python and Blender"
 date: 2023-12-26
-author: Steve Grice
+author: Steve
 tags:
   - blender
   - python

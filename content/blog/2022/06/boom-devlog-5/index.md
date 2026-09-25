@@ -1,7 +1,7 @@
 ---
 title: 'Language Logging as the "One Thing" | Boom DevLog 5'
 date: 2022-06-13
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - language-learning

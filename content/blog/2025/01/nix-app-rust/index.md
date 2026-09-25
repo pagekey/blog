@@ -1,7 +1,7 @@
 ---
 title: "Nix: Build and Distribute a Rust App on GitHub (How-To)"
 date: 2025-01-17
-author: Steve Grice
+author: Steve
 tags:
   - nix
   - rust

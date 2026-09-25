@@ -1,7 +1,7 @@
 ---
 title: "Boom Devlog 14: Language Chatbot"
 date: 2023-12-17
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - llm

@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 1 (Coding is Re-Coding)"
 date: 2026-01-02
-author: Steve Grice
+author: Steve
 tags:
   - artificial-intelligence
   - self-hosting

@@ -1,7 +1,7 @@
 ---
 title: "Next.js / tRPC App Design Process | Boom Dev Log 15"
 date: 2024-03-01
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - nextjs

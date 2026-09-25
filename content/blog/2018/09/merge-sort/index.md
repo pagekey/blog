@@ -1,7 +1,7 @@
 ---
 title: "Merge Sort in Python"
 date: 2018-09-28
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

@@ -1,7 +1,7 @@
 ---
 title: "≤90s: Hello World with Qt Framework (Ubuntu)"
 date: 2020-05-06
-author: Steve Grice
+author: Steve
 tags:
   - c++
   - linux

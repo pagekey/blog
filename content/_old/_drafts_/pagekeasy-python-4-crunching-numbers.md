@@ -3,7 +3,7 @@ slug: pagekeasy-python-4
 layout: post
 title: 'Crunching Numbers - PageKeasy Python (4 of 6)'
 keywords: [learning, ideas, education, productivity, engineering, software engineering, technology, python, scripting, pagekey, pagekeasy, math, mathematics]
-author: stephengrice
+author: Steve
 categories: ['Python', 'Tutorial', 'Scripting']
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Variables & Mutability | Rust Book Speedrun 2"
 date: 2023-02-21
-author: Steve Grice
+author: Steve
 tags:
   - rust
   - rust-book-speedrun

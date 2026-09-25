@@ -2,7 +2,7 @@
 layout: post
 title: 'Working with Files - PageKeasy Python (2 of 6)'
 keywords: [learning, ideas, education, productivity, engineering, software engineering, technology, python, scripting, pagekey, pagekeasy, files]
-author: stephengrice
+author: Steve
 categories: ['Python', 'Tutorial', 'Scripting']
 draft: true
 ---
@@ -93,15 +93,15 @@ In the above, if we used a `for` loop, we would have to read all of the lines, e
 The following code snippet uses a while loop to process the data in two parts: before the data and the data itself.
 
 ```python
-f = open('employees.txt')
+f = open("employees.txt")
 line = f.readline()
 while len(line) > 0:
-  if line.startswith('EID'):
-    break # We found the data!
-  line = f.readline() # Next!
+    if line.startswith("EID"):
+        break  # We found the data!
+    line = f.readline()  # Next!
 # Part two: we found the data
 while len(line) > 0:
-  print("Processing employee: %s" % line)
+    print("Processing employee: %s" % line)
 f.close()
 ```
 
@@ -116,8 +116,8 @@ Writing to a file is a breeze. First, be aware of which mode you opened the file
 When you've opened the file properly, just use the `.write()` method to write something to the file!
 
 ```python
-f = open('myfile.txt', 'w')
-f.write('Hello World!')
+f = open("myfile.txt", "w")
+f.write("Hello World!")
 f.close()
 ```
 

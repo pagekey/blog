@@ -1,7 +1,7 @@
 ---
 title: "Python Update - Convert OneNote to Markdown"
 date: 2022-03-12
-author: Steve Grice
+author: Steve
 tags:
   - onenote
   - productivity

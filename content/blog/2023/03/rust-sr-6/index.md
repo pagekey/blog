@@ -1,7 +1,7 @@
 ---
 title: "3.5 Control Flow | Rust Book Speedrun 6"
 date: 2023-03-01
-author: Steve Grice
+author: Steve
 tags:
   - rust
   - rust-book-speedrun

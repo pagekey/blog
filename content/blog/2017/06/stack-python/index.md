@@ -1,7 +1,7 @@
 ---
 title: How to Implement a Stack in Python
 date: 2017-06-22
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial
@@ -28,14 +28,15 @@ Our Stack will have two fields - `self.top`, which is the item on the top of the
 
 ```python
 class Node(object):
-	def __init__(self, d):
-		self.data = d
-		self.next_node = None
+    def __init__(self, d):
+        self.data = d
+        self.next_node = None
+
 
 class Stack(object):
-	def __init__(self):
-		self.top = None
-		self.size = 0
+    def __init__(self):
+        self.top = None
+        self.size = 0
 ```
 
 ## Push it
@@ -45,12 +46,12 @@ When you `push` something onto your Stack, you place it on top. This is akin to 
 The first step to making this work is creating a Node object to hold the data you're holding. Then, tie this `new_node` to the Node referenced by the Stack's `self.top` variable: `new_node.next_node = self.top`. Now, set your `new_node` as the new top of the Stack.
 
 ```python
-	def push(self, d):
-		new_node = Node(d)
-		if self.top:
-			new_node.next_node = self.top
-		self.top = new_node
-		self.size += 1
+def push(self, d):
+    new_node = Node(d)
+    if self.top:
+        new_node.next_node = self.top
+    self.top = new_node
+    self.size += 1
 ```
 
 The nodes are linked together exactly like a Singly Linked List. The only differences are the operations used to manipulate the data.
@@ -60,8 +61,8 @@ The nodes are linked together exactly like a Singly Linked List. The only differ
 What happens when you need to look at what's in your Stack? You just peek down inside, that's all! The method `peek` is used to access the top data entry in a Stack __without changing the Stack itself__. It's not destructive - after all, it's just a harmless peek!
 
 ```python
-	def peek(self):
-		return self.top.data
+def peek(self):
+    return self.top.data
 ```
 
 ## Pop it
@@ -69,11 +70,11 @@ What happens when you need to look at what's in your Stack? You just peek down i
 Now, let's get serious. We need to completely remove something from our stack and look at it. We want to do something with it, and more importantly, we want whatever is below it to become the new `self.top` so that we can access it, too. When we `pop` something from the stack, we pull an object out, removing it from the stack. More specifically, the `pop` method returns `self.top` just like `peek`, but it also removes whatever Node is located at `self.top`, changing it to reference the next Node down.
 
 ```python
-	def pop(self):
-		result = self.top.data
-		self.top = self.top.next_node
-		self.size -= 1
-		return result
+def pop(self):
+    result = self.top.data
+    self.top = self.top.next_node
+    self.size -= 1
+    return result
 ```
 
 ## Challenges

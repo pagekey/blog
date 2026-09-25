@@ -1,7 +1,7 @@
 ---
 title: "Как Установить Android Studio на Windows 10"
 date: 2018-02-13
-author: Steve Grice
+author: Steve
 tags:
   - android
   - russian

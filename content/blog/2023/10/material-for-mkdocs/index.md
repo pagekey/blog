@@ -1,7 +1,7 @@
 ---
 title: "FINALLY! The Blog SSG I've Been Looking For"
 date: 2023-10-15
-author: Steve Grice
+author: Steve
 tags:
   - productivity
 ---

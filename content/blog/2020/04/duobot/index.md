@@ -1,7 +1,7 @@
 ---
 title: "DuoBot: Topping the DuoLingo Charts with Selenium"
 date: 2020-04-08
-author: Steve Grice
+author: Steve
 tags:
   - python
   - language-learning

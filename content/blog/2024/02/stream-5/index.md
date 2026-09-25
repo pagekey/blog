@@ -1,7 +1,7 @@
 ---
 title: "CI/CD & Design Doc for Docgen - Stream 5"
 date: 2024-02-07
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - python

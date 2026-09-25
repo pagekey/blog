@@ -1,7 +1,7 @@
 ---
 title: 'How to Create a Kanban Board in OneNote'
 date: 2018-11-29
-author: Steve Grice
+author: Steve
 tags:
   - onenote
   - productivity

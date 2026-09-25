@@ -1,7 +1,7 @@
 ---
 title: "Quicksort in Python"
 date: 2018-09-23
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

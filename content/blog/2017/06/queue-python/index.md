@@ -1,7 +1,7 @@
 ---
 title: How to Implement a Queue in Python
 date: 2017-06-23
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial
@@ -16,16 +16,17 @@ Bear with me. Our basic Queue data structure and accompanying Node will look lik
 
 ```python
 class Node(object):
-	def __init__(self, d):
-		self.data = d
-		self.prev_node = None
-		self.next_node = None
+    def __init__(self, d):
+        self.data = d
+        self.prev_node = None
+        self.next_node = None
+
 
 class Queue(object):
-	def __init__(self):
-		self.head = None
-		self.tail = None
-		self.size = 0
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.size = 0
 ```
 
 ## enqueue
@@ -39,16 +40,16 @@ When you're joining the line, the first thing you need to do is point at the cur
 In code, this would look like:
 
 ```python
-	def enqueue(self, d):
-		new_node = Node(d)
-		if self.size > 0:
-			self.tail.prev_node = new_node
-			new_node.next_node = self.tail
-			self.tail = new_node
-		else:
-			self.head = new_node
-			self.tail = new_node
-		self.size += 1
+def enqueue(self, d):
+    new_node = Node(d)
+    if self.size > 0:
+        self.tail.prev_node = new_node
+        new_node.next_node = self.tail
+        self.tail = new_node
+    else:
+        self.head = new_node
+        self.tail = new_node
+    self.size += 1
 ```
 
 ## dequeue
@@ -60,13 +61,13 @@ Something special just happened. You've been `dequeue`'d. Congratulations.
 In order to `dequeue` something from the list, you first grab the Node from the front. Then, set `self.head = self.head.prev_node`. In other words, move the `head` pointer to the previous person in line. Now, return the `data` from Node you just removed from the Queue. It's important to store this in a temporary variable. Otherwise, you'll be returning the data of something still in the Queue. An important part of `dequeue` is that the item you return has been removed from the queue.
 
 ```python
-	def dequeue(self):
-		if self.head == None:
-			return None
-		result = self.head
-		self.head = self.head.prev_node
-		self.size -= 1
-		return result.data
+def dequeue(self):
+    if self.head == None:
+        return None
+    result = self.head
+    self.head = self.head.prev_node
+    self.size -= 1
+    return result.data
 ```
 
 ## peek
@@ -78,8 +79,8 @@ How did they know you were there? They had to `peek` at the front of the line to
 This operation is very simple. All you need to do is ask the first person in line to pull out their driver's license for a moment. In other words, just return `self.head.data`.
 
 ```python
-	def peek(self):
-		return self.head.data
+def peek(self):
+    return self.head.data
 ```
 
 ## Full Source and Tests

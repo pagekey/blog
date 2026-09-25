@@ -1,7 +1,7 @@
 ---
 title: "Adding Doodads | markdown sitegen 7"
 date: 2023-02-11
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

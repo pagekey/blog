@@ -1,7 +1,7 @@
 ---
 title: "Using Other People's Code - NPM and Node | FTP6"
 date: 2022-07-25
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - tutorial

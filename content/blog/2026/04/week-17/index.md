@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 17 (Graph-Based Exploration)"
 date: 2026-04-22
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hardware

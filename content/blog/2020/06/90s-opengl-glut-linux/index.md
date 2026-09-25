@@ -1,7 +1,7 @@
 ---
 title: "≤90s: First OpenGL Program with GLUT (Linux)"
 date: 2020-06-03
-author: Steve Grice
+author: Steve
 tags:
   - c++
   - ubuntu

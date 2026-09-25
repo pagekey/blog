@@ -1,7 +1,7 @@
 ---
 title: "OS14: Organizing Our OS Code"
 date: 2022-04-09
-author: Steve Grice
+author: Steve
 tags:
   - assembly
   - clang

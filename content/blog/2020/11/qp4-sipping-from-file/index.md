@@ -1,7 +1,7 @@
 ---
 title: "Quick Python 4: Sipping from a File (Open/Print Contents)"
 date: 2020-11-04
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 15 (Successful Backup)"
 date: 2026-04-08
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hardware

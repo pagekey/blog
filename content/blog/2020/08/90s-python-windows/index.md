@@ -1,7 +1,7 @@
 ---
 title: "≤90s: Install Python (Windows 10)"
 date: 2020-08-26
-author: Steve Grice
+author: Steve
 tags:
   - python
   - windows

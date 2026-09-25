@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 11 (Startup Expo & Build Timelapse)"
 date: 2026-03-06
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hardware

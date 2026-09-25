@@ -1,7 +1,7 @@
 ---
 title: "How to: 5 Blender Plugins to Learn User Input (Properties)"
 date: 2025-01-03
-author: Steve Grice
+author: Steve
 tags:
   - blender
   - python

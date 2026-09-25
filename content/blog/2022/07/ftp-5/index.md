@@ -1,7 +1,7 @@
 ---
 title: "Collaborating with Git | FTP5"
 date: 2022-07-18
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - first-time-programmer

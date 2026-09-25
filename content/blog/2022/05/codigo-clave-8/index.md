@@ -1,7 +1,7 @@
 ---
 title: "CC8: Finalmente tenemos los datos de la API"
 date: 2022-05-22
-author: Steve Grice
+author: Steve
 tags:
   - python
   - spanish

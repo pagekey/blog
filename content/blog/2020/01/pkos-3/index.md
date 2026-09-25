@@ -1,7 +1,7 @@
 ---
 title: "OS3: Hone the Power of the BIOS!"
 date: 2020-01-15
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

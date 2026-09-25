@@ -1,7 +1,7 @@
 ---
 title: "≤90s: Install Julia Programming Language on Windows"
 date: 2020-05-19
-author: Steve Grice
+author: Steve
 tags:
   - julia
   - windows

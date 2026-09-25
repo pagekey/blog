@@ -1,7 +1,7 @@
 ---
 title: How to Implement a Linked List in Python
 date: 2017-06-20
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial
@@ -30,9 +30,9 @@ Putting this idea into code will yield the following `Node` object:
 
 ```python
 class Node(object):
-	def __init__(self, d):
-		self.next_node = None
-		self.data = d
+    def __init__(self, d):
+        self.next_node = None
+        self.data = d
 ```
 
 ## List Setup - Heads and Tails
@@ -43,10 +43,10 @@ Keep in mind that while the `head` and `tail` hold Node objects, they are set to
 
 ```python
 class LinkedList(object):
-	def __init__(self):
-		self.head = None
-		self.tail = None
-		self.size = 0
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.size = 0
 ```
 
 ## Adding elements
@@ -56,29 +56,29 @@ Adding an element to a list involves updating the `next_node` references of surr
 Note that if the list is empty, you only need to set `head` and `tail` to your new list node. In either case, increment the list's size by one. Adding a node to the end of the list is completed in O(1) time.
 
 ```python
-	# Add d to tail of list
-	def add(self, d):
-		new_node = Node(d)
-		if self.tail:
-			self.tail.next_node = new_node
-			self.tail = new_node
-		else:
-			self.head = new_node
-			self.tail = new_node
-		self.size += 1
+# Add d to tail of list
+def add(self, d):
+    new_node = Node(d)
+    if self.tail:
+        self.tail.next_node = new_node
+        self.tail = new_node
+    else:
+        self.head = new_node
+        self.tail = new_node
+    self.size += 1
 ```
 
 Adding a node at a specific index in the list is a more complex operation. To do this, you need to iterate the list to find the `current_node` at the index you will be inserting the new data, as well as the `previous` node. Once you have these references, tie the previous node to the new node, and the new node to the rest of the list. In code, this would mean setting `previous.next_node = new_node` and `new_node.next_node = current_node`.
 
 ```python
-	# Return True if d is in list, false otherwise
-	def find(self, d):
-		current_node = self.head
-		while current_node:
-			if current_node.data == d:
-				return True
-			current_node = current_node.next_node
-		return False
+# Return True if d is in list, false otherwise
+def find(self, d):
+    current_node = self.head
+    while current_node:
+        if current_node.data == d:
+            return True
+        current_node = current_node.next_node
+    return False
 ```
 
 ## Removing elements
@@ -88,21 +88,21 @@ Removing an element is fairly straightforward, though it may seem counterintuiti
 Once you have the `previous` and `node` references, the remove operation has a time complexity of O(1).
 
 ```python
-	# Remove d; return True if successful, false otherwise
-	def remove(self, d):
-		previous_node = None
-		current_node = self.head
-		while current_node:
-			if current_node.data == d:
-				if previous_node:
-					previous_node.next_node = current_node.next_node
-				else:
-					self.head = current_node.next_node
-				self.size -= 1
-				return True
-			previous_node = current_node
-			current_node = current_node.next_node
-		return False
+# Remove d; return True if successful, false otherwise
+def remove(self, d):
+    previous_node = None
+    current_node = self.head
+    while current_node:
+        if current_node.data == d:
+            if previous_node:
+                previous_node.next_node = current_node.next_node
+            else:
+                self.head = current_node.next_node
+            self.size -= 1
+            return True
+        previous_node = current_node
+        current_node = current_node.next_node
+    return False
 ```
 
 ## Finding elements
@@ -114,14 +114,14 @@ Next, begin a loop. For each iteration, check if you found the data you are `fin
 The find operation has a time complexity of O(n).
 
 ```python
-	# Return True if d is in list, false otherwise
-	def find(self, d):
-		current_node = self.head
-		while current_node:
-			if current_node.data == d:
-				return True
-			current_node = current_node.next_node
-		return False
+# Return True if d is in list, false otherwise
+def find(self, d):
+    current_node = self.head
+    while current_node:
+        if current_node.data == d:
+            return True
+        current_node = current_node.next_node
+    return False
 ```
 
 ## Testing

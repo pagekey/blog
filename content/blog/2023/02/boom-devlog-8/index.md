@@ -1,7 +1,7 @@
 ---
 title: "rejected ❌ | boom devlog 8"
 date: 2023-02-17
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - language-learning

@@ -1,7 +1,7 @@
 ---
 title: "DAW1: Let's change music FOREVER"
 date: 2023-01-19
-author: Steve Grice
+author: Steve
 tags:
   - design
   - python

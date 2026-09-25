@@ -1,7 +1,7 @@
 ---
 title: "DAW10: ResourceManager is DONE"
 date: 2023-02-12
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

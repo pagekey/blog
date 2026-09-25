@@ -1,7 +1,7 @@
 ---
 title: "Take Back Tech: A Grand Experiment"
 date: 2026-09-13
-author: Steve Grice
+author: Steve
 tags:
   - hexbox
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Converting Markdown into a Blog (kinda) | markdown-sitegen 1"
 date: 2023-01-29
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - python

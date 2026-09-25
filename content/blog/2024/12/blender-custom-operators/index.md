@@ -1,7 +1,7 @@
 ---
 title: "Unlock Blender's Full Potential - Custom Operators"
 date: 2024-12-27
-author: Steve Grice
+author: Steve
 tags:
   - blender
   - python

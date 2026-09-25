@@ -1,7 +1,7 @@
 ---
 title: "Нашем первое приложение для Android"
 date: 2018-02-13
-author: Steve Grice
+author: Steve
 tags:
   - android
   - java

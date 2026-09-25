@@ -1,7 +1,7 @@
 ---
 title: "WebGL Live Coding 2"
 date: 2022-12-11
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - livestream

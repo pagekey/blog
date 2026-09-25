@@ -1,7 +1,7 @@
 ---
 title: "5 Lecciones de 4 Reescrituras de mi Aplicación de Idiomas | Boom DevLog 9"
 date: 2023-05-27
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - language-learning

@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 14 (Launch, Crash, Learn)"
 date: 2026-04-02
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hardware

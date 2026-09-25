@@ -1,7 +1,7 @@
 ---
 title: "User Account Design Doc, Boom #6 - Stream 15"
 date: 2024-02-21
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - design

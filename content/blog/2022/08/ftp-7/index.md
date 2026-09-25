@@ -1,7 +1,7 @@
 ---
 title: "Create a Simple API - Express.js | First Time Programmer"
 date: 2022-08-01
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - tutorial

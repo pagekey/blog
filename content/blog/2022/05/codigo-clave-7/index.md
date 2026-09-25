@@ -1,7 +1,7 @@
 ---
 title: "CC7: ¿¿Flask se encuentra con html??"
 date: 2022-05-21
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - python

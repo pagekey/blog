@@ -2,7 +2,7 @@
 layout: post
 title: 'Getting Started - PageKeasy Python (1 of 6)'
 keywords: [learning, ideas, education, productivity, engineering, software engineering, technology, python, scripting, pagekey, pagekeasy]
-author: stephengrice
+author: Steve
 categories: ['Python', 'Tutorial', 'Scripting']
 draft: true
 ---
@@ -97,7 +97,10 @@ verb1 = raw_input()
 print("Enter another noun:")
 noun2 = raw_input()
 
-result = "There was once a %s. It was a %s %s. One day, it had to %s. As a result, the %s became a %s." % (noun1,adjective1,noun1,verb1,noun1,noun2)
+result = (
+    "There was once a %s. It was a %s %s. One day, it had to %s. As a result, the %s became a %s."
+    % (noun1, adjective1, noun1, verb1, noun1, noun2)
+)
 
 print("Here's your Mad Lib:")
 print(result)

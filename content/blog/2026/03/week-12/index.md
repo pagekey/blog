@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 12 (SD Cards & UI CRUD)"
 date: 2026-03-20
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hardware

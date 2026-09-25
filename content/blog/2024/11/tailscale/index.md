@@ -1,7 +1,7 @@
 ---
 title: "Connect Your Devices from Anywhere with Tailscale (What, Why, How-To Guide)"
 date: 2024-11-08
-author: Steve Grice
+author: Steve
 tags:
   - hardware
   - logic-gates

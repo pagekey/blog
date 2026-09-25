@@ -1,7 +1,7 @@
 ---
 title: Making Simple Modifications to the Linux Source
 date: 2018-03-23
-author: Steve Grice
+author: Steve
 tags:
   - linux
   - tutorial

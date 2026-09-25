@@ -1,7 +1,7 @@
 ---
 title: "How to NUC the Cloud with your own Linux Server"
 date: 2023-09-03
-author: Steve Grice
+author: Steve
 tags:
   - hardware
   - tutorial

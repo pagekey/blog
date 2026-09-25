@@ -1,7 +1,7 @@
 ---
 title: "CC4: Usamos una API Para Saber Mi Edad"
 date: 2022-05-18
-author: Steve Grice
+author: Steve
 tags:
   - python
   - spanish

@@ -1,7 +1,7 @@
 ---
 title: "Lessons Learned from Building HexBox, Year One"
 date: 2026-08-27
-author: Steve Grice
+author: Steve
 tags:
   - hexbox
 ---

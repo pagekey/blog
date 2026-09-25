@@ -1,7 +1,7 @@
 ---
 title: "DOC'ING THE DOC - Stream 6"
 date: 2024-02-08
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - python

@@ -1,7 +1,7 @@
 ---
 title: "Quick Python 2: Easy User Input"
 date: 2020-10-07
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

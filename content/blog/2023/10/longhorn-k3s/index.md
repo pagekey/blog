@@ -1,7 +1,7 @@
 ---
 title: "How to: Kubernetes Storage with Longhorn"
 date: 2023-10-01
-author: Steve Grice
+author: Steve
 tags:
   - kubernetes
   - tutorial

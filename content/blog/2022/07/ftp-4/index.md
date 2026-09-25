@@ -1,7 +1,7 @@
 ---
 title: "Git: Your Foundation | FTP4"
 date: 2022-07-11
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - tutorial

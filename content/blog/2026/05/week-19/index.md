@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 19 (Graph Engine → UI → Hardware)"
 date: 2026-05-07
-author: Steve Grice
+author: Steve
 tags:
   - backup
   - cli

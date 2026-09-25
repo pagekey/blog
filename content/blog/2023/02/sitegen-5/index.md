@@ -1,7 +1,7 @@
 ---
 title: "Parsing the date, and more | markdown sitegen 5"
 date: 2023-02-07
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

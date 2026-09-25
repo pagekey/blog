@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 22 (Onboarding, User 2 & The Big Question)"
 date: 2026-05-29
-author: Steve Grice
+author: Steve
 tags:
   - onboarding
   - hardware

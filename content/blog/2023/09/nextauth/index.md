@@ -1,7 +1,7 @@
 ---
 title: "NextAuth Tutorial - Google & Apple Social Login"
 date: 2023-09-02
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - tutorial

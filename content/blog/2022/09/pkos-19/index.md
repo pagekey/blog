@@ -1,7 +1,7 @@
 ---
 title: "OS19: More VGA + stdlib/memory improvements"
 date: 2022-09-12
-author: Steve Grice
+author: Steve
 tags:
   - assembly
   - clang

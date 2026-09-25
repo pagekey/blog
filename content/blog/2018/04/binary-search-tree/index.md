@@ -1,7 +1,7 @@
 ---
 title: How to Implement a Binary Search Tree in Python
 date: 2018-04-19
-author: Steve Grice
+author: Steve
 category: 
 tags:
   - python
@@ -75,16 +75,18 @@ class BST(object):
 
 ```python
 class Node(object):
-  ...
-  def find(self, d):
-    if self.data == d:
-      return True
-    elif d < self.data and self.left:
-      return self.left.find(d)
-    elif d > self.data and self.right:
-      return self.right.find(d)
-    return False
-  ...
+    ...
+
+    def find(self, d):
+        if self.data == d:
+            return True
+        elif d < self.data and self.left:
+            return self.left.find(d)
+        elif d > self.data and self.right:
+            return self.right.find(d)
+        return False
+
+    ...
 ```
 
 In the above code snippet, we first check for the best case - did we find what we are looking for? If so, we are done and can tell everyone the good news by returning `True`.
@@ -95,16 +97,18 @@ The BST wrapper will shape up like this:
 
 ```python
 class BST(object):
-  ...
-  def find(self, d):
-    '''
-    Returns True if d is found in tree, false otherwise
-    '''
-    if self.root:
-      return self.root.find(d)
-    else:
-      return False
-  ...
+    ...
+
+    def find(self, d):
+        """
+        Returns True if d is found in tree, false otherwise
+        """
+        if self.root:
+            return self.root.find(d)
+        else:
+            return False
+
+    ...
 ```
 
 ## Remove
@@ -121,95 +125,97 @@ While most of these methods can be explained in a fairly straightforward way, `r
 
 ```python
 class BST(object):
-  ...
-  def remove(self, d):
-    '''
-    Returns True if node successfully removed, False if not removed
-    '''
-    # Case 1: Empty Tree?
-    if self.root == None:
-      return False
+    ...
 
-    # Case 2: Deleting root node
-    if self.root.data == d:
-      # Case 2.1: Root node has no children
-      if self.root.left is None and self.root.right is None:
-        self.root = None
-        return True
-      # Case 2.2: Root node has left child
-      elif self.root.left and self.root.right is None:
-        self.root = self.root.left
-        return True
-      # Case 2.3: Root node has right child
-      elif self.root.left is None and self.root.right:
-        self.root = self.root.right
-        return True
-      # Case 2.4: Root node has two children
-      else:
-        moveNode = self.root.right
-        moveNodeParent = None
-        while moveNode.left:
-          moveNodeParent = moveNode
-          moveNode = moveNode.left
-        self.root.data = moveNode.data
-        if moveNode.data < moveNodeParent.data:
-          moveNodeParent.left = None
+    def remove(self, d):
+        """
+        Returns True if node successfully removed, False if not removed
+        """
+        # Case 1: Empty Tree?
+        if self.root == None:
+            return False
+
+        # Case 2: Deleting root node
+        if self.root.data == d:
+            # Case 2.1: Root node has no children
+            if self.root.left is None and self.root.right is None:
+                self.root = None
+                return True
+            # Case 2.2: Root node has left child
+            elif self.root.left and self.root.right is None:
+                self.root = self.root.left
+                return True
+            # Case 2.3: Root node has right child
+            elif self.root.left is None and self.root.right:
+                self.root = self.root.right
+                return True
+            # Case 2.4: Root node has two children
+            else:
+                moveNode = self.root.right
+                moveNodeParent = None
+                while moveNode.left:
+                    moveNodeParent = moveNode
+                    moveNode = moveNode.left
+                self.root.data = moveNode.data
+                if moveNode.data < moveNodeParent.data:
+                    moveNodeParent.left = None
+                else:
+                    moveNodeParent.right = None
+                return True
+        # Find node to remove
+        parent = None
+        node = self.root
+        while node and node.data != d:
+            parent = node
+            if d < node.data:
+                node = node.left
+            elif d > node.data:
+                node = node.right
+        # Case 3: Node not found
+        if node == None or node.data != d:
+            return False
+        # Case 4: Node has no children
+        elif node.left is None and node.right is None:
+            if d < parent.data:
+                parent.left = None
+            else:
+                parent.right = None
+            return True
+        # Case 5: Node has left child only
+        elif node.left and node.right is None:
+            if d < parent.data:
+                parent.left = node.left
+            else:
+                parent.right = node.left
+            return True
+        # Case 6: Node has right child only
+        elif node.left is None and node.right:
+            if d < parent.data:
+                parent.left = node.right
+            else:
+                parent.right = node.right
+            return True
+        # Case 7: Node has left and right child
         else:
-          moveNodeParent.right = None
-        return True		
-    # Find node to remove
-    parent = None
-    node = self.root
-    while node and node.data != d:
-      parent = node
-      if d < node.data:
-        node = node.left
-      elif d > node.data:
-        node = node.right
-    # Case 3: Node not found
-    if node == None or node.data != d:
-      return False
-    # Case 4: Node has no children
-    elif node.left is None and node.right is None:
-      if d < parent.data:
-        parent.left = None
-      else:
-        parent.right = None
-      return True
-    # Case 5: Node has left child only
-    elif node.left and node.right is None:
-      if d < parent.data:
-        parent.left = node.left
-      else:
-        parent.right = node.left
-      return True
-    # Case 6: Node has right child only
-    elif node.left is None and node.right:
-      if d < parent.data:
-        parent.left = node.right
-      else:
-        parent.right = node.right
-      return True
-    # Case 7: Node has left and right child
-    else:
-      moveNodeParent = node
-      moveNode = node.right
-      while moveNode.left:
-        moveNodeParent = moveNode
-        moveNode = moveNode.left
-      node.data = moveNode.data
-      if moveNode.right:
-        if moveNode.data < moveNodeParent.data:
-          moveNodeParent.left = moveNode.right
-        else:
-          moveNodeParent.right = moveNode.right
-      else:
-        if moveNode.data < moveNodeParent.data:
-          moveNodeParent.left = None
-        else:
-          moveNodeParent.right = None
-      return True
-  ...
+            moveNodeParent = node
+            moveNode = node.right
+            while moveNode.left:
+                moveNodeParent = moveNode
+                moveNode = moveNode.left
+            node.data = moveNode.data
+            if moveNode.right:
+                if moveNode.data < moveNodeParent.data:
+                    moveNodeParent.left = moveNode.right
+                else:
+                    moveNodeParent.right = moveNode.right
+            else:
+                if moveNode.data < moveNodeParent.data:
+                    moveNodeParent.left = None
+                else:
+                    moveNodeParent.right = None
+            return True
+
+    ...
 ```
 
 Whew! Glad that one's done.
@@ -231,16 +237,18 @@ The code for each method of traversal will look very similar. Each time, we'll s
 ```python
 class Node(object):
     ...
+
     def preorder(self, l):
-      '''
-      l: the list of data objects so far in the traversal
-      '''
-      l.append(self.data)
-      if self.left:
-          self.left.preorder(l)
-      if self.right:
-          self.right.preorder(l)
-      return l
+        """
+        l: the list of data objects so far in the traversal
+        """
+        l.append(self.data)
+        if self.left:
+            self.left.preorder(l)
+        if self.right:
+            self.right.preorder(l)
+        return l
+
     ...
 ```
 
@@ -251,16 +259,18 @@ class Node(object):
 ```python
 class Node(object):
     ...
+
     def inorder(self, l):
-      '''
-      l: the list of data objects so far in the traversal
-      '''
-      if self.left:
-          self.left.preorder(l)
-      l.append(self.data)
-      if self.right:
-          self.right.preorder(l)
-      return l
+        """
+        l: the list of data objects so far in the traversal
+        """
+        if self.left:
+            self.left.preorder(l)
+        l.append(self.data)
+        if self.right:
+            self.right.preorder(l)
+        return l
+
     ...
 ```
 
@@ -271,16 +281,18 @@ class Node(object):
 ```python
 class Node(object):
     ...
+
     def postorder(self, l):
-      '''
-      l: the list of data objects so far in the traversal
-      '''
-      if self.left:
-          self.left.preorder(l)
-      if self.right:
-          self.right.preorder(l)
-      l.append(self.data)
-      return l
+        """
+        l: the list of data objects so far in the traversal
+        """
+        if self.left:
+            self.left.preorder(l)
+        if self.right:
+            self.right.preorder(l)
+        l.append(self.data)
+        return l
+
     ...
 ```
 
@@ -288,30 +300,32 @@ For each traversal, I added a corresponding wrapper in the BST class to expose i
 
 ```python
 class BST(object):
-  def preorder(self):
-    '''
-    Returns list of data elements resulting from preorder tree traversal
-    '''
-    if self.root:
-      return self.root.preorder([])
-    else:
-      return []
-  def postorder(self):
-    '''
-    Returns list of post-order elements
-    '''
-    if self.root:
-      return self.root.postorder([])
-    else:
-      return []
-  def inorder(self):
-    '''
-    Returns list of in-order elements
-    '''
-    if self.root:
-      return self.root.inorder([])
-    else:
-      return []
+    def preorder(self):
+        """
+        Returns list of data elements resulting from preorder tree traversal
+        """
+        if self.root:
+            return self.root.preorder([])
+        else:
+            return []
+
+    def postorder(self):
+        """
+        Returns list of post-order elements
+        """
+        if self.root:
+            return self.root.postorder([])
+        else:
+            return []
+
+    def inorder(self):
+        """
+        Returns list of in-order elements
+        """
+        if self.root:
+            return self.root.inorder([])
+        else:
+            return []
 ```
 
 ## Full Source and Tests

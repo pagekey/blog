@@ -1,7 +1,7 @@
 ---
 title: "OS9: Multiboot (Bootloader Breakup)"
 date: 2020-07-01
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

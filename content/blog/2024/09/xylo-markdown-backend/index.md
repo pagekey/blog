@@ -1,7 +1,7 @@
 ---
 title: "Xylo DevLog: Markdown-Based Backend, Build/Export"
 date: 2024-09-27
-author: Steve Grice
+author: Steve
 tags:
   - python
   - rust

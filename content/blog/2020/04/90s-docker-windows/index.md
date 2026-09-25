@@ -1,7 +1,7 @@
 ---
 title: "≤90s: Install Docker on Windows 10 Pro"
 date: 2020-04-22
-author: Steve Grice
+author: Steve
 tags:
   - docker
   - windows

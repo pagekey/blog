@@ -1,7 +1,7 @@
 ---
 title: "NixOS: Mankind's Greatest Invention (Why and What to Do About It)"
 date: 2024-10-11
-author: Steve Grice
+author: Steve
 tags:
   - nix
   - nixos

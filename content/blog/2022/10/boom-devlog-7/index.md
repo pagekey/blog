@@ -1,7 +1,7 @@
 ---
 title: "Version, Registration Info in React Native | Boom Dev Log 7"
 date: 2022-10-17
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - language-learning

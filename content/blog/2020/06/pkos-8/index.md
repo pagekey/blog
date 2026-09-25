@@ -1,7 +1,7 @@
 ---
 title: "OS8: Calling C from Assembly"
 date: 2020-06-17
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

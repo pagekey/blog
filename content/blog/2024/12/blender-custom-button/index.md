@@ -1,7 +1,7 @@
 ---
 title: "Custom Blender Button/Panel: How-To (Add-Ons Basics)"
 date: 2024-12-20
-author: Steve Grice
+author: Steve
 tags:
   - blender
   - python

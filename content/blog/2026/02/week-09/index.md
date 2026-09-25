@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 9 (Items Calling Items)"
 date: 2026-02-20
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hex

@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 2 (Hexagonal Architecture)"
 date: 2026-01-09
-author: Steve Grice
+author: Steve
 tags:
   - self-hosting
   - software

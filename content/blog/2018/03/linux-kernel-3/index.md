@@ -1,7 +1,7 @@
 ---
 title: Writing Your First Kernel Module
 date: 2018-03-29
-author: Steve Grice
+author: Steve
 category: 
 tags:
   - linux

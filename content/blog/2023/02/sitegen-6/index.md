@@ -1,7 +1,7 @@
 ---
 title: "Adding prev/next post buttons | markdown sitegen 6"
 date: 2023-02-09
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

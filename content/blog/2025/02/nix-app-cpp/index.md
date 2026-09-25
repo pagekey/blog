@@ -1,7 +1,7 @@
 ---
 title: "Nix: Build and Distribute a C++ App on GitHub (How-To)"
 date: 2025-02-07
-author: Steve Grice
+author: Steve
 tags:
   - nix
   - cpp

@@ -1,7 +1,7 @@
 ---
 title: "MEASURE - The Secret to Language Learning"
 date: 2023-10-19
-author: Steve Grice
+author: Steve
 tags:
   - design
   - language-learning

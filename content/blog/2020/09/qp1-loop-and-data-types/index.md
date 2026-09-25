@@ -1,7 +1,7 @@
 ---
 title: "Quick Python 1: Your First Loop & Data Types"
 date: 2020-09-23
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

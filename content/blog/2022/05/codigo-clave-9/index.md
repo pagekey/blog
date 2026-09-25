@@ -1,7 +1,7 @@
 ---
 title: "CC9: Fijamos Errores, Ponemos Estilo"
 date: 2022-05-23
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - python

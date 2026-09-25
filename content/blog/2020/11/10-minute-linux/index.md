@@ -1,7 +1,7 @@
 ---
 title: "10 Minute Linux Crash Course - Everything You Need to Get Started Now"
 date: 2020-11-30
-author: Steve Grice
+author: Steve
 tags:
   - linux
 ---

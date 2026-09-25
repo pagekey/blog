@@ -1,7 +1,7 @@
 ---
 title: "Self-Host NextJS on Kubernetes (Tutorial)"
 date: 2023-10-08
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - kubernetes

@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 21 (Dynamic UI & Navigation)"
 date: 2026-05-21
-author: Steve Grice
+author: Steve
 tags:
   - backup
   - cli

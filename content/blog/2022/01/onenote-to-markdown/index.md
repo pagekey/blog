@@ -1,7 +1,7 @@
 ---
 title: "Convert OneNote to Markdown (and Obsidian.md)"
 date: 2022-01-23
-author: Steve Grice
+author: Steve
 tags:
   - onenote
   - powershell

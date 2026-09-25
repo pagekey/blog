@@ -1,7 +1,7 @@
 ---
 title: "Footer & Post Summaries | markdown sitegen 10"
 date: 2023-02-20
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 25 (Automating Backups & True Data Ownership)"
 date: 2026-06-20
-author: Steve Grice
+author: Steve
 tags:
   - self-hosting
   - hardware

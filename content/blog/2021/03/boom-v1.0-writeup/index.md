@@ -1,7 +1,7 @@
 ---
 title: "Boom! A new app is born."
 date: 2021-03-24
-author: Steve Grice
+author: Steve
 tags:
   - design
   - flutter

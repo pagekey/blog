@@ -1,7 +1,7 @@
 ---
 title: "Next.js + tRPC Project Setup (Boom CE) - Stream 13"
 date: 2024-02-19
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - javascript

@@ -1,7 +1,7 @@
 ---
 title: "OS11: Calling Assembly from C"
 date: 2020-07-29
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

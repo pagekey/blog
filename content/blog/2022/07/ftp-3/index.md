@@ -1,7 +1,7 @@
 ---
 title: "VSCode, Emmet Coding, Serving Static Files | FTP3"
 date: 2022-07-04
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - first-time-programmer

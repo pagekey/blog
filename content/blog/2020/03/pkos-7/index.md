@@ -1,7 +1,7 @@
 ---
 title: "OS7: Protected Mode - Making the Jump!"
 date: 2020-03-11
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 24 (The Immich Guide, 11K Subs & Selling the First Box)"
 date: 2026-06-13
-author: Steve Grice
+author: Steve
 tags:
   - self-hosting
   - hardware

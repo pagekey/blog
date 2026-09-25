@@ -1,7 +1,7 @@
 ---
 title: "Nix: Build and Distribute a Java App on GitHub (How-To)"
 date: 2025-02-14
-author: Steve Grice
+author: Steve
 tags:
   - nix
   - java

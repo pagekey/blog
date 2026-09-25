@@ -1,7 +1,7 @@
 ---
 title: "DAW7: What's wrong with timing??"
 date: 2023-02-06
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

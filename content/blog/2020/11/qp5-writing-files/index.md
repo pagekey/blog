@@ -1,7 +1,7 @@
 ---
 title: "Quick Python 5: Writing Files"
 date: 2020-11-18
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

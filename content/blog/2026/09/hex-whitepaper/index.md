@@ -1,7 +1,7 @@
 ---
 title: "The Hex Whitepaper"
 date: 2026-09-18
-author: Steve Grice
+author: Steve
 tags:
   - hexbox
 ---

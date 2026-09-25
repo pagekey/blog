@@ -1,7 +1,7 @@
 ---
 title: "OS20: Researching PCI (Peripheral Component Interconnect)"
 date: 2023-02-19
-author: Steve Grice
+author: Steve
 tags:
   - assembly
   - clang

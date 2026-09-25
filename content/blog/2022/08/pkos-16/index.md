@@ -1,7 +1,7 @@
 ---
 title: "OS16: Integration Test with QEMU in CI/CD Using Pytest"
 date: 2022-08-08
-author: Steve Grice
+author: Steve
 tags:
   - assembly
   - clang

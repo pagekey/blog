@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 23 (The Pivot & Open Sourcing Hex)"
 date: 2026-06-05
-author: Steve Grice
+author: Steve
 tags:
   - open-source
   - pivot

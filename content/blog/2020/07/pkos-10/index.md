@@ -1,7 +1,7 @@
 ---
 title: "OS10: Running on Real Hardware"
 date: 2020-07-15
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

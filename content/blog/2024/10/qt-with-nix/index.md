@@ -1,7 +1,7 @@
 ---
 title: "Qt Using Nix: Harder Than Expected (How-To)"
 date: 2024-10-19
-author: Steve Grice
+author: Steve
 tags:
   - qt
   - linux

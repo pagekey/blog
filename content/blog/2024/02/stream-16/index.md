@@ -1,7 +1,7 @@
 ---
 title: "Boom: Writing Issues from Design - Stream 16"
 date: 2024-02-26
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - design

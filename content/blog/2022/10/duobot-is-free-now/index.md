@@ -1,7 +1,7 @@
 ---
 title: "I spent dozens of hours to save 5 minutes on DuoLingo"
 date: 2022-10-03
-author: Steve Grice
+author: Steve
 tags:
   - language-learning
   - python

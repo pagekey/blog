@@ -1,7 +1,7 @@
 ---
 title: "DAW14: Deciphering State Management in Tauri"
 date: 2023-03-06
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

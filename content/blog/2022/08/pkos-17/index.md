@@ -1,7 +1,7 @@
 ---
 title: "OS17: Unit Testing C Code with Gtest, LCOV, Genhtml"
 date: 2022-08-15
-author: Steve Grice
+author: Steve
 tags:
   - assembly
   - clang

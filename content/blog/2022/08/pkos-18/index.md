@@ -1,7 +1,7 @@
 ---
 title: "OS18: Shredding the Makefile"
 date: 2022-08-22
-author: Steve Grice
+author: Steve
 tags:
   - assembly
   - clang

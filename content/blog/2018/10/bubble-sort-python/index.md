@@ -1,7 +1,7 @@
 ---
 title: "Bubble Sort in Python"
 date: 2018-10-05
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

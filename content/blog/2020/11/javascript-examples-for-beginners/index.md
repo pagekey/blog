@@ -1,7 +1,7 @@
 ---
 title: "4 Fun JavaScript Examples for Beginners"
 date: 2020-11-02
-author: Steve Grice
+author: Steve
 tags:
   - javascript
 ---
@@ -12,7 +12,7 @@ Any of these examples are editable on CodePen. Just click "Edit on Codepen" in t
 
 ## Genie Game
 
-[Link to Genie Game on CodePen](https://codepen.io/stephengrice/pen/KKMewxN)
+[Link to Genie Game on CodePen](https://codepen.io/localsteve/pen/KKMewxN)
 
 Click the button below to start the Genie Game!
 
@@ -56,19 +56,19 @@ As a special challenge, create a new CodePen and try to make your own story from
 
 ## Random Choice
 
-[Link to Random Choice on CodePen](https://codepen.io/stephengrice/pen/VwjdYdq)
+[Link to Random Choice on CodePen](https://codepen.io/localsteve/pen/VwjdYdq)
 
 This code picks a random color when you press the button, and shows you the answer.
 
 ## Tip Calculator
 
-[Link to Tip Calculator on CodePen](https://codepen.io/stephengrice/pen/xxVpOgO)
+[Link to Tip Calculator on CodePen](https://codepen.io/localsteve/pen/xxVpOgO)
 
 If you ever need to pay the bill at a restaurant, you may need to figure out how much to tip. This calculator takes the bill amount you provide and adds 20% so that you know how much to pay!
 
 ## Canvas Example
 
-[Link to Canvas Example on CodePen](https://codepen.io/stephengrice/pen/bGpLRJO)
+[Link to Canvas Example on CodePen](https://codepen.io/localsteve/pen/bGpLRJO)
 
 The HTML Canvas is a special element on the page that lets you draw custom shapes, lines, and images wherever and however you want. It's often used to create games right in your browser. It's a bit of an advanced topic, so we won't delve into it for this post. Try messing around with the code to get a feel for it.
 

@@ -1,7 +1,7 @@
 ---
 title: "New coders: Instantly apply concepts with JavaScript (FTP2)"
 date: 2022-06-27
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - tutorial

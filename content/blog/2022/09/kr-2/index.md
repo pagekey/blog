@@ -1,7 +1,7 @@
 ---
 title: "Generating the Project and Adding Screens | KR2"
 date: 2022-09-05
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - keyreader

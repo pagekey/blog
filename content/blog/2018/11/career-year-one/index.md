@@ -1,7 +1,7 @@
 ---
 title: 'Career, Year One: 8 Lessons Learned'
 date: 2018-11-17
-author: Steve Grice
+author: Steve
 tags:
   - career
 ---

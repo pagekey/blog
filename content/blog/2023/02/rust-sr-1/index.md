@@ -1,7 +1,7 @@
 ---
 title: "It has begun. | Rust Book Speedrun 1"
 date: 2023-02-18
-author: Steve Grice
+author: Steve
 tags:
   - rust
   - rust-book-speedrun

@@ -1,7 +1,7 @@
 ---
 title: "How to Make a Python Package / Upload to PyPi"
 date: 2023-12-28
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

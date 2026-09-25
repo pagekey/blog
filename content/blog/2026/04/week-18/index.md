@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 18 (Dynamic Graph Engine)"
 date: 2026-04-29
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hardware

@@ -1,7 +1,7 @@
 ---
 title: "The Nuanced Truth: Exploring Differences Between ML and AI"
 date: 2021-04-11
-author: Steve Grice
+author: Steve
 tags:
   - artificial-intelligence
   - machine-learning

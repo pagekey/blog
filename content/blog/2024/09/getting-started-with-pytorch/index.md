@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with PyTorch  - AI / Machine Learning Basics"
 date: 2024-09-06
-author: Steve Grice
+author: Steve
 tags:
   - python
   - artificial-intelligence

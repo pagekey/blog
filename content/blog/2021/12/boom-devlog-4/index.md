@@ -1,7 +1,7 @@
 ---
 title: "Boom Languages Dev Log 4"
 date: 2021-12-31
-author: Steve Grice
+author: Steve
 tags:
   - language-learning
   - boom-languages

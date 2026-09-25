@@ -1,7 +1,7 @@
 ---
 title: "DAW13: 3 ways to create a window in Tauri"
 date: 2023-02-26
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

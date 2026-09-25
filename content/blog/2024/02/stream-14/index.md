@@ -1,7 +1,7 @@
 ---
 title: "Designing Boom - Stream 14"
 date: 2024-02-20
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - design

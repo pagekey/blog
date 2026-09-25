@@ -1,7 +1,7 @@
 ---
 title: "TAKE BACK TECH - 2024 Roadmap for PageKey"
 date: 2024-01-30
-author: Steve Grice
+author: Steve
 tags:
   - mindset
 ---

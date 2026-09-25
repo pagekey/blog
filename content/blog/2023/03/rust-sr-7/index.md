@@ -1,7 +1,7 @@
 ---
 title: "What is ownership? | Rust Book Speedrun 7"
 date: 2023-03-02
-author: Steve Grice
+author: Steve
 tags:
   - rust
   - rust-book-speedrun

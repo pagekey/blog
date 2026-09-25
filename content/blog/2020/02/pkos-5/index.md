@@ -1,7 +1,7 @@
 ---
 title: "OS5: Going Over print_hex"
 date: 2020-02-12
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

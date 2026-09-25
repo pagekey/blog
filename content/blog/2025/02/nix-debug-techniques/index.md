@@ -1,7 +1,7 @@
 ---
 title: "Get Comfy with Nix (3 easy debug techniques)"
 date: 2025-02-21
-author: Steve Grice
+author: Steve
 tags:
   - nix
 ---

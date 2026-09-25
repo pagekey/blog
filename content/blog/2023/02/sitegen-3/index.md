@@ -1,7 +1,7 @@
 ---
 title: "jumping thru hoops for CSS | markdown sitegen 3"
 date: 2023-02-03
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

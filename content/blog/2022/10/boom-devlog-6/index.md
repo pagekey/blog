@@ -1,7 +1,7 @@
 ---
 title: "React Native Redesign | Boom Dev Log 6"
 date: 2022-10-10
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - language-learning

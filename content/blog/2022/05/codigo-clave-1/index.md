@@ -1,7 +1,7 @@
 ---
 title: "CC1: Introducción"
 date: 2022-05-15
-author: Steve Grice
+author: Steve
 tags:
   - spanish
   - 9-dias-de-codigo

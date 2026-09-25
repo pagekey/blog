@@ -1,7 +1,7 @@
 ---
 title: "DAW12: Tauri filepicker"
 date: 2023-02-23
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

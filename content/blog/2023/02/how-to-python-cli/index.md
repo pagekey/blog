@@ -1,7 +1,7 @@
 ---
 title: "How to Make a CLI in Python"
 date: 2023-02-16
-author: Steve Grice
+author: Steve
 tags:
   - python
   - tutorial

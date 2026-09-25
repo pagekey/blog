@@ -1,7 +1,7 @@
 ---
 title: "Auto-Captions and MORE - Major PKVid Progress"
 date: 2023-12-30
-author: Steve Grice
+author: Steve
 tags:
   - python
   - blender

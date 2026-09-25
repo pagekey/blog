@@ -1,7 +1,7 @@
 ---
 title: "How to Install NixOS on PinePhone (Ultimate Linux Cell Phone Setup)"
 date: 2024-10-25
-author: Steve Grice
+author: Steve
 tags:
   - nixos
   - nix

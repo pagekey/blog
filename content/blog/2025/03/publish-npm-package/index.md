@@ -1,7 +1,7 @@
 ---
 title: "How to Publish an NPM Package (Node.js)"
 date: 2025-03-07
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - node

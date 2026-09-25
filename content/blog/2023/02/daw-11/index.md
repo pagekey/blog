@@ -1,7 +1,7 @@
 ---
 title: "DAW11: Generating a Tauri Project"
 date: 2023-02-14
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

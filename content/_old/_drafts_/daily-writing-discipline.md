@@ -2,7 +2,7 @@
 layout: post
 title: '20 Minutes: My New Daily Writing Discipline'
 keywords: [learning, business, ideas, education, career, productivity]
-author: stephengrice
+author: Steve
 categories: ['Productivity']
 draft: true
 ---

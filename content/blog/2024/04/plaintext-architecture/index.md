@@ -1,7 +1,7 @@
 ---
 title: "Software Architecture for Plaintext and Self-Hosting"
 date: 2024-04-12
-author: Steve Grice
+author: Steve
 tags:
   - design
   - rust

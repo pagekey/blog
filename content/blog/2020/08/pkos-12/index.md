@@ -1,7 +1,7 @@
 ---
 title: "OS12: Basic Keyboard Driver (x86 Interrupts)"
 date: 2020-08-12
-author: Steve Grice
+author: Steve
 tags:
   - tutorial
   - assembly

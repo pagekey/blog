@@ -1,7 +1,7 @@
 ---
 title: "Nix: Build and Distribute a Python App on GitHub (How-To)"
 date: 2025-01-24
-author: Steve Grice
+author: Steve
 tags:
   - nix
   - python

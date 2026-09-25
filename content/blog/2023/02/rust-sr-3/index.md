@@ -1,7 +1,7 @@
 ---
 title: "3.2 Data Types | Rust Book Speedrun 3"
 date: 2023-02-25
-author: Steve Grice
+author: Steve
 tags:
   - rust
   - rust-book-speedrun

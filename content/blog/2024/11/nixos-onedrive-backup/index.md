@@ -1,7 +1,7 @@
 ---
 title: "NixOS: How to Set Up OneDrive Backup"
 date: 2024-11-01
-author: Steve Grice
+author: Steve
 tags:
   - self-hosting
   - nixos

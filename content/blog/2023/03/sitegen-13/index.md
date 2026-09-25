@@ -1,7 +1,7 @@
 ---
 title: "Adding redirects | markdown sitegen 13"
 date: 2023-03-03
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

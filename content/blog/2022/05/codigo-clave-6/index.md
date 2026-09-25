@@ -1,7 +1,7 @@
 ---
 title: "CC6: Primera Aplicación Web con Flask"
 date: 2022-05-20
-author: Steve Grice
+author: Steve
 tags:
   - javascript
   - python

@@ -1,7 +1,7 @@
 ---
 title: "KeyDo Python Prototype"
 date: 2024-05-10
-author: Steve Grice
+author: Steve
 tags:
   - python
   - prototype

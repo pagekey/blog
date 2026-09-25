@@ -1,7 +1,7 @@
 ---
 title: "DAW4: Chords? Tempo? SYNTH??"
 date: 2023-01-31
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

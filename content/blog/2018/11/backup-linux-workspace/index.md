@@ -1,7 +1,7 @@
 ---
 title: 'Take Your Linux Workspace Anywhere: Backup for Nerds'
 date: 2018-11-24
-author: Steve Grice
+author: Steve
 tags:
   - linux
   - productivity
@@ -77,10 +77,10 @@ How great would it be to regenerate all of the folders you work with, anywhere, 
 First, we will create a list of repositories. You can format this list however you want, but any structural changes must be reflected in the script we're about to write that actually performs the sync. For mine, I just created two columns in a CSV format. The first column is the local location where the code will live within your `linux-workspace`. The other is the URL to the remote source of the repository, where we will be cloning from. Here's a sample from mine:
 
 ```bash
-github/stephengrice, git@github.com:stephengrice/linux-workspace
+github/localsteve, git@github.com:localsteve/linux-workspace
 ```
 
-In the above example, the local directory `github/stephengrice` will be created, and `linux-workspace` will be cloned into it from the remote address.
+In the above example, the local directory `github/localsteve` will be created, and `linux-workspace` will be cloned into it from the remote address.
 
 Now we just need a script to sync things up.
 

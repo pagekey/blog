@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 28 (Private DNS)"
 date: 2026-07-10
-author: Steve Grice
+author: Steve
 tags:
   - self-hosting
   - hardware

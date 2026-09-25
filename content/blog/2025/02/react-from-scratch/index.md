@@ -1,7 +1,7 @@
 ---
 title: "React from Scratch: 5 Steps, 0 Frameworks"
 date: 2025-02-28
-author: Steve Grice
+author: Steve
 tags:
   - react
   - javascript

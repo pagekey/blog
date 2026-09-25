@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 16 (First Remote Update)"
 date: 2026-04-15
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hardware

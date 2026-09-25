@@ -1,7 +1,7 @@
 ---
 title: "PKVid MVP: Video Concatenation from Config File"
 date: 2023-12-29
-author: Steve Grice
+author: Steve
 tags:
   - python
   - blender

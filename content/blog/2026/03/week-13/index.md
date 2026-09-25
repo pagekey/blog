@@ -1,7 +1,7 @@
 ---
 title: "Building HexBox, 2026 Week 13 (Google Oauth WIN + Data Center Tour)"
 date: 2026-03-27
-author: Steve Grice
+author: Steve
 tags:
   - cli
   - hardware

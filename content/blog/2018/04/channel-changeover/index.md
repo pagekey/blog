@@ -1,7 +1,7 @@
 ---
 title: "PageKey Solutions - Channel Changeover"
 date: 2018-04-30
-author: Steve Grice
+author: Steve
 ---
 
 In this video, I announce the changeover for this channel from a personal account to a PageKey Solutions brand account.

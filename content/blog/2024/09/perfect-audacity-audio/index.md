@@ -1,7 +1,7 @@
 ---
 title: "5 Steps to Perfect Audio in Audacity"
 date: 2024-09-13
-author: Steve Grice
+author: Steve
 tags:
   - video-production
   - music

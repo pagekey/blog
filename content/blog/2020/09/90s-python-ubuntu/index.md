@@ -1,7 +1,7 @@
 ---
 title: "≤90s: Install Python (Ubuntu)"
 date: 2020-09-09
-author: Steve Grice
+author: Steve
 tags:
   - linux
   - python

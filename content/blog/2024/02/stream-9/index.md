@@ -1,7 +1,7 @@
 ---
 title: "Pesky VGA... (PKOS) - Stream 9"
 date: 2024-02-13
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - clang

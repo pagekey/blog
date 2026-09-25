@@ -1,7 +1,7 @@
 ---
 title: "Adding colorful codeblocks | markdown sitegen 9"
 date: 2023-02-15
-author: Steve Grice
+author: Steve
 tags:
   - python
   - markdown-sitegen

@@ -1,7 +1,7 @@
 ---
 title: "AND Gate from Scratch (How-To, Using Transistors)"
 date: 2024-12-06
-author: Steve Grice
+author: Steve
 tags:
   - hardware
   - logic-gates

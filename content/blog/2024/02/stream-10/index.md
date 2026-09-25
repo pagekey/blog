@@ -1,7 +1,7 @@
 ---
 title: "VGA Fonts, are they the key? - Stream 10"
 date: 2024-02-14
-author: Steve Grice
+author: Steve
 tags:
   - livestream
   - clang

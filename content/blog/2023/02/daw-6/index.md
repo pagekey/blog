@@ -1,7 +1,7 @@
 ---
 title: "DAW6: Integrating Synth Code"
 date: 2023-02-04
-author: Steve Grice
+author: Steve
 tags:
   - python
   - plaintext-daw

@@ -1,7 +1,7 @@
 ---
 title: "CC5: Terminamos Nuestra Aplication Terminal"
 date: 2022-05-19
-author: Steve Grice
+author: Steve
 tags:
   - python
   - spanish
