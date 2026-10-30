@@ -1,6 +1,7 @@
 import { ArrowRight, Box, Camera, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import MailingListSignup from "@/components/MailingListSignup";
 
 const ArrowLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
     <Link to={to} className="inline-flex items-center gap-2 text-sm font-semibold text-orange-300 transition-colors hover:text-orange-200">
@@ -59,6 +60,13 @@ export default function HomePage() {
                     <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] text-white md:text-5xl">Technology should serve people, not the other way around.</h2>
                     <p className="mt-6 text-lg leading-relaxed text-zinc-400">We make things that favor ownership, independence, and practical understanding. That means technology you can operate yourself and products made with a clear purpose.</p>
                     <div className="mt-9"><ArrowLink to="/mission">Read the Take Back Tech mission</ArrowLink></div>
+                </div>
+            </section>
+
+            <section className="border-t border-white/10 bg-zinc-900/35">
+                <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-2 md:items-end md:py-20">
+                    <div><p className="text-xs font-bold uppercase tracking-[0.18em] text-orange-400">Keep in touch</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] text-white">Follow what we&apos;re making.</h2><p className="mt-5 max-w-md leading-relaxed text-zinc-400">Get occasional notes about new products, HexBox, and the work behind PageKey.</p></div>
+                    <MailingListSignup id="home-email-signup" />
                 </div>
             </section>
 
