@@ -1,25 +1,25 @@
-import { Route, Routes, Navigate } from 'react-router-dom'
-import './App.css'
-import HomePage from './pages/Home'
-import NotFoundPage from './pages/NotFoundPage'
-import HelpPage from './pages/Help'
-import HexBoxPage from './pages/HexBox'
-import VPNPage from './pages/VPN'
-import KitsPage from './pages/Kits'
-import BlogPost from './pages/BlogPost'
-import BlogIndex from './pages/BlogIndex'
-import TagsIndex from './pages/TagsIndex'
-import TagPosts from './pages/TagPosts'
+import { Route, Routes, Navigate } from "react-router-dom";
+import "./App.css";
+import HomePage from "./pages/Home";
+import NotFoundPage from "./pages/NotFoundPage";
+import HelpPage from "./pages/Help";
+import HexBoxPage from "./pages/HexBox";
+import VPNPage from "./pages/VPN";
+import KitsPage from "./pages/Kits";
+import BlogPost from "./pages/BlogPost";
+import BlogIndex from "./pages/BlogIndex";
+import TagsIndex from "./pages/TagsIndex";
+import TagPosts from "./pages/TagPosts";
 
-import ConsultingPage from './pages/Consulting'
-import EventsPage from './pages/Events'
-import ProductsPage from './pages/Products'
-import AboutPage from './pages/About'
-import SignupPage from './pages/Signup'
-import PortfolioPage from './pages/Portfolio'
-import ManufacturingPage from './pages/Manufacturing'
-import MissionPage from './pages/Mission'
-import ContactPage from './pages/Contact'
+import ConsultingPage from "./pages/Consulting";
+import EventsPage from "./pages/Events";
+import ProductsPage from "./pages/Products";
+import AboutPage from "./pages/About";
+import SignupPage from "./pages/Signup";
+import PortfolioPage from "./pages/Portfolio";
+import ManufacturingPage from "./pages/Manufacturing";
+import MissionPage from "./pages/Mission";
+import ContactPage from "./pages/Contact";
 
 function App() {
   return (
@@ -47,7 +47,7 @@ function App() {
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

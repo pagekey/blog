@@ -1,24 +1,181 @@
-import { ArrowRight, Check, HardDrive, LockKeyhole, Server } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  HardDrive,
+  LockKeyhole,
+  Server,
+} from "lucide-react";
 import Layout from "@/components/Layout";
 import ProductPlaceholder from "@/components/ProductPlaceholder";
 
 const checkoutUrl = "https://buy.stripe.com/fZu8wQ6yu7BYckP8pDgEg08";
 const principles = [
-    { icon: Server, title: "Your own server", text: "HexBox Photos is a personal photo server that runs on hardware in your home, not on a service you rent." },
-    { icon: LockKeyhole, title: "Privacy by design", text: "Your photo library stays under your control instead of becoming another cloud account." },
-    { icon: HardDrive, title: "A practical backup path", text: "Keep your photos on local storage you can see, access, and manage yourself." },
+  {
+    icon: Server,
+    title: "Your own server",
+    text: "HexBox Photos is a personal photo server that runs on hardware in your home, not on a service you rent.",
+  },
+  {
+    icon: LockKeyhole,
+    title: "Privacy by design",
+    text: "Your photo library stays under your control instead of becoming another cloud account.",
+  },
+  {
+    icon: HardDrive,
+    title: "A practical backup path",
+    text: "Keep your photos on local storage you can see, access, and manage yourself.",
+  },
 ];
 
 export default function HexBoxPage() {
-    return <Layout title="HexBox Photos | PageKey" description="HexBox Photos is a personal photo server designed around ownership, privacy, understandable operation, and safe backups.">
-        <section className="border-b border-white/10">
-            <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 md:grid-cols-[1.25fr_.75fr] md:py-28">
-                <div><p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">A PageKey technology product</p><h1 className="mt-5 text-5xl font-semibold tracking-[-.055em] text-white md:text-7xl">Your photos.<br />Your server.</h1><p className="mt-7 max-w-xl text-xl leading-relaxed text-zinc-300">HexBox Photos is a personal photo server built to put your library and the infrastructure behind it back under your control.</p><p className="mt-5 max-w-xl leading-relaxed text-zinc-400">It is a complete, hand-assembled hardware setup with Immich pre-installed for a local-first photo library. It is for people who want a practical alternative to handing their memories to another cloud service.</p><div className="mt-10 flex flex-col gap-3 sm:flex-row"><a href={checkoutUrl} className="inline-flex items-center justify-center gap-2 bg-orange-400 px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-orange-300">Purchase HexBox Photos <ArrowRight className="h-4 w-4" /></a><a href="#how-it-works" className="inline-flex items-center justify-center border border-white/20 px-5 py-3 text-sm font-bold text-white hover:border-orange-300 hover:text-orange-200">How it works</a></div></div>
-                <aside className="border border-white/15 bg-zinc-900/50 p-7 md:self-end"><ProductPlaceholder label="Photo space" detail="HexBox Photos" variant="hardware" /><p className="mt-7 text-xs font-bold uppercase tracking-[.18em] text-orange-400">HexBox Photos Ed. 1</p><p className="mt-6 text-4xl font-semibold text-white">$349 <span className="text-base font-normal text-zinc-500">USD</span></p><p className="mt-2 text-sm text-zinc-400">Complete hardware setup. Free US shipping.</p><div className="my-7 border-t border-white/10" /><p className="text-sm leading-relaxed text-zinc-400">The first Edition is a single, hand-assembled unit. Availability is limited to this configuration.</p><a href={checkoutUrl} className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200">Buy securely via Stripe <ArrowRight className="h-4 w-4" /></a></aside>
+  return (
+    <Layout
+      title="HexBox Photos | PageKey"
+      description="HexBox Photos is a personal photo server designed around ownership, privacy, understandable operation, and safe backups."
+    >
+      <section className="border-b border-white/10">
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 md:grid-cols-[1.25fr_.75fr] md:py-28">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+              A PageKey technology product
+            </p>
+            <h1 className="mt-5 text-5xl font-semibold tracking-[-.055em] text-white md:text-7xl">
+              Your photos.
+              <br />
+              Your server.
+            </h1>
+            <p className="mt-7 max-w-xl text-xl leading-relaxed text-zinc-300">
+              HexBox Photos is a personal photo server built to put your library
+              and the infrastructure behind it back under your control.
+            </p>
+            <p className="mt-5 max-w-xl leading-relaxed text-zinc-400">
+              It is a complete, hand-assembled hardware setup with Immich
+              pre-installed for a local-first photo library. It is for people
+              who want a practical alternative to handing their memories to
+              another cloud service.
+            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={checkoutUrl}
+                className="inline-flex items-center justify-center gap-2 bg-orange-400 px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-orange-300"
+              >
+                Purchase HexBox Photos <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#how-it-works"
+                className="inline-flex items-center justify-center border border-white/20 px-5 py-3 text-sm font-bold text-white hover:border-orange-300 hover:text-orange-200"
+              >
+                How it works
+              </a>
             </div>
-        </section>
-        <section id="how-it-works" className="mx-auto max-w-7xl px-6 py-20 md:py-28"><p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">Designed for independence</p><h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-[-.04em] text-white md:text-5xl">A more understandable home for your photo library.</h2><div className="mt-14 grid gap-8 md:grid-cols-3">{principles.map(({ icon: Icon, title, text }) => <article key={title} className="border-t border-white/15 pt-6"><Icon className="h-7 w-7 text-orange-400" /><h3 className="mt-10 text-xl font-semibold text-white">{title}</h3><p className="mt-4 leading-relaxed text-zinc-400">{text}</p></article>)}</div></section>
-        <section className="border-y border-white/10 bg-zinc-900/35"><div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28"><div><p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">What is included</p><h2 className="mt-5 text-4xl font-semibold tracking-[-.04em] text-white">The work to get started is already done.</h2></div><ul className="space-y-4 text-zinc-300">{["A hand-assembled HexBox Photos hardware setup", "Immich pre-installed", "Plug-and-play local network setup", "Local-first photo storage", "No monthly cloud subscription required"].map(item => <li key={item} className="flex gap-3"><Check className="mt-1 h-4 w-4 shrink-0 text-orange-400" />{item}</li>)}</ul></div></section>
-        <section className="mx-auto max-w-7xl px-6 py-20 md:py-28"><div className="max-w-2xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">Get started</p><h2 className="mt-5 text-4xl font-semibold tracking-[-.04em] text-white">Choose the path that fits.</h2><p className="mt-5 leading-relaxed text-zinc-400">Purchase the available HexBox Photos Edition, or contact PageKey with questions about whether it is right for your library and home setup.</p><div className="mt-8 flex flex-wrap gap-5"><a href={checkoutUrl} className="inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200">Purchase via Stripe <ArrowRight className="h-4 w-4" /></a><a href="mailto:hello@pagekey.io?subject=HexBox%20Photos%20question" className="inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200">Ask a question <ArrowRight className="h-4 w-4" /></a></div></div></section>
-    </Layout>;
+          </div>
+          <aside className="border border-white/15 bg-zinc-900/50 p-7 md:self-end">
+            <ProductPlaceholder
+              label="Photo space"
+              detail="HexBox Photos"
+              variant="hardware"
+            />
+            <p className="mt-7 text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+              HexBox Photos Ed. 1
+            </p>
+            <p className="mt-6 text-4xl font-semibold text-white">
+              $349{" "}
+              <span className="text-base font-normal text-zinc-500">USD</span>
+            </p>
+            <p className="mt-2 text-sm text-zinc-400">
+              Complete hardware setup. Free US shipping.
+            </p>
+            <div className="my-7 border-t border-white/10" />
+            <p className="text-sm leading-relaxed text-zinc-400">
+              The first Edition is a single, hand-assembled unit. Availability
+              is limited to this configuration.
+            </p>
+            <a
+              href={checkoutUrl}
+              className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200"
+            >
+              Buy securely via Stripe <ArrowRight className="h-4 w-4" />
+            </a>
+          </aside>
+        </div>
+      </section>
+      <section
+        id="how-it-works"
+        className="mx-auto max-w-7xl px-6 py-20 md:py-28"
+      >
+        <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+          Designed for independence
+        </p>
+        <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-[-.04em] text-white md:text-5xl">
+          A more understandable home for your photo library.
+        </h2>
+        <div className="mt-14 grid gap-8 md:grid-cols-3">
+          {principles.map(({ icon: Icon, title, text }) => (
+            <article key={title} className="border-t border-white/15 pt-6">
+              <Icon className="h-7 w-7 text-orange-400" />
+              <h3 className="mt-10 text-xl font-semibold text-white">
+                {title}
+              </h3>
+              <p className="mt-4 leading-relaxed text-zinc-400">{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="border-y border-white/10 bg-zinc-900/35">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+              What is included
+            </p>
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-.04em] text-white">
+              The work to get started is already done.
+            </h2>
+          </div>
+          <ul className="space-y-4 text-zinc-300">
+            {[
+              "A hand-assembled HexBox Photos hardware setup",
+              "Immich pre-installed",
+              "Plug-and-play local network setup",
+              "Local-first photo storage",
+              "No monthly cloud subscription required",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <Check className="mt-1 h-4 w-4 shrink-0 text-orange-400" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+            Get started
+          </p>
+          <h2 className="mt-5 text-4xl font-semibold tracking-[-.04em] text-white">
+            Choose the path that fits.
+          </h2>
+          <p className="mt-5 leading-relaxed text-zinc-400">
+            Purchase the available HexBox Photos Edition, or contact PageKey
+            with questions about whether it is right for your library and home
+            setup.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-5">
+            <a
+              href={checkoutUrl}
+              className="inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200"
+            >
+              Purchase via Stripe <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="mailto:hello@pagekey.io?subject=HexBox%20Photos%20question"
+              className="inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200"
+            >
+              Ask a question <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
 }
