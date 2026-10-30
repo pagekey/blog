@@ -10,17 +10,17 @@ const stages = [
   {
     icon: DraftingCompass,
     title: "Design",
-    text: "Work through a practical idea, constraint, or part that needs to exist.",
+    text: "Turn a practical need or rough idea into a design worth making.",
   },
   {
     icon: Layers3,
     title: "Prototype",
-    text: "Create and refine a physical version that can be handled and tested.",
+    text: "Make a physical version, test it, and refine the details.",
   },
   {
     icon: PackageCheck,
-    title: "Small production",
-    text: "Make a considered small run when a prototype is ready to be useful.",
+    title: "Made to order",
+    text: "Produce exactly what you need, without committing to mass production.",
   },
 ];
 export default function ManufacturingPage() {
@@ -64,23 +64,17 @@ export default function ManufacturingPage() {
       <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2 md:py-28">
         <div>
           <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
-            An honest starting point
+            What we make
           </p>
           <h2 className="mt-5 text-4xl font-semibold tracking-[-.04em] text-white">
-            Built for practical, smaller work.
+            Practical products. Made in small batches.
           </h2>
         </div>
         <div className="space-y-5 leading-relaxed text-zinc-400">
           <p>
-            Current work is centered on custom 3D-printed products and small
-            batches. That makes PageKey a good fit for practical parts,
-            prototypes, and early production runs where direct attention
-            matters.
-          </p>
+            PageKey makes custom 3D-printed products, prototypes, and small production runs. Whether you need a handful of specialized parts or a finished product made to order, you work directly with the person designing and making it. No large minimums, long supply chains, or unnecessary overhead.          </p>
           <p>
-            If you have an idea, include what it needs to do, who will use it,
-            and any rough sketches or dimensions. We will start with an honest
-            conversation about whether PageKey is the right fit.
+            Have an idea? Tell us what it needs to do, who will use it, and share any sketches or dimensions you have. We'll have an honest conversation about your needs and how we can help.
           </p>
           <a
             href="mailto:hello@pagekey.io?subject=Custom%20manufacturing%20inquiry"
