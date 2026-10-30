@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Code, Mail, MessageSquare, Phone, Video } from "lucide-react";
 import Layout from "@/components/Layout";
 import MailingListSignup from "@/components/MailingListSignup";
 
@@ -69,6 +69,28 @@ export default function ContactPage() {
           </p>
           <div className="mt-7">
             <MailingListSignup id="contact-email-signup" />
+          </div>
+        </div>
+        <div className="mt-16 border-t border-white/10 pt-10">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+            Follow PageKey
+          </p>
+          <div className="mt-6 grid border-l border-t border-white/10 sm:grid-cols-3">
+            <a href="https://youtube.com/@PageKey" target="_blank" rel="noreferrer" className="group border-b border-r border-white/10 p-5 transition-colors hover:bg-zinc-900/60">
+              <Video className="h-5 w-5 text-orange-400" aria-hidden="true" />
+              <p className="mt-5 font-semibold text-white group-hover:text-orange-200">YouTube</p>
+              <p className="mt-2 text-sm text-zinc-400">Videos and devlogs</p>
+            </a>
+            <a href="https://discord.gg/5m5yFgDPF5" target="_blank" rel="noreferrer" className="group border-b border-r border-white/10 p-5 transition-colors hover:bg-zinc-900/60">
+              <MessageSquare className="h-5 w-5 text-orange-400" aria-hidden="true" />
+              <p className="mt-5 font-semibold text-white group-hover:text-orange-200">Discord</p>
+              <p className="mt-2 text-sm text-zinc-400">Join the conversation</p>
+            </a>
+            <a href="https://github.com/pagekey" target="_blank" rel="noreferrer" className="group border-b border-r border-white/10 p-5 transition-colors hover:bg-zinc-900/60">
+              <Code className="h-5 w-5 text-orange-400" aria-hidden="true" />
+              <p className="mt-5 font-semibold text-white group-hover:text-orange-200">GitHub</p>
+              <p className="mt-2 text-sm text-zinc-400">Code and open work</p>
+            </a>
           </div>
         </div>
       </section>
