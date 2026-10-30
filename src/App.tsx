@@ -1,7 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/Home'
-import PhotosPage from './pages/Photos'
 import NotFoundPage from './pages/NotFoundPage'
 import HelpPage from './pages/Help'
 import HexBoxPage from './pages/HexBox'
@@ -18,6 +17,9 @@ import ProductsPage from './pages/Products'
 import AboutPage from './pages/About'
 import SignupPage from './pages/Signup'
 import PortfolioPage from './pages/Portfolio'
+import ManufacturingPage from './pages/Manufacturing'
+import MissionPage from './pages/Mission'
+import ContactPage from './pages/Contact'
 
 function App() {
   return (
@@ -28,11 +30,14 @@ function App() {
       <Route path="/portfolio" element={<PortfolioPage />} />
       <Route path="/events" element={<EventsPage />} />
       <Route path="/products" element={<ProductsPage />} />
+      <Route path="/manufacturing" element={<ManufacturingPage />} />
+      <Route path="/mission" element={<MissionPage />} />
+      <Route path="/contact" element={<ContactPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/help" element={<HelpPage />} />
       <Route path="/hexbox" element={<HexBoxPage />} />
       <Route path="/unit" element={<Navigate to="/hexbox" replace />} />
-      <Route path="/photos" element={<PhotosPage />} />
+      <Route path="/photos" element={<Navigate to="/hexbox" replace />} />
       <Route path="/vpn" element={<VPNPage />} />
       <Route path="/kits" element={<KitsPage />} />
       <Route path="/blog" element={<BlogIndex />} />

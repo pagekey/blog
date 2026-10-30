@@ -1,300 +1,71 @@
-import { BookOpen, Users, Cpu, Video, Code, MessageSquare, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import Layout from "@/components/Layout";
+import { ArrowRight, Box, Camera, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
+import Layout from "@/components/Layout";
+
+const ArrowLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
+    <Link to={to} className="inline-flex items-center gap-2 text-sm font-semibold text-orange-300 transition-colors hover:text-orange-200">
+        {children}<ArrowRight className="h-4 w-4" />
+    </Link>
+);
 
 export default function HomePage() {
     return (
-        <Layout
-            title="PageKey — Take Back Tech"
-            description="PageKey builds software, hardware, and educational content to help people understand, control, and build their own technology."
-        >
-            {/* Hero Section */}
-            <section className="relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-amber-500/10 to-orange-500/5 blur-[120px]" />
-
-                <div className="mx-auto max-w-5xl px-6 py-28 text-center">
-                    <h1 className="text-5xl font-extrabold tracking-tight md:text-7xl mb-6">
-                        Take Back <span className="text-orange-600">Tech.</span>
-                    </h1>
-
-                    <p className="mx-auto max-w-2xl text-xl md:text-2xl font-medium text-foreground leading-relaxed">
-                        Technology should be something you can understand, control, and build yourself.
-                    </p>
-
-                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-                        PageKey builds software, hardware, and educational content around that idea.
-                    </p>
-
-                    <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-                        <Button
-                            size="lg"
-                            className="bg-orange-600 hover:bg-orange-500 text-white transition-colors text-base"
-                            asChild
-                        >
-                            <Link to="/products">
-                                Explore Products
-                            </Link>
-                        </Button>
-
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            className="hover:bg-muted transition-colors text-base"
-                            asChild
-                        >
-                            <Link to="/blog">
-                                Read the Blog
-                            </Link>
-                        </Button>
+        <Layout title="PageKey | Take Back Tech" description="PageKey designs, builds, and manufactures practical products and technology that put people back in control.">
+            <section className="border-b border-white/10">
+                <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
+                    <p className="mb-7 text-xs font-bold uppercase tracking-[0.2em] text-orange-400">Independent technology, design, and manufacturing</p>
+                    <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.055em] text-white sm:text-7xl md:text-8xl">Take Back Tech.</h1>
+                    <p className="mt-8 max-w-2xl text-2xl leading-snug text-zinc-200 md:text-3xl">Useful things. Built with purpose. Made to be yours.</p>
+                    <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-400">PageKey designs, builds, and manufactures practical products and technology that put people back in control.</p>
+                    <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                        <Link to="/hexbox" className="inline-flex items-center justify-center gap-2 bg-orange-400 px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-orange-300">Explore HexBox Photos <ArrowRight className="h-4 w-4" /></Link>
+                        <Link to="/products" className="inline-flex items-center justify-center border border-white/20 px-5 py-3 text-sm font-bold text-white transition-colors hover:border-orange-300 hover:text-orange-200">View physical products</Link>
                     </div>
                 </div>
             </section>
 
-            {/* Explore */}
-            <section id="explore" className="mx-auto max-w-6xl px-6 py-16">
-                <div className="grid gap-8 md:grid-cols-3">
-
-                    {/* Products */}
-                    <Card className="border-orange-500/30 bg-orange-500/5 transition-all hover:border-orange-500/50">
-                        <CardHeader>
-                            <Cpu className="mb-2 h-8 w-8 text-orange-500" />
-                            <CardTitle className="text-2xl">Products</CardTitle>
-                            <CardDescription className="text-base">
-                                Build technology you actually own.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex flex-col h-[calc(100%-100px)] justify-between gap-6">
-                            <p className="text-muted-foreground">
-                                Discover hardware and software designed for ownership.
-                                Explore HexBox, our local-first computing platform,
-                                and other practical tools built by PageKey.
-                            </p>
-
-                            <div className="mt-auto pt-4">
-                                <Button
-                                    variant="outline"
-                                    className="w-full sm:w-auto"
-                                    asChild
-                                >
-                                    <Link to="/products">
-                                        Explore Products
-                                    </Link>
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Blog */}
-                    <Card className="transition-all hover:border-border/80">
-                        <CardHeader>
-                            <BookOpen className="mb-2 h-8 w-8 text-orange-500" />
-                            <CardTitle className="text-2xl">Blog</CardTitle>
-                            <CardDescription className="text-base">
-                                Ideas, experiments, builds, and lessons.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex flex-col h-[calc(100%-100px)] justify-between gap-6">
-                            <p className="text-muted-foreground">
-                                Follow the work through devlogs, technical articles,
-                                educational posts, open-source experiments, and
-                                the ongoing Take Back Tech journey.
-                            </p>
-
-                            <div className="mt-auto pt-4">
-                                <Button
-                                    variant="outline"
-                                    className="w-full sm:w-auto"
-                                    asChild
-                                >
-                                    <a href="/blog">
-                                        Read the Blog
-                                    </a>
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Events */}
-                    <Card className="transition-all hover:border-border/80">
-                        <CardHeader>
-                            <Users className="mb-2 h-8 w-8 text-orange-500" />
-                            <CardTitle className="text-2xl">Events</CardTitle>
-                            <CardDescription className="text-base">
-                                Meet other people building the future.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex flex-col h-[calc(100%-100px)] justify-between gap-6">
-                            <p className="text-muted-foreground">
-                                Join local Take Back Tech events to connect with
-                                builders, engineers, and curious people who want
-                                to understand and control their technology.
-                            </p>
-
-                            <div className="mt-auto pt-4">
-                                <Button
-                                    variant="outline"
-                                    className="w-full sm:w-auto"
-                                    asChild
-                                >
-                                    <Link to="/events">
-                                        See Events
-                                    </Link>
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
-
+            <section className="mx-auto grid max-w-7xl border-x border-white/10 md:grid-cols-2">
+                <div className="border-b border-white/10 p-8 md:border-b-0 md:border-r md:p-12 lg:p-16">
+                    <Camera className="h-7 w-7 text-orange-400" aria-hidden="true" />
+                    <p className="mt-12 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">Flagship technology product</p>
+                    <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-white">HexBox Photos</h2>
+                    <p className="mt-5 max-w-md text-lg leading-relaxed text-zinc-400">A personal photo server designed around ownership, privacy, understandable operation, and safe backups. Your photos stay on hardware you control.</p>
+                    <div className="mt-9"><ArrowLink to="/hexbox">Meet HexBox Photos</ArrowLink></div>
+                </div>
+                <div className="p-8 md:p-12 lg:p-16">
+                    <Box className="h-7 w-7 text-orange-400" aria-hidden="true" />
+                    <p className="mt-12 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">Designed and made in small batches</p>
+                    <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-white">Physical products</h2>
+                    <p className="mt-5 max-w-md text-lg leading-relaxed text-zinc-400">Practical objects for everyday use. Custom 3D-printed ice scrapers are available now. License plate covers are in development.</p>
+                    <div className="mt-9"><ArrowLink to="/products">See what we are making</ArrowLink></div>
                 </div>
             </section>
 
-            {/* Why PageKey? */}
-            <section className="border-t bg-muted/20">
-                <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-                    <h2 className="text-3xl font-bold tracking-tight mb-6">
-                        Why PageKey?
-                    </h2>
-
-                    <p className="mx-auto max-w-2xl text-xl text-foreground font-medium mb-12">
-                        Technology has become increasingly opaque and centralized.
-                        PageKey exists to make it understandable again.
-                    </p>
-
-                    <div className="grid sm:grid-cols-3 gap-8 text-left">
-                        <div>
-                            <h3 className="font-semibold text-lg mb-2">
-                                Ownership
-                            </h3>
-                            <p className="text-muted-foreground">
-                                You should control the systems you rely on, not rent
-                                them from a platform that can disappear.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 className="font-semibold text-lg mb-2">
-                                Simplicity
-                            </h3>
-                            <p className="text-muted-foreground">
-                                Complex problems don't always need complex solutions.
-                                We favor straightforward, resilient engineering.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 className="font-semibold text-lg mb-2">
-                                Education
-                            </h3>
-                            <p className="text-muted-foreground">
-                                Knowledge shouldn't be gatekept. We build in public
-                                and share what we learn along the way.
-                            </p>
-                        </div>
+            <section className="border-y border-white/10 bg-zinc-900/35">
+                <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[0.8fr_1.2fr] md:py-28">
+                    <div><Wrench className="h-7 w-7 text-orange-400" aria-hidden="true" /></div>
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-orange-400">Custom manufacturing</p>
+                        <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-[-0.04em] text-white md:text-5xl">Good ideas deserve a path to becoming real.</h2>
+                        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">PageKey works with individuals and small businesses on practical parts, prototypes, and small production runs. We help turn a useful need into something you can hold, test, and use.</p>
+                        <div className="mt-9"><ArrowLink to="/manufacturing">How we work</ArrowLink></div>
                     </div>
                 </div>
             </section>
 
-            {/* Final CTA */}
-            <section className="border-t">
-                <div className="mx-auto max-w-5xl px-6 py-24 pb-12">
-                    <div className="grid gap-12 md:grid-cols-2 rounded-2xl bg-muted/30 p-8 md:p-12 border">
+            <section className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+                <div className="max-w-3xl">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-orange-400">Why PageKey</p>
+                    <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] text-white md:text-5xl">Technology should serve people, not the other way around.</h2>
+                    <p className="mt-6 text-lg leading-relaxed text-zinc-400">We make things that favor ownership, independence, and practical understanding. That means technology you can operate yourself and products made with a clear purpose.</p>
+                    <div className="mt-9"><ArrowLink to="/mission">Read the Take Back Tech mission</ArrowLink></div>
+                </div>
+            </section>
 
-                        <div className="flex flex-col items-start justify-center gap-4">
-                            <h2 className="text-3xl font-bold tracking-tight">
-                                Want to take back tech?
-                            </h2>
-
-                            <p className="text-muted-foreground text-lg mb-2">
-                                Follow along as we build software, hardware, and
-                                open-source tools from first principles.
-                            </p>
-
-                            <div className="flex flex-col gap-3 sm:flex-row">
-                                <Button
-                                    size="lg"
-                                    className="bg-orange-600 hover:bg-orange-500 text-white"
-                                    asChild
-                                >
-                                    <Link to="/signup">
-                                        Join the Mailing List
-                                    </Link>
-                                </Button>
-
-                                <Button
-                                    variant="outline"
-                                    size="lg"
-                                    asChild
-                                >
-                                    <a href="/blog">
-                                        Read the Blog
-                                    </a>
-                                </Button>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col items-start justify-center gap-4 border-t pt-10 md:border-t-0 md:border-l md:pt-0 md:pl-12">
-                            <h2 className="text-3xl font-bold tracking-tight">
-                                Build with us.
-                            </h2>
-
-                            <p className="text-muted-foreground text-lg mb-2">
-                                Meet other builders, engineers, and curious people
-                                through local Take Back Tech events.
-                            </p>
-
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                asChild
-                            >
-                                <Link to="/events">
-                                    See Events
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
-
-                    {/* Social Links */}
-                    <div className="mt-16 flex justify-center gap-6">
-                        <a
-                            href="https://youtube.com/@PageKey"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-muted-foreground hover:text-red-500 transition-colors"
-                            aria-label="YouTube"
-                        >
-                            <Video className="h-5 w-5" />
-                        </a>
-
-                        <a
-                            href="https://github.com/pagekey"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-muted-foreground hover:text-orange-500 transition-colors"
-                            aria-label="GitHub"
-                        >
-                            <Code className="h-5 w-5" />
-                        </a>
-
-                        <a
-                            href="https://discord.gg/5m5yFgDPF5"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-muted-foreground hover:text-[#5865F2] transition-colors"
-                            aria-label="Discord"
-                        >
-                            <MessageSquare className="h-5 w-5" />
-                        </a>
-
-                        <a
-                            href="mailto:hello@pagekey.io"
-                            className="text-muted-foreground hover:text-green-500 transition-colors"
-                            aria-label="Email"
-                        >
-                            <Mail className="h-5 w-5" />
-                        </a>
-                    </div>
+            <section className="border-t border-white/10 bg-orange-400 text-zinc-950">
+                <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 px-6 py-16 md:flex-row md:items-end md:py-20">
+                    <div><p className="text-xs font-bold uppercase tracking-[0.18em]">Have a practical project in mind?</p><h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em]">Let&apos;s make it useful.</h2></div>
+                    <Link to="/contact" className="inline-flex items-center gap-2 border border-zinc-950 px-5 py-3 text-sm font-bold transition-colors hover:bg-zinc-950 hover:text-orange-300">Contact PageKey <ArrowRight className="h-4 w-4" /></Link>
                 </div>
             </section>
         </Layout>
