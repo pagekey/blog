@@ -6,7 +6,13 @@ interface PaginationControlsProps {
   onPageChange: (page: number) => void;
 }
 
-export function PaginationControls({ validPage, totalPages, totalItems, itemsPerPage, onPageChange }: PaginationControlsProps) {
+export function PaginationControls({
+  validPage,
+  totalPages,
+  totalItems,
+  itemsPerPage,
+  onPageChange,
+}: PaginationControlsProps) {
   if (totalPages <= 1) return null;
 
   return (
@@ -18,9 +24,10 @@ export function PaginationControls({ validPage, totalPages, totalItems, itemsPer
       >
         ← Previous
       </button>
-      
+
       <div className="text-sm text-muted-foreground hidden sm:block">
-        Showing {(validPage - 1) * itemsPerPage + 1} to {Math.min(validPage * itemsPerPage, totalItems)} of {totalItems}
+        Showing {(validPage - 1) * itemsPerPage + 1} to{" "}
+        {Math.min(validPage * itemsPerPage, totalItems)} of {totalItems}
       </div>
 
       <button

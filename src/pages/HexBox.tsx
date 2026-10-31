@@ -1,387 +1,181 @@
-import { useState } from "react";
 import {
-    ArrowRight,
-    Play,
-    HardDrive,
-    Image,
-    GitGraph,
-    Network,
-    PlugZap,
-    Globe,
-    HardDriveDownload,
-    ShieldCheck,
+  ArrowRight,
+  Check,
+  HardDrive,
+  LockKeyhole,
+  Server,
 } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
-import FloatingHexBox from "@/components/FloatingHexBox";
-import YamlPreview from "@/components/YamlPreview";
-import WaitlistCard from "@/components/WaitlistCard";
+import ProductPlaceholder from "@/components/ProductPlaceholder";
 
-const features = [
-    {
-        id: "backups",
-        title: "Deterministic Backups",
-        description:
-            "Pull files and documents directly from legacy platforms onto your bare metal. Every payload transfer is a verifiable execution node, meaning zero corrupted files.",
-        icon: <HardDrive className="w-6 h-6 text-muted-foreground" />,
-        className: "md:col-span-2",
-        status: "MVP Feature",
-        statusClass: "bg-muted text-muted-foreground border-border"
-    },
-    {
-        id: "photos",
-        title: "Self-Hosted Photos",
-        description:
-            "An isolated, secure media gallery operating entirely out of your local storage. High-speed indexing without giving megacorps an ML training license to your memories.",
-        icon: <Image className="w-6 h-6 text-muted-foreground" />,
-        className: "md:col-span-1",
-        status: "MVP Feature",
-        statusClass: "bg-muted text-muted-foreground border-border"
-    },
-    {
-        id: "dag",
-        title: "Visual DAG Studio",
-        description:
-            "Coming Soon: Stop writing YAML by hand. Arrange, connect, and deploy workflows using a node graph designer that turns complex scripting into clean data paths.",
-        icon: <GitGraph className="w-6 h-6 text-muted-foreground" />,
-        className: "md:col-span-1",
-        status: "In Development",
-        statusClass: "bg-muted text-muted-foreground border-border"
-    },
-    {
-        id: "vpn",
-        title: "VPN Traffic Tunneling",
-        description:
-            "Coming Soon: The ultimate physical firewall. Encrypt external communication and audit your home network in real-time to watch exactly where 'smart' tech tries to leak your metadata.",
-        icon: <Network className="w-6 h-6 text-muted-foreground" />,
-        className: "md:col-span-2",
-        status: "Planned Roadmap",
-        statusClass: "bg-muted text-muted-foreground border-border"
-    }
-];
-
-const steps = [
-    {
-        step: "01",
-        title: "Plug & Play",
-        description:
-            "Connect the HexBox to your power and router. No complicated BIOS or OS installation required.",
-        icon: <PlugZap className="w-5 h-5 text-muted-foreground" />
-    },
-    {
-        step: "02",
-        title: "Access Local",
-        description:
-            "Open 'hexbox.local' in any browser on your network. Your private dashboard is served directly from the hardware in your home.",
-        icon: <Globe className="w-5 h-5 text-muted-foreground" />
-    },
-    {
-        step: "03",
-        title: "Sync the Vault",
-        description:
-            "Connect the services you want to migrate from. HexBox pulls your data into your local storage through an encrypted gateway.",
-        icon: <HardDriveDownload className="w-5 h-5 text-muted-foreground" />
-    },
-    {
-        step: "04",
-        title: "Take It Back",
-        description:
-            "Once your data is local, you control where it lives, how it moves, and what happens to it.",
-        icon: <ShieldCheck className="w-5 h-5 text-muted-foreground" />
-    }
+const checkoutUrl = "https://buy.stripe.com/fZu8wQ6yu7BYckP8pDgEg08";
+const principles = [
+  {
+    icon: Server,
+    title: "Your own server",
+    text: "HexBox Photos is a personal photo server that runs on hardware in your home, not on a service you rent.",
+  },
+  {
+    icon: LockKeyhole,
+    title: "Privacy by design",
+    text: "Your photo library stays under your control instead of becoming another cloud account.",
+  },
+  {
+    icon: HardDrive,
+    title: "A practical backup path",
+    text: "Keep your photos on local storage you can see, access, and manage yourself.",
+  },
 ];
 
 export default function HexBoxPage() {
-    const [isVideoOpen, setIsVideoOpen] = useState(false);
-
-    return (
-        <Layout>
-            {/* Hero Section */}
-            <section className="relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-amber-500/10 to-orange-500/5 blur-[120px]" />
-
-                <div className="mx-auto max-w-6xl px-6 py-24 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div className="text-left space-y-6">
-                        <Badge
-                            variant="outline"
-                            className="bg-orange-500/10 border-orange-500/20 text-orange-500 px-3 py-1 text-sm font-medium"
-                        >
-                            Coming Soon
-                        </Badge>
-
-                        <div className="space-y-2">
-                            <h1 className="text-6xl font-black tracking-tight md:text-8xl text-white">
-                                HexBox
-                            </h1>
-                            <p className="text-2xl font-bold tracking-tight md:text-4xl bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent leading-tight">
-                                Take Back Your Tech.
-                            </p>
-                        </div>
-
-                        <p className="max-w-lg text-lg md:text-xl text-muted-foreground leading-relaxed">
-                            The self-hosting appliance that turns "the cloud" into your private vault. Fully observable, unit-testable, and billionaire-free.
-                        </p>
-
-                        <div className="flex flex-wrap gap-x-4 gap-y-2 font-mono text-[10px] md:text-xs tracking-widest text-muted-foreground uppercase">
-                            <span className="flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-                                No Subscriptions
-                            </span>
-                            <span className="flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-                                No Tracking
-                            </span>
-                            <span className="flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-                                Local First
-                            </span>
-                        </div>
-
-                        <div className="flex flex-wrap gap-4 pt-4">
-                            <Button
-                                size="lg"
-                                disabled
-                                className="bg-orange-600 text-white opacity-60 cursor-not-allowed"
-                            >
-                                Coming Soon
-                            </Button>
-
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                onClick={() => setIsVideoOpen(true)}
-                                className="hover:bg-muted transition-colors gap-2"
-                            >
-                                <Play className="w-4 h-4 text-orange-500" />
-                                Watch Pitch
-                            </Button>
-                        </div>
-                    </div>
-
-                    <div
-                        className="relative flex justify-center items-center cursor-pointer group"
-                        onClick={() => setIsVideoOpen(true)}
-                    >
-                        <div className="absolute z-20 opacity-0 group-hover:opacity-100 transition-opacity bg-orange-600 text-white px-4 py-2 rounded-full flex items-center gap-2 font-bold shadow-xl translate-y-24">
-                            <Play className="w-4 h-4" />
-                            Play Video
-                        </div>
-                        <FloatingHexBox />
-                    </div>
-                </div>
-            </section>
-
-            {/* Features */}
-            <section className="mx-auto max-w-6xl px-6 py-20">
-                <div className="mb-16 text-center">
-                    <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
-                        Own Your Piece of the Internet
-                    </h2>
-                    <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
-                        Stop renting your digital life. HexBox combines isolated computing with deterministic workflows.
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-orange-500/5 to-transparent opacity-60 blur-2xl" />
-
-                    {features.map((feature) => {
-                        const isFeatured = feature.className?.includes("md:col-span-2");
-
-                        return (
-                            <Card
-                                key={feature.id}
-                                className={`
-                                    relative overflow-hidden group flex flex-col justify-between
-                                    transition-all duration-300
-                                    hover:-translate-y-1 hover:border-orange-500/40
-                                    hover:shadow-lg hover:shadow-orange-500/5
-                                    ${feature.className}
-                                    ${isFeatured ? "ring-1 ring-orange-500/10 bg-card/60 backdrop-blur-sm" : ""}
-                                `}
-                            >
-                                {isFeatured && (
-                                    <div className="absolute -top-20 -right-20 w-40 h-40 bg-orange-500/10 blur-3xl rounded-full" />
-                                )}
-
-                                <div>
-                                    <CardHeader>
-                                        <div className="flex justify-between items-start">
-                                            <div
-                                                className={`
-                                                    mb-4 p-2 rounded-lg border transition-colors
-                                                    ${isFeatured
-                                                        ? "bg-orange-500/5 border-orange-500/20"
-                                                        : "bg-muted/40"
-                                                    }
-                                                `}
-                                            >
-                                                <div
-                                                    className={
-                                                        isFeatured
-                                                            ? "text-orange-500"
-                                                            : "text-muted-foreground"
-                                                    }
-                                                >
-                                                    {feature.icon}
-                                                </div>
-                                            </div>
-
-                                            <Badge
-                                                variant="outline"
-                                                className={`
-                                                    text-[10px] uppercase tracking-wider px-2.5 py-0.5
-                                                    ${feature.statusClass}
-                                                    ${isFeatured ? "border-orange-500/20" : ""}
-                                                `}
-                                            >
-                                                {feature.status}
-                                            </Badge>
-                                        </div>
-
-                                        <CardTitle className="text-xl font-bold tracking-tight group-hover:text-foreground transition-colors">
-                                            {feature.title}
-                                        </CardTitle>
-                                    </CardHeader>
-
-                                    <CardContent>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
-                                            {feature.description}
-                                        </p>
-                                    </CardContent>
-                                </div>
-
-                                {feature.id === "photos" && (
-                                    <CardFooter className="pt-0">
-                                        <Button
-                                            asChild
-                                            variant="outline"
-                                            size="sm"
-                                            className="
-                                                w-full justify-between
-                                                hover:border-orange-500/40 hover:bg-orange-500/5
-                                                transition-all
-                                            "
-                                        >
-                                            <a href="/photos">
-                                                Explore module
-                                                <ArrowRight className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-1 transition-transform" />
-                                            </a>
-                                        </Button>
-                                    </CardFooter>
-                                )}
-                            </Card>
-                        );
-                    })}
-                </div>
-            </section>
-
-            <YamlPreview />
-
-            {/* Steps */}
-            <section className="relative border-t border-zinc-800 bg-zinc-950/40 overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-
-                <div className="relative max-w-6xl mx-auto px-6 py-24 z-10">
-                    <div className="mb-12 text-center md:text-left">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-orange-500/80 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
-                            The HexBox Experience
-                        </span>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 lg:gap-8">
-                        {steps.map((item, index) => (
-                            <div
-                                key={item.step}
-                                className="relative p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 backdrop-blur-sm group hover:bg-zinc-900/80 hover:border-zinc-700/80 transition-all duration-300 flex flex-col h-full"
-                            >
-                                {index < steps.length - 1 && (
-                                    <div className="hidden md:block absolute top-12 left-[calc(1.5rem+3rem)] right-[-1.5rem] h-[1px] bg-gradient-to-r from-zinc-800 to-transparent z-0 group-hover:from-orange-500/30 transition-all duration-500" />
-                                )}
-
-                                <div className="relative z-10 w-12 h-12 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center mb-6 shadow-inner group-hover:border-orange-500/40 group-hover:shadow-[0_0_15px_rgba(234,88,12,0.15)] transition-all duration-300">
-                                    <span className="text-zinc-400 font-mono text-xs font-bold tracking-tight group-hover:text-orange-400 transition-colors">
-                                        {item.step}
-                                    </span>
-                                </div>
-
-                                <div className="relative z-10 flex-grow">
-                                    <h3 className="text-lg font-bold text-zinc-100 mb-2 group-hover:text-white transition-colors">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-zinc-400 text-sm leading-relaxed font-normal">
-                                        {item.description}
-                                    </p>
-                                </div>
-
-                                <div className="w-6 h-[2px] bg-zinc-800 mt-6 group-hover:w-12 group-hover:bg-orange-500 transition-all duration-300" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Coming Soon CTA */}
-            <section className="mx-auto max-w-4xl px-6 py-24">
-                <Card className="border-orange-500/20 bg-gradient-to-br from-card to-orange-500/[0.03]">
-                    <CardContent className="p-12 text-center">
-                        <Badge
-                            variant="outline"
-                            className="mb-6 bg-orange-500/10 border-orange-500/20 text-orange-500"
-                        >
-                            HexBox
-                        </Badge>
-
-                        <h2 className="text-4xl font-bold">
-                            Take Back Your Tech.
-                        </h2>
-
-                        <p className="mt-5 max-w-xl mx-auto text-muted-foreground leading-relaxed">
-                            HexBox is in development. Join the list and we'll let you
-                            know when the first units are ready.
-                        </p>
-
-                        <div className="mt-10 max-w-md mx-auto">
-                            <WaitlistCard
-                                apiEndpoint="https://zu0rim0p04.execute-api.us-east-1.amazonaws.com/default/email-signup-handler"
-                                newsletter="hexbox-waitlist"
-                                title="Join the Waitlist"
-                                subtitle="Be the first to know when HexBox is ready."
-                                label="Email Address"
-                                buttonText="Join Waitlist"
-                                successTitle="You're on the list!"
-                                successDescription="We'll email you when HexBox is ready."
-                                errorTitle="Something went wrong"
-                                errorDescription="We couldn't save your email. Please refresh and try again."
-                            />
-                        </div>
-                    </CardContent>
-                </Card>
-            </section>
-
-            {/* Video Modal */}
-            {isVideoOpen && (
-                <div className="fixed inset-0 z-[100] bg-background/90 backdrop-blur-md flex items-center justify-center p-4">
-                    <div className="relative w-full max-w-5xl aspect-video bg-black border rounded-2xl overflow-hidden">
-                        <button
-                            onClick={() => setIsVideoOpen(false)}
-                            className="absolute top-4 right-4 z-10 text-white/60 hover:text-white"
-                        >
-                            ✕
-                        </button>
-
-                        <iframe
-                            className="absolute inset-0 w-full h-full"
-                            src="https://www.youtube.com/embed/HaWhwNRAgLo?autoplay=1"
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen
-                        />
-                    </div>
-                </div>
-            )}
-        </Layout>
-    );
+  return (
+    <Layout
+      title="HexBox Photos | PageKey"
+      description="HexBox Photos is a personal photo server designed around ownership, privacy, understandable operation, and safe backups."
+    >
+      <section className="border-b border-white/10">
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 md:grid-cols-[1.25fr_.75fr] md:py-28">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+              A PageKey technology product
+            </p>
+            <h1 className="mt-5 text-5xl font-semibold tracking-[-.055em] text-white md:text-7xl">
+              Your photos.
+              <br />
+              Your server.
+            </h1>
+            <p className="mt-7 max-w-xl text-xl leading-relaxed text-zinc-300">
+              HexBox Photos is a personal photo server built to put your library
+              and the infrastructure behind it back under your control.
+            </p>
+            <p className="mt-5 max-w-xl leading-relaxed text-zinc-400">
+              It is a complete, hand-assembled hardware setup with Immich
+              pre-installed for a local-first photo library. It is for people
+              who want a practical alternative to handing their memories to
+              another cloud service.
+            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={checkoutUrl}
+                className="inline-flex items-center justify-center gap-2 bg-orange-400 px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-orange-300"
+              >
+                Purchase HexBox Photos <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#how-it-works"
+                className="inline-flex items-center justify-center border border-white/20 px-5 py-3 text-sm font-bold text-white hover:border-orange-300 hover:text-orange-200"
+              >
+                How it works
+              </a>
+            </div>
+          </div>
+          <aside className="border border-white/15 bg-zinc-900/50 p-7 md:self-end">
+            <ProductPlaceholder
+              label="Photo space"
+              detail="HexBox Photos"
+              variant="hardware"
+            />
+            <p className="mt-7 text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+              HexBox Photos Ed. 1
+            </p>
+            <p className="mt-6 text-4xl font-semibold text-white">
+              $349{" "}
+              <span className="text-base font-normal text-zinc-500">USD</span>
+            </p>
+            <p className="mt-2 text-sm text-zinc-400">
+              Complete hardware setup. Free US shipping.
+            </p>
+            <div className="my-7 border-t border-white/10" />
+            <p className="text-sm leading-relaxed text-zinc-400">
+              The first Edition is a single, hand-assembled unit. Availability
+              is limited to this configuration.
+            </p>
+            <a
+              href={checkoutUrl}
+              className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200"
+            >
+              Buy securely via Stripe <ArrowRight className="h-4 w-4" />
+            </a>
+          </aside>
+        </div>
+      </section>
+      <section
+        id="how-it-works"
+        className="mx-auto max-w-7xl px-6 py-20 md:py-28"
+      >
+        <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+          Designed for independence
+        </p>
+        <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-[-.04em] text-white md:text-5xl">
+          A more understandable home for your photo library.
+        </h2>
+        <div className="mt-14 grid gap-8 md:grid-cols-3">
+          {principles.map(({ icon: Icon, title, text }) => (
+            <article key={title} className="border-t border-white/15 pt-6">
+              <Icon className="h-7 w-7 text-orange-400" />
+              <h3 className="mt-10 text-xl font-semibold text-white">
+                {title}
+              </h3>
+              <p className="mt-4 leading-relaxed text-zinc-400">{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="border-y border-white/10 bg-zinc-900/35">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+              What is included
+            </p>
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-.04em] text-white">
+              The work to get started is already done.
+            </h2>
+          </div>
+          <ul className="space-y-4 text-zinc-300">
+            {[
+              "A hand-assembled HexBox Photos hardware setup",
+              "Immich pre-installed",
+              "Plug-and-play local network setup",
+              "Local-first photo storage",
+              "No monthly cloud subscription required",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <Check className="mt-1 h-4 w-4 shrink-0 text-orange-400" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+            Get started
+          </p>
+          <h2 className="mt-5 text-4xl font-semibold tracking-[-.04em] text-white">
+            Choose the path that fits.
+          </h2>
+          <p className="mt-5 leading-relaxed text-zinc-400">
+            Purchase the available HexBox Photos Edition, or contact PageKey
+            with questions about whether it is right for your library and home
+            setup.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-5">
+            <a
+              href={checkoutUrl}
+              className="inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200"
+            >
+              Purchase via Stripe <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="mailto:hello@pagekey.io?subject=HexBox%20Photos%20question"
+              className="inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200"
+            >
+              Ask a question <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
 }
