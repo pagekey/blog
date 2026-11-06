@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import ProductPlaceholder from "@/components/ProductPlaceholder";
+import hexBoxImage from "@/assets/images/hb6.jpg";
 
 const checkoutUrl = "https://buy.stripe.com/fZu8wQ6yu7BYckP8pDgEg08";
 const principles = [
@@ -74,6 +75,8 @@ export default function HexBoxPage() {
               label="Photo space"
               detail="HexBox Photos"
               variant="hardware"
+              src={hexBoxImage}
+              alt="HexBox Photos personal photo server"
             />
             <p className="mt-7 text-xs font-bold uppercase tracking-[.18em] text-orange-400">
               HexBox Photos Ed. 1

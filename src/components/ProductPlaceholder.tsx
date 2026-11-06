@@ -2,13 +2,36 @@ interface ProductPlaceholderProps {
   label: string;
   detail: string;
   variant?: "hardware" | "physical";
+  src?: string;
+  alt?: string;
+  overlay?: string;
 }
 
 export default function ProductPlaceholder({
   label,
   detail,
   variant = "physical",
+  src,
+  alt,
+  overlay,
 }: ProductPlaceholderProps) {
+  if (src) {
+    return (
+      <div className="relative aspect-[4/3] overflow-hidden border border-white/10 bg-[#181818]">
+        <img
+          src={src}
+          alt={alt ?? `${detail} product photography`}
+          className={`h-full w-full object-cover ${overlay ? "opacity-50" : ""}`}
+        />
+        {overlay && (
+          <div className="absolute inset-0 flex items-center justify-center bg-zinc-950/30 p-5 text-center text-xs font-bold uppercase tracking-[.18em] text-white">
+            {overlay}
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div
       className="relative isolate flex aspect-[4/3] overflow-hidden border border-white/10 bg-[#181818] p-5"

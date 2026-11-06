@@ -2,6 +2,9 @@ import { ArrowRight, Box, Camera, Snowflake } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ProductPlaceholder from "@/components/ProductPlaceholder";
+import hexBoxImage from "@/assets/images/hb6.jpg";
+import printerImage from "@/assets/images/printer1.jpg";
+import scraperImage from "@/assets/images/scraper4.jpg";
 
 export default function ProductsPage() {
   return (
@@ -29,6 +32,8 @@ export default function ProductsPage() {
               label="Photo space"
               detail="HexBox Photos"
               variant="hardware"
+              src={hexBoxImage}
+              alt="HexBox Photos personal photo server"
             />
             <div className="flex flex-col items-start justify-center">
               <Camera className="h-8 w-8 text-orange-400" />
@@ -60,7 +65,12 @@ export default function ProductsPage() {
       <section className="border-y border-white/10">
         <div className="mx-auto grid max-w-7xl md:grid-cols-2">
           <article className="border-b border-white/10 p-8 md:border-b-0 md:border-r md:p-12">
-            <ProductPlaceholder label="Photo space" detail="Ice scraper" />
+            <ProductPlaceholder
+              label="Photo space"
+              detail="Ice scraper"
+              src={scraperImage}
+              alt="Custom 3D-printed ice scraper"
+            />
             <Snowflake className="mt-8 h-8 w-8 text-orange-400" />
             <p className="mt-8 text-xs font-bold uppercase tracking-[.18em] text-orange-400">
               Available now
@@ -83,6 +93,9 @@ export default function ProductsPage() {
             <ProductPlaceholder
               label="Photo space"
               detail="License plate cover"
+              src={printerImage}
+              alt="3D printer used to make PageKey physical products"
+              overlay="In development"
             />
             <Box className="mt-8 h-8 w-8 text-zinc-500" />
             <p className="mt-8 text-xs font-bold uppercase tracking-[.18em] text-zinc-500">
