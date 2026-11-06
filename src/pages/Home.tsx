@@ -1,7 +1,10 @@
-import { ArrowRight, Box, Camera, Wrench } from "lucide-react";
+import { ArrowRight, Box, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import MailingListSignup from "@/components/MailingListSignup";
+import cadImage from "@/assets/images/cad2.jpg";
+import hexBoxImage from "@/assets/images/hb6.jpg";
+import scraperImage from "@/assets/images/scraper4.jpg";
 
 const ArrowLink = ({
   to,
@@ -59,8 +62,13 @@ export default function HomePage() {
 
       <section className="mx-auto grid max-w-7xl border-x border-white/10 md:grid-cols-2">
         <div className="border-b border-white/10 p-8 md:border-b-0 md:border-r md:p-12 lg:p-16">
-          <Camera className="h-7 w-7 text-orange-400" aria-hidden="true" />
-          <p className="mt-12 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
+          <img
+            src={hexBoxImage}
+            alt="HexBox Photos personal photo server"
+            className="aspect-[4/3] w-full border border-white/10 object-cover"
+          />
+          <Camera className="mt-8 h-7 w-7 text-orange-400" aria-hidden="true" />
+          <p className="mt-8 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
             Flagship technology product
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-white">
@@ -76,8 +84,13 @@ export default function HomePage() {
           </div>
         </div>
         <div className="p-8 md:p-12 lg:p-16">
-          <Box className="h-7 w-7 text-orange-400" aria-hidden="true" />
-          <p className="mt-12 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
+          <img
+            src={scraperImage}
+            alt="Custom 3D-printed ice scraper"
+            className="aspect-[4/3] w-full border border-white/10 object-cover"
+          />
+          <Box className="mt-8 h-7 w-7 text-orange-400" aria-hidden="true" />
+          <p className="mt-8 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">
             Designed and made in small batches
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-white">
@@ -95,9 +108,11 @@ export default function HomePage() {
 
       <section className="border-y border-white/10 bg-zinc-900/35">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[0.8fr_1.2fr] md:py-28">
-          <div>
-            <Wrench className="h-7 w-7 text-orange-400" aria-hidden="true" />
-          </div>
+          <img
+            src={cadImage}
+            alt="Ice scraper design open in CAD software"
+            className="aspect-[4/3] w-full border border-white/10 object-cover"
+          />
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-orange-400">
               Custom manufacturing
