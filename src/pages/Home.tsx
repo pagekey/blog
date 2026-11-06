@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import MailingListSignup from "@/components/MailingListSignup";
 import cadImage from "@/assets/images/cad2.jpg";
+import happyTechImage from "@/assets/images/happytech.jpg";
 import hexBoxImage from "@/assets/images/hb6.jpg";
 import scraperImage from "@/assets/images/scraper4.jpg";
 
@@ -30,32 +31,41 @@ export default function HomePage() {
     >
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
-          <p className="mb-7 text-xs font-bold uppercase tracking-[0.2em] text-orange-400">
-            Independent technology, design, and manufacturing
-          </p>
-          <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.055em] text-white sm:text-7xl md:text-8xl">
-            Take Back Tech.
-          </h1>
-          <p className="mt-8 max-w-2xl text-2xl leading-snug text-zinc-200 md:text-3xl">
-            Useful things. Built with purpose. Made to be yours.
-          </p>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-400">
-            PageKey designs, builds, and manufactures practical products and
-            technology that put people back in control.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/hexbox"
-              className="inline-flex items-center justify-center gap-2 bg-orange-400 px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-orange-300"
-            >
-              Explore HexBox Photos <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              to="/products"
-              className="inline-flex items-center justify-center border border-white/20 px-5 py-3 text-sm font-bold text-white transition-colors hover:border-orange-300 hover:text-orange-200"
-            >
-              View physical products
-            </Link>
+          <div className="grid gap-12 md:grid-cols-[1.1fr_.9fr] md:items-center">
+            <div>
+              <p className="mb-7 text-xs font-bold uppercase tracking-[0.2em] text-orange-400">
+                Independent technology, design, and manufacturing
+              </p>
+              <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.055em] text-white sm:text-7xl md:text-8xl">
+                Take Back Tech.
+              </h1>
+              <p className="mt-8 max-w-2xl text-2xl leading-snug text-zinc-200 md:text-3xl">
+                Useful things. Built with purpose. Made to be yours.
+              </p>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-400">
+                PageKey designs, builds, and manufactures practical products and
+                technology that put people back in control.
+              </p>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  to="/hexbox"
+                  className="inline-flex items-center justify-center gap-2 bg-orange-400 px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-orange-300"
+                >
+                  Explore HexBox Photos <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/products"
+                  className="inline-flex items-center justify-center border border-white/20 px-5 py-3 text-sm font-bold text-white transition-colors hover:border-orange-300 hover:text-orange-200"
+                >
+                  View physical products
+                </Link>
+              </div>
+            </div>
+            <img
+              src={happyTechImage}
+              alt="Happy person using technology"
+              className="aspect-square w-full border border-white/10 object-cover"
+            />
           </div>
         </div>
       </section>
