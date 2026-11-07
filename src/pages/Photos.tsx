@@ -141,7 +141,7 @@ export default function PhotosPage() {
 
                 <CardHeader className="text-center pb-4">
                   <CardTitle className="text-2xl font-bold">
-                    HexBox Photos Ed. 1
+                    HexBox Photos
                   </CardTitle>
                   <CardDescription>Complete hardware setup</CardDescription>
                   <div className="mt-4 flex items-baseline justify-center gap-1">

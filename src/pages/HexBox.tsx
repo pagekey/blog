@@ -79,7 +79,7 @@ export default function HexBoxPage() {
               alt="HexBox Photos personal photo server"
             />
             <p className="mt-7 text-xs font-bold uppercase tracking-[.18em] text-orange-400">
-              HexBox Photos Ed. 1
+              HexBox Photos
             </p>
             <p className="mt-6 text-4xl font-semibold text-white">
               $349{" "}
