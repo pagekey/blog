@@ -9,9 +9,14 @@ const planningIncludes = [
 ];
 
 const packages = [
-  { name: "Starter Website", pages: "1–3 pages", price: "$1,000" },
-  { name: "Standard Website", pages: "Up to 5 pages", price: "$1,500" },
-  { name: "Advanced Website", pages: null, price: "$2,500+" },
+  { name: "Starter Website", details: "1–3 pages", price: "$1,000" },
+  { name: "Standard Website", details: "Up to 5 pages", price: "$1,500" },
+  {
+    name: "Advanced Website",
+    details:
+      "For projects with custom functionality, more involved integrations, or complex layouts.",
+    price: "$2,500+",
+  },
 ];
 
 const developmentIncludes = [
@@ -29,14 +34,78 @@ const additionalServices = [
   ["Additional revision round", "$125"],
   ["Custom functionality", "Custom quote"],
   ["Content entry / formatting", "$100/hour"],
-  ["Additional development", "$100/hour"],
+  ["Custom Development", "$100/hour"],
 ];
 
 const supportIncludes = [
   "Routine website health checks",
   "Software and dependency updates, where applicable",
   "Basic troubleshooting",
-  "Up to 30 minutes of minor content or configuration changes monthly",
+  "Up to one hour of minor content or configuration changes per month",
+];
+
+// Placeholder content only. Replace titles, descriptions, previews, and hrefs
+// with actual projects when available; these are not completed client projects.
+const portfolioProjects: {
+  title: string;
+  description: string;
+  href: string | null;
+  previewClassName: string;
+}[] = [
+  {
+    title: "Personal Website — Placeholder",
+    description:
+      "Example space for a personal website with an introduction, featured work, and a contact page.",
+    href: null,
+    previewClassName: "grid-cols-[1.3fr_1fr]",
+  },
+  {
+    title: "Business Website — Placeholder",
+    description:
+      "Example space for a small-business website highlighting services and making it easy to get in touch.",
+    href: null,
+    previewClassName: "grid-cols-2",
+  },
+  {
+    title: "Custom Website — Placeholder",
+    description:
+      "Example space for a website with tailored layouts, custom features, or connected tools.",
+    href: null,
+    previewClassName: "grid-cols-[1fr_1.3fr]",
+  },
+];
+
+const projectSteps = [
+  {
+    title: "Discovery meeting",
+    description:
+      "We discuss your goals, audience, needs, and budget, then agree on the scope and project plan.",
+  },
+  {
+    title: "Initial design",
+    description:
+      "You receive an initial design to review, with a proposed layout and visual direction for your website.",
+  },
+  {
+    title: "Comments & revisions",
+    description:
+      "Share consolidated comments so we can refine the design together. Up to five revision rounds are included.",
+  },
+  {
+    title: "Development & review",
+    description:
+      "We build your responsive website, add the agreed features, and walk through the finished site with you.",
+  },
+  {
+    title: "Launch & handoff",
+    description:
+      "After final approval and payment, we launch your website and provide access to your site and deliverables.",
+  },
+  {
+    title: "Ongoing support",
+    description:
+      "Choose optional Website Care & Maintenance for routine upkeep, or request additional support as needed.",
+  },
 ];
 
 const projectTerms = [
@@ -103,7 +172,7 @@ export default function WebsitesPage() {
               aria-hidden="true"
             />
             <h2 className="mt-5 text-3xl font-semibold tracking-[-.04em] text-white">
-              Project Planning
+              Discovery &amp; Planning
             </h2>
             <p className="mt-5 text-4xl font-semibold tracking-tight text-white">
               $200
@@ -124,17 +193,19 @@ export default function WebsitesPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <h2 className="text-3xl font-semibold tracking-[-.04em] text-white md:text-4xl">
-          Website Development
+          Website Design &amp; Development
         </h2>
         <div className="mt-9 grid gap-4 md:grid-cols-3">
-          {packages.map(({ name, pages, price }) => (
+          {packages.map(({ name, details, price }) => (
             <article
               key={name}
-              className="border border-white/15 bg-zinc-900/35 p-7 md:p-8"
+              className="flex flex-col border border-white/15 bg-zinc-900/35 p-7 md:p-8"
             >
               <h3 className="text-xl font-semibold text-white">{name}</h3>
-              {pages && <p className="mt-2 text-sm text-zinc-400">{pages}</p>}
-              <p className="mt-9 text-xs font-bold uppercase tracking-[.14em] text-zinc-500">
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                {details}
+              </p>
+              <p className="mt-auto pt-9 text-xs font-bold uppercase tracking-[.14em] text-zinc-500">
                 Starting price
               </p>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-orange-300">
@@ -151,6 +222,113 @@ export default function WebsitesPage() {
             items={developmentIncludes}
             className="mt-5 grid gap-x-10 gap-y-3 space-y-0 md:grid-cols-2"
           />
+        </div>
+      </section>
+
+      <section className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+          <h2 className="text-3xl font-semibold tracking-[-.04em] text-white md:text-4xl">
+            Portfolio
+          </h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400">
+            Project examples will appear here. The cards below are placeholders,
+            not completed client projects.
+          </p>
+          <div className="mt-9 grid gap-4 md:grid-cols-3">
+            {portfolioProjects.map(
+              ({ title, description, href, previewClassName }) => (
+                <article
+                  key={title}
+                  className="flex flex-col border border-white/15 bg-zinc-900/35"
+                >
+                  {/* Decorative image placeholder; replace with a project screenshot. */}
+                  <div
+                    className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-white/10 bg-linear-to-br from-orange-400/10 via-zinc-900 to-zinc-950 p-4 lg:p-6"
+                    aria-hidden="true"
+                  >
+                    <div className="w-full border border-white/15 bg-zinc-950/80 p-3 shadow-xl">
+                      <div className="flex gap-1.5 border-b border-white/10 pb-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-orange-400/70" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-600" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-600" />
+                      </div>
+                      <div
+                        className={`mt-3 grid items-center gap-3 ${previewClassName}`}
+                      >
+                        <div className="space-y-2">
+                          <div className="h-2 w-3/4 bg-orange-300/60" />
+                          <div className="h-1.5 w-full bg-zinc-600" />
+                          <div className="h-1.5 w-2/3 bg-zinc-700" />
+                          <div className="mt-3 h-4 w-12 border border-orange-400/50 bg-orange-400/10" />
+                        </div>
+                        <div className="h-14 border border-orange-300/15 bg-orange-400/10" />
+                      </div>
+                    </div>
+                    <span className="absolute right-3 bottom-3 bg-zinc-950 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-orange-300">
+                      Placeholder preview
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-7">
+                    <h3 className="text-xl font-semibold text-white">
+                      {title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                      {description}
+                    </p>
+                    <div className="mt-auto pt-6 text-sm font-semibold">
+                      {href ? (
+                        <a
+                          href={href}
+                          className="inline-flex items-center gap-2 text-orange-300 transition-colors hover:text-orange-200"
+                        >
+                          View project{" "}
+                          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      ) : (
+                        <span className="text-zinc-500">
+                          Project link coming soon
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+          <h2 className="text-3xl font-semibold tracking-[-.04em] text-white md:text-4xl">
+            From first conversation to ongoing care
+          </h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400">
+            A clear, collaborative process with opportunities to review and
+            share feedback along the way.
+          </p>
+          <ol className="mt-10 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+            {projectSteps.map(({ title, description }, index) => (
+              <li
+                key={title}
+                className="relative border-l border-orange-400/30 pl-6"
+              >
+                <span
+                  className="absolute -left-1 top-1.5 h-2 w-2 rounded-full bg-orange-400"
+                  aria-hidden="true"
+                />
+                <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
+                  Step 0{index + 1}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold text-white">
+                  {title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                  {description}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -202,7 +380,7 @@ export default function WebsitesPage() {
               </h2>
             </div>
             <h3 className="mt-8 font-medium text-zinc-300">
-              Basic Maintenance
+              Website Care &amp; Maintenance
             </h3>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-white">
               $75
@@ -211,6 +389,10 @@ export default function WebsitesPage() {
               </span>
             </p>
             <Checklist items={supportIncludes} className="mt-6" />
+            <p className="mt-6 border-l-2 border-orange-400/60 pl-4 text-sm leading-relaxed text-zinc-400">
+              Hosting and domain registration are separate costs and are not
+              included in the $75/month care and maintenance price.
+            </p>
             <p className="mt-6 text-sm leading-relaxed text-zinc-400">
               Additional support and development billed at $100/hour.
             </p>
@@ -233,11 +415,11 @@ export default function WebsitesPage() {
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 px-6 py-14 md:flex-row md:items-center md:py-16">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-semibold tracking-[-.04em] text-white">
-              Every project is different.
+              Let&apos;s build something that works for you.
             </h2>
             <p className="mt-4 leading-relaxed text-zinc-400">
-              Custom proposals are available based on each author&apos;s needs
-              and goals.
+              PageKey works with each customer to understand their goals and
+              develop a solution that fits their needs and budget.
             </p>
           </div>
           <a
