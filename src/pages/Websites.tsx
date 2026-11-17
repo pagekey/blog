@@ -1,5 +1,7 @@
 import { ArrowRight, Check, ClipboardList, LifeBuoy } from "lucide-react";
 import Layout from "@/components/Layout";
+import jeannetteMillsPreview from "@/assets/images/websites/jeannettemils.com.jpg";
+import pageKeyPreview from "@/assets/images/websites/pagekey.io.jpg";
 
 const planningIncludes = [
   "60–90 minute discovery session",
@@ -44,35 +46,40 @@ const supportIncludes = [
   "Up to one hour of minor content or configuration changes per month",
 ];
 
-// Placeholder content only. Replace titles, descriptions, previews, and hrefs
-// with actual projects when available; these are not completed client projects.
 const portfolioProjects: {
   title: string;
   description: string;
   href: string | null;
-  previewClassName: string;
+  image: string;
+  imageAlt: string;
 }[] = [
   {
-    title: "Personal Website — Placeholder",
+    title: "JeannetteMills.com",
     description:
-      "Example space for a personal website with an introduction, featured work, and a contact page.",
-    href: null,
-    previewClassName: "grid-cols-[1.3fr_1fr]",
+      "A website for author and leadership consultant Jeannette Mills, showcasing her book, consulting services, and approach to developing strong leaders.",
+    href: "https://jeannettemills.com",
+    image: jeannetteMillsPreview,
+    imageAlt:
+      "Jeannette Mills website with her portrait and the headline Lead Boldly. Build what lasts.",
   },
   {
-    title: "Business Website — Placeholder",
+    title: "PageKey.io",
     description:
-      "Example space for a small-business website highlighting services and making it easy to get in touch.",
-    href: null,
-    previewClassName: "grid-cols-2",
+      "Our own website, bringing together PageKey's products, manufacturing and website services, and a technical blog in a responsive design.",
+    href: "https://pagekey.io",
+    image: pageKeyPreview,
+    imageAlt:
+      "PageKey homepage with the Take Back Tech headline and orange heart illustration",
   },
-  {
+  // Restore this third project after its website facelift is ready.
+  /* {
     title: "Custom Website — Placeholder",
     description:
       "Example space for a website with tailored layouts, custom features, or connected tools.",
     href: null,
-    previewClassName: "grid-cols-[1fr_1.3fr]",
-  },
+    image: "", // Add the project screenshot when ready.
+    imageAlt: "",
+  }, */
 ];
 
 const projectSteps = [
@@ -231,43 +238,22 @@ export default function WebsitesPage() {
             Portfolio
           </h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400">
-            Project examples will appear here. The cards below are placeholders,
-            not completed client projects.
+            Explore an author&apos;s website and PageKey&apos;s own online home.
+            Follow the links to visit the sites.
           </p>
-          <div className="mt-9 grid gap-4 md:grid-cols-3">
+          <div className="mt-9 grid gap-4 md:grid-cols-2">
             {portfolioProjects.map(
-              ({ title, description, href, previewClassName }) => (
+              ({ title, description, href, image, imageAlt }) => (
                 <article
                   key={title}
                   className="flex flex-col border border-white/15 bg-zinc-900/35"
                 >
-                  {/* Decorative image placeholder; replace with a project screenshot. */}
-                  <div
-                    className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-white/10 bg-linear-to-br from-orange-400/10 via-zinc-900 to-zinc-950 p-4 lg:p-6"
-                    aria-hidden="true"
-                  >
-                    <div className="w-full border border-white/15 bg-zinc-950/80 p-3 shadow-xl">
-                      <div className="flex gap-1.5 border-b border-white/10 pb-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-orange-400/70" />
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-600" />
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-600" />
-                      </div>
-                      <div
-                        className={`mt-3 grid items-center gap-3 ${previewClassName}`}
-                      >
-                        <div className="space-y-2">
-                          <div className="h-2 w-3/4 bg-orange-300/60" />
-                          <div className="h-1.5 w-full bg-zinc-600" />
-                          <div className="h-1.5 w-2/3 bg-zinc-700" />
-                          <div className="mt-3 h-4 w-12 border border-orange-400/50 bg-orange-400/10" />
-                        </div>
-                        <div className="h-14 border border-orange-300/15 bg-orange-400/10" />
-                      </div>
-                    </div>
-                    <span className="absolute right-3 bottom-3 bg-zinc-950 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-orange-300">
-                      Placeholder preview
-                    </span>
-                  </div>
+                  <img
+                    src={image}
+                    alt={imageAlt}
+                    loading="lazy"
+                    className="aspect-[16/9] w-full border-b border-white/10 object-cover object-top"
+                  />
                   <div className="flex flex-1 flex-col p-7">
                     <h3 className="text-xl font-semibold text-white">
                       {title}
@@ -279,6 +265,8 @@ export default function WebsitesPage() {
                       {href ? (
                         <a
                           href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 text-orange-300 transition-colors hover:text-orange-200"
                         >
                           View project{" "}
