@@ -1,7 +1,77 @@
 import pageKeyLogo from "@/assets/logo_dark.svg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { DropdownMenu } from "radix-ui";
+
+const serviceLinks = [
+  ["/manufacturing", "Manufacturing"],
+  ["/websites", "Websites"],
+];
+
+function NavigationLinks({ onNavigate }: { onNavigate?: () => void }) {
+  const { pathname } = useLocation();
+  const isServiceActive = serviceLinks.some(([to]) => pathname === to);
+  const linkClassName = ({ isActive }: { isActive: boolean }) =>
+    `transition-colors hover:text-orange-400 ${isActive ? "text-orange-400" : "text-zinc-300"}`;
+
+  return (
+    <>
+      <NavLink to="/products" className={linkClassName} onClick={onNavigate}>
+        Products
+      </NavLink>
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger asChild>
+          <button
+            type="button"
+            className={`group flex w-fit items-center gap-1.5 transition-colors hover:text-orange-400 data-[state=open]:text-orange-400 ${isServiceActive ? "text-orange-400" : "text-zinc-300"}`}
+          >
+            Services
+            <ChevronDown
+              className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180"
+              aria-hidden="true"
+            />
+          </button>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Portal>
+          <DropdownMenu.Content
+            align="start"
+            sideOffset={12}
+            collisionPadding={16}
+            className="z-[60] min-w-48 border border-white/15 bg-zinc-950 p-1.5 shadow-xl"
+          >
+            {serviceLinks.map(([to, label]) => (
+              <DropdownMenu.Item key={to} asChild>
+                <NavLink
+                  to={to}
+                  onClick={onNavigate}
+                  className={({ isActive }) =>
+                    `block px-3 py-2.5 text-sm font-medium outline-none transition-colors data-[highlighted]:bg-white/10 data-[highlighted]:text-orange-300 ${isActive ? "text-orange-400" : "text-zinc-300"}`
+                  }
+                >
+                  {label}
+                </NavLink>
+              </DropdownMenu.Item>
+            ))}
+          </DropdownMenu.Content>
+        </DropdownMenu.Portal>
+      </DropdownMenu.Root>
+      {[
+        ["/mission", "Mission"],
+        ["/contact", "Contact"],
+      ].map(([to, label]) => (
+        <NavLink
+          key={to}
+          to={to}
+          className={linkClassName}
+          onClick={onNavigate}
+        >
+          {label}
+        </NavLink>
+      ))}
+    </>
+  );
+}
 
 export default function Layout({
   children,
@@ -71,6 +141,8 @@ export default function Layout({
             className="md:hidden flex items-center justify-center p-2 text-foreground hover:text-orange-400 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -83,22 +155,7 @@ export default function Layout({
             aria-label="Primary navigation"
             className="hidden md:flex items-center gap-7 text-sm font-medium"
           >
-            {[
-              ["/products", "Products"],
-              ["/manufacturing", "Manufacturing"],
-              ["/mission", "Mission"],
-              ["/contact", "Contact"],
-            ].map(([to, label]) => (
-              <NavLink
-                key={to}
-                to={to}
-                className={({ isActive }) =>
-                  `transition-colors hover:text-orange-400 ${isActive ? "text-orange-400" : "text-zinc-300"}`
-                }
-              >
-                {label}
-              </NavLink>
-            ))}
+            <NavigationLinks />
             <NavLink
               to="/hexbox"
               className="border border-orange-400/70 px-3.5 py-2 text-orange-300 transition-colors hover:bg-orange-400 hover:text-zinc-950"
@@ -112,25 +169,18 @@ export default function Layout({
         {isMobileMenuOpen && (
           <div className="md:hidden border-t bg-background">
             <nav
+              id="mobile-navigation"
               aria-label="Mobile navigation"
               className="flex flex-col px-6 py-5 gap-4 text-sm font-medium"
             >
-              {[
-                ["/products", "Products"],
-                ["/manufacturing", "Manufacturing"],
-                ["/mission", "Mission"],
-                ["/contact", "Contact"],
-                ["/hexbox", "HexBox Photos"],
-              ].map(([to, label]) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  className="transition-colors hover:text-orange-400"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {label}
-                </NavLink>
-              ))}
+              <NavigationLinks onNavigate={() => setIsMobileMenuOpen(false)} />
+              <NavLink
+                to="/hexbox"
+                className="transition-colors hover:text-orange-400"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                HexBox Photos
+              </NavLink>
             </nav>
           </div>
         )}

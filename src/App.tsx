@@ -18,6 +18,7 @@ import AboutPage from "./pages/About";
 import SignupPage from "./pages/Signup";
 import PortfolioPage from "./pages/Portfolio";
 import ManufacturingPage from "./pages/Manufacturing";
+import WebsitesPage from "./pages/Websites";
 import MissionPage from "./pages/Mission";
 import ContactPage from "./pages/Contact";
 
@@ -31,6 +32,7 @@ function App() {
       <Route path="/events" element={<EventsPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/manufacturing" element={<ManufacturingPage />} />
+      <Route path="/websites" element={<WebsitesPage />} />
       <Route path="/mission" element={<MissionPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/about" element={<AboutPage />} />
