@@ -53,34 +53,34 @@ const portfolioProjects: {
   image: string;
   imageAlt: string;
 }[] = [
-  {
-    title: "JeannetteMills.com",
-    description:
-      "A website for author and leadership consultant Jeannette Mills, showcasing her book, consulting services, and approach to developing strong leaders.",
-    href: "https://jeannettemills.com",
-    image: jeannetteMillsPreview,
-    imageAlt:
-      "Jeannette Mills website with her portrait and the headline Lead Boldly. Build what lasts.",
-  },
-  {
-    title: "PageKey.io",
-    description:
-      "Our own website, bringing together PageKey's products, manufacturing and website services, and a technical blog in a responsive design.",
-    href: "https://pagekey.io",
-    image: pageKeyPreview,
-    imageAlt:
-      "PageKey homepage with the Take Back Tech headline and orange heart illustration",
-  },
-  // Restore this third project after its website facelift is ready.
-  /* {
-    title: "Custom Website — Placeholder",
-    description:
-      "Example space for a website with tailored layouts, custom features, or connected tools.",
-    href: null,
-    image: "", // Add the project screenshot when ready.
-    imageAlt: "",
-  }, */
-];
+    {
+      title: "JeannetteMills.com",
+      description:
+        "A website for author and leadership consultant Jeannette Mills, showcasing her book, consulting services, and approach to developing strong leaders.",
+      href: "https://jeannettemills.pagekey.io",
+      image: jeannetteMillsPreview,
+      imageAlt:
+        "Jeannette Mills website with her portrait and the headline Lead Boldly. Build what lasts.",
+    },
+    {
+      title: "PageKey.io",
+      description:
+        "Our own website, bringing together PageKey's products, manufacturing and website services, and a technical blog in a responsive design.",
+      href: "https://pagekey.io",
+      image: pageKeyPreview,
+      imageAlt:
+        "PageKey homepage with the Take Back Tech headline and orange heart illustration",
+    },
+    // Restore this third project after its website facelift is ready.
+    /* {
+      title: "Custom Website — Placeholder",
+      description:
+        "Example space for a website with tailored layouts, custom features, or connected tools.",
+      href: null,
+      image: "", // Add the project screenshot when ready.
+      imageAlt: "",
+    }, */
+  ];
 
 const projectSteps = [
   {
