@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <Layout
       title="Contact | PageKey"
-      description="Contact PageKey about HexBox Photos, physical products, or small-batch custom manufacturing."
+      description="Contact PageKey about websites, HexBox Photos, physical products, or small-batch custom manufacturing."
     >
       <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
         <p className="text-xs font-bold uppercase tracking-[.18em] text-orange-400">
@@ -22,7 +22,7 @@ export default function ContactPage() {
           Let&apos;s talk about what you need to make.
         </h1>
         <p className="mt-7 max-w-2xl text-lg leading-relaxed text-zinc-400">
-          Ask about HexBox Photos, physical products, or a practical custom
+          Ask about websites, HexBox Photos, physical products, or a practical custom
           manufacturing idea. For manufacturing, it helps to include the
           purpose, quantity, dimensions, and any sketches or references.
         </p>
