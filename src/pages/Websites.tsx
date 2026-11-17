@@ -2,6 +2,7 @@ import { ArrowRight, Check, ClipboardList, LifeBuoy } from "lucide-react";
 import Layout from "@/components/Layout";
 import jeannetteMillsPreview from "@/assets/images/websites/jeannettemils.com.jpg";
 import pageKeyPreview from "@/assets/images/websites/pagekey.io.jpg";
+import { Link } from "react-router-dom";
 
 const planningIncludes = [
   "60–90 minute discovery session",
@@ -410,13 +411,13 @@ export default function WebsitesPage() {
               develop a solution that fits their needs and budget.
             </p>
           </div>
-          <a
-            href="mailto:hello@pagekey.io?subject=Website%20project%20inquiry"
+          <Link
+            to="/contact"
             className="inline-flex w-fit shrink-0 items-center gap-3 border border-orange-400/70 px-6 py-3.5 text-sm font-bold text-orange-300 transition-colors hover:bg-orange-400 hover:text-zinc-950"
           >
             Start a conversation{" "}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </a>
+          </Link>
         </div>
       </section>
     </Layout>
