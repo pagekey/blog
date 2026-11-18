@@ -1,7 +1,8 @@
 import { ArrowRight, Check, ClipboardList, LifeBuoy } from "lucide-react";
 import Layout from "@/components/Layout";
 import jeannetteMillsPreview from "@/assets/images/websites/jeannettemils.com.jpg";
-import pageKeyPreview from "@/assets/images/websites/pagekey.io.jpg";
+import alliedRecyclingPreview from "@/assets/images/websites/alliedrecyclingnj.com.png";
+import greenFellowFarmsPreview from "@/assets/images/websites/greenfellowfarms.com.png";
 import { Link } from "react-router-dom";
 
 const planningIncludes = [
@@ -54,34 +55,34 @@ const portfolioProjects: {
   image: string;
   imageAlt: string;
 }[] = [
-    {
-      title: "JeannetteMills.com",
-      description:
-        "A website for author and leadership consultant Jeannette Mills, showcasing her book, consulting services, and approach to developing strong leaders.",
-      href: "https://jeannettemills.pagekey.io",
-      image: jeannetteMillsPreview,
-      imageAlt:
-        "Jeannette Mills website with her portrait and the headline Lead Boldly. Build what lasts.",
-    },
-    {
-      title: "PageKey.io",
-      description:
-        "Our own website, bringing together PageKey's products, manufacturing and website services, and a technical blog in a responsive design.",
-      href: "https://pagekey.io",
-      image: pageKeyPreview,
-      imageAlt:
-        "PageKey homepage with the Take Back Tech headline and orange heart illustration",
-    },
-    // Restore this third project after its website facelift is ready.
-    /* {
-      title: "Custom Website — Placeholder",
-      description:
-        "Example space for a website with tailored layouts, custom features, or connected tools.",
-      href: null,
-      image: "", // Add the project screenshot when ready.
-      imageAlt: "",
-    }, */
-  ];
+  {
+    title: "JeannetteMills.com",
+    description:
+      "A website for author and leadership consultant Jeannette Mills, showcasing her book, consulting services, and approach to developing strong leaders.",
+    href: "https://jeannettemills.pagekey.io",
+    image: jeannetteMillsPreview,
+    imageAlt:
+      "Jeannette Mills website with her portrait and the headline Lead Boldly. Build what lasts.",
+  },
+  {
+    title: "AlliedRecyclingNJ.com",
+    description:
+      "A website for Allied Recycling in Mt. Holly, New Jersey, highlighting scrap metal recycling, hauling services, and an easy way to request a junk-car pickup.",
+    href: "https://alliedrecyclingnj.com",
+    image: alliedRecyclingPreview,
+    imageAlt:
+      "Allied Recycling homepage showcasing recycling and hauling services in New Jersey",
+  },
+  {
+    title: "GreenFellowFarms.com",
+    description:
+      "A website for GreenFellow Farms in Columbus, New Jersey, showcasing its butcher shop, beef shares, livestock buying, and hay offerings.",
+    href: "https://greenfellowfarms.com",
+    image: greenFellowFarmsPreview,
+    imageAlt:
+      "GreenFellow Farms homepage highlighting its farm offerings in Columbus, New Jersey",
+  },
+];
 
 const projectSteps = [
   {
@@ -239,10 +240,10 @@ export default function WebsitesPage() {
             Portfolio
           </h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400">
-            Explore an author&apos;s website and PageKey&apos;s own online home.
+            Explore websites for an author and local New Jersey businesses.
             Follow the links to visit the sites.
           </p>
-          <div className="mt-9 grid gap-4 md:grid-cols-2">
+          <div className="mt-9 grid gap-4 md:grid-cols-3">
             {portfolioProjects.map(
               ({ title, description, href, image, imageAlt }) => (
                 <article
