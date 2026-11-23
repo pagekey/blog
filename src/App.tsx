@@ -4,6 +4,7 @@ import HomePage from "./pages/Home";
 import NotFoundPage from "./pages/NotFoundPage";
 import HelpPage from "./pages/Help";
 import HexBoxPage from "./pages/HexBox";
+import HexBoxTravelPage from "./pages/HexBoxTravel";
 import VPNPage from "./pages/VPN";
 import KitsPage from "./pages/Kits";
 import BlogPost from "./pages/BlogPost";
@@ -40,6 +41,7 @@ function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/help" element={<HelpPage />} />
       <Route path="/hexbox" element={<HexBoxPage />} />
+      <Route path="/hexbox/travel" element={<HexBoxTravelPage />} />
       <Route path="/unit" element={<Navigate to="/hexbox" replace />} />
       <Route path="/photos" element={<Navigate to="/hexbox" replace />} />
       <Route path="/vpn" element={<VPNPage />} />
