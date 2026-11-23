@@ -21,6 +21,7 @@ import ManufacturingPage from "./pages/Manufacturing";
 import WebsitesPage from "./pages/Websites";
 import MissionPage from "./pages/Mission";
 import ContactPage from "./pages/Contact";
+import SupportPage from "./pages/Support";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Route path="/websites" element={<WebsitesPage />} />
       <Route path="/mission" element={<MissionPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/support" element={<SupportPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/help" element={<HelpPage />} />
       <Route path="/hexbox" element={<HexBoxPage />} />

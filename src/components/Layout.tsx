@@ -195,6 +195,9 @@ export default function Layout({
         <div className="mx-auto flex flex-col md:flex-row min-h-24 max-w-7xl items-center justify-between gap-4 px-6 py-6 text-sm text-muted-foreground">
           <p>&copy; {currentYear} PageKey Solutions LLC.</p>
           <div className="flex items-center gap-5">
+            <Link to="/support" className="hover:text-orange-300 transition-colors">
+              Support
+            </Link>
             <a
               href="mailto:hello@pagekey.io"
               className="hover:text-orange-300 transition-colors"
