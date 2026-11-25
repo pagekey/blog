@@ -2,8 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 
-// Add the YouTube video ID when the setup guide is available.
-const youtubeVideoId: string = "";
+const youtubeVideoId: string = "lLRq45FqzZA";
 
 export default function HexBoxTravelPage() {
   return (
